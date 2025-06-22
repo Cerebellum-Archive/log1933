@@ -107,7 +107,7 @@ export default function JourneyPage() {
             The World Tour
           </h1>
           <p className="text-xl text-blue-200 max-w-3xl">
-            Follow Ernest K. Gann&apos;s 1933 journey around the world as he reviewed telephone companies 
+            Follow Ernest K. Gann's 1933 journey around the world as he reviewed telephone companies 
             across Europe and Asia, an adventure that would shape his future as an aviation author.
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function JourneyPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Explore the Original Logbook</h2>
           <p className="text-lg text-blue-100 mb-8">
-            See the actual pages from Ernest&apos;s 1933 world tour logbook, 
+            See the actual pages from Ernest's 1933 world tour logbook, 
             carefully digitized and preserved for future generations.
           </p>
           <Link 

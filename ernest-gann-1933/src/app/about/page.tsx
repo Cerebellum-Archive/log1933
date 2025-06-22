@@ -42,7 +42,7 @@ export default function AboutPage() {
                   His father was a telephone company executive who worked in Lincoln, St. Paul, and Chicago.
                 </p>
                 <p className="text-slate-300 leading-relaxed">
-                  Despite his father&apos;s desire for him to pursue a career in the telephone business, 
+                  Despite his father's desire for him to pursue a career in the telephone business, 
                   young Ernest was fascinated by photography, movie-making, and aviation.
                 </p>
               </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
             <div className="bg-slate-800 p-8 rounded-lg">
               <h3 className="text-xl font-bold text-blue-300 mb-4">The Assignment</h3>
               <p className="text-slate-300 leading-relaxed mb-6">
-                In 1933, Ernest&apos;s father gave him a unique opportunity: a trip around the world 
+                In 1933, Ernest's father gave him a unique opportunity: a trip around the world 
                 to review telephone companies in Europe and Asia. This assignment would prove to be 
                 a pivotal experience in his life, exposing him to different cultures and technologies.
               </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Commercial Aviation</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   In 1938, Gann was hired as a First Officer by American Airlines, flying Douglas DC-2 
-                  and DC-3 aircraft. He found his &quot;life&apos;s work&quot; in aviation, flying routes in the 
+                  and DC-3 aircraft. He found his "life's work" in aviation, flying routes in the 
                   northeastern United States.
                 </p>
                 <p className="text-slate-300 leading-relaxed">
@@ -106,8 +106,8 @@ export default function AboutPage() {
               <div className="bg-slate-800 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">The Hump and Beyond</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
-                  Gann flew &quot;The Hump&quot; - the dangerous airlift route across the Himalayas to China, 
-                  which he described as having &quot;simply and truthfully the worst weather in the world.&quot;
+                  Gann flew "The Hump" - the dangerous airlift route across the Himalayas to China, 
+                  which he described as having "simply and truthfully the worst weather in the world."
                 </p>
                 <p className="text-slate-300 leading-relaxed">
                   His wartime experiences would later provide rich material for his aviation novels 
@@ -124,15 +124,15 @@ export default function AboutPage() {
               <div className="bg-slate-800 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Aviation Novels</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
-                  Gann&apos;s first novel, &quot;Island in the Sky&quot; (1944), was based on his wartime experiences 
+                  Gann's first novel, "Island in the Sky" (1944), was based on his wartime experiences 
                   and became a successful film starring John Wayne.
                 </p>
                 <p className="text-slate-300 leading-relaxed mb-4">
-                  His most famous work, &quot;The High and the Mighty&quot; (1953), was also adapted into a 
+                  His most famous work, "The High and the Mighty" (1953), was also adapted into a 
                   major Hollywood film starring John Wayne and won an Academy Award for Best Original Song.
                 </p>
                 <p className="text-slate-300 leading-relaxed">
-                  &quot;Fate Is the Hunter&quot; (1961) is considered one of the greatest aviation books ever written 
+                  "Fate Is the Hunter" (1961) is considered one of the greatest aviation books ever written 
                   and remains in print today.
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <div className="bg-slate-800 p-6 rounded-lg">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Nautical and Other Works</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
-                  Gann also wrote nautical-themed novels including &quot;Fiddler&apos;s Green&quot; and &quot;Soldier of Fortune,&quot; 
+                  Gann also wrote nautical-themed novels including "Fiddler's Green" and "Soldier of Fortune," 
                   both of which were adapted into major motion pictures.
                 </p>
                 <p className="text-slate-300 leading-relaxed mb-4">
@@ -189,7 +189,7 @@ export default function AboutPage() {
           <section className="text-center">
             <h2 className="text-3xl font-bold text-white mb-6">Explore the 1933 Logbook</h2>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-              Discover the actual pages from Ernest&apos;s world tour logbook, 
+              Discover the actual pages from Ernest's world tour logbook, 
               carefully preserved and digitized for future generations.
             </p>
             <Link 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -18,8 +19,8 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              A young man&apos;s journey around the world to review telephone companies in Europe and Asia, 
-              setting the stage for one of aviation&apos;s greatest storytellers.
+              A young man's journey around the world to review telephone companies in Europe and Asia, 
+              setting the stage for one of aviation's greatest storytellers.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -75,7 +76,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-white mb-3">Aviation Pioneer</h3>
                 <p className="text-slate-300">
                   This journey would later inspire his aviation career and his famous novels 
-                  like &quot;Fate Is the Hunter&quot; and &quot;The High and the Mighty.&quot;
+                  like "Fate Is the Hunter" and "The High and the Mighty."
                 </p>
               </div>
             </div>
@@ -87,7 +88,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-white mb-6">Discover the Logbook</h2>
             <p className="text-xl text-blue-100 mb-8">
-              Explore the carefully preserved pages of Ernest&apos;s 1933 world tour logbook, 
+              Explore the carefully preserved pages of Ernest's 1933 world tour logbook, 
               digitized and enhanced with modern technology.
             </p>
             <Link 
