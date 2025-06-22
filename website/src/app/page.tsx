@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+// Force deployment update - Ernest K. Gann 1933 Logbook
 export default function Home() {
   return (
     <>
