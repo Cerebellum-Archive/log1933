@@ -20,7 +20,7 @@ export default function LogbookPage() {
             The 1933 Logbook
           </h1>
           <p className="text-xl text-blue-200 max-w-3xl">
-            Explore the original pages from Ernest K. Gann's world tour logbook, 
+            Explore the original pages from Ernest K. Gann&apos;s world tour logbook, 
             carefully digitized and enhanced for modern viewing.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function LogbookPage() {
             <div className="text-6xl mb-6">📖</div>
             <h2 className="text-3xl font-bold text-white mb-6">Coming Soon</h2>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-              We're currently processing and digitizing the original logbook pages from Ernest's 1933 world tour. 
+              We&apos;re currently processing and digitizing the original logbook pages from Ernest&apos;s 1933 world tour. 
               This will include high-resolution scans, OCR text extraction, and historical context for each entry.
             </p>
             
