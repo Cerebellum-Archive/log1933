@@ -87,24 +87,31 @@ tmp/
 *_temp.*
 converted_image.png
 
-# Environment variables
+# Environment variables and credentials
 .env
 .env.local
 .env.*.local
-
-# Logs
-*.log
-logs/
+.env.production
+.env.development
 
 # API keys and secrets
 secrets.json
 config.json
+credentials/*.json
+!credentials/*.example
+!credentials/*.json.example
+credentials/.env
+credentials/google-cloud-vision.json
+
+# Processing logs and output
+digitization.log
+digitized_output/
 
 # Large text files (keep only small samples)
 *.txt
 !sample_*.txt
 !README*.txt
-!requirements.txt
+!requirements*.txt
 !docs/*.txt
 
 # Backup files

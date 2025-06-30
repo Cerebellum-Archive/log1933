@@ -25,6 +25,10 @@ from dataclasses import dataclass, asdict
 import asyncio
 import aiohttp
 
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 from PIL import Image
 import pytesseract
 from spellchecker import SpellChecker
@@ -265,14 +269,18 @@ async def main():
     
     args = parser.parse_args()
     
-    # Get OpenAI API key
+    # Get OpenAI API key - try argument, then environment variable
     openai_key = args.openai_key or os.getenv("OPENAI_API_KEY")
     if not openai_key:
         logger.error("OpenAI API key required. Set OPENAI_API_KEY env var or use --openai-key")
+        logger.error("To set up credentials, see: credentials/README.md")
         return
     
+    # Get Google credentials path from environment if not specified
+    google_credentials = args.google_credentials or os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+    
     # Initialize digitizer
-    digitizer = AIDigitizer(openai_key, args.google_credentials)
+    digitizer = AIDigitizer(openai_key, google_credentials)
     
     # Create output directory
     output_dir = Path(args.output_dir)
@@ -324,7 +332,8 @@ async def main():
     # Generate summary
     logger.info(f"\nProcessing complete!")
     logger.info(f"Total entries: {len(entries)}")
-    logger.info(f"Average confidence: {sum(e.confidence_score for e in entries) / len(entries):.2f}")
+    if entries:
+        logger.info(f"Average confidence: {sum(e.confidence_score for e in entries) / len(entries):.2f}")
     logger.info(f"Output directory: {output_dir}")
 
 if __name__ == "__main__":
