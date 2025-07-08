@@ -107,7 +107,9 @@ class AIDigitizer:
             with open(image_path, 'rb') as image_file:
                 content = image_file.read()
             
-            image = self.google_vision.types.Image(content=content)
+            # Use the current Google Vision API syntax
+            from google.cloud import vision
+            image = vision.Image(content=content)
             response = self.google_vision.text_detection(image=image)
             
             if response.text_annotations:
@@ -129,7 +131,7 @@ class AIDigitizer:
                 base64_image = base64.b64encode(image_file.read()).decode('utf-8')
             
             response = await self.openai_client.chat.completions.create(
-                model="gpt-4-vision-preview",
+                model="gpt-4o",
                 messages=[
                     {
                         "role": "user",
@@ -173,7 +175,7 @@ class AIDigitizer:
             - This is Ernest K. Gann's world tour logbook from 1933"""
             
             response = await self.openai_client.chat.completions.create(
-                model="gpt-4-turbo-preview",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"Raw OCR text to improve:\n\n{text}\n\nContext: {context}"}
@@ -190,18 +192,33 @@ class AIDigitizer:
         """Extract structured metadata from improved text."""
         try:
             response = await self.openai_client.chat.completions.create(
-                model="gpt-4-turbo-preview",
+                model="gpt-4o",
                 messages=[
                     {
                         "role": "system", 
-                        "content": "Extract structured information from this 1933 logbook entry. Return JSON with keys: date_entry, location, weather, activities, people_mentioned. Use null for missing information."
+                        "content": """Extract structured information from this 1933 logbook entry. 
+                        Return ONLY a valid JSON object with these exact keys: date_entry, location, weather, activities, people_mentioned. 
+                        Use null for missing information. Do not include any explanations or additional text."""
                     },
-                    {"role": "user", "content": improved_text}
+                    {"role": "user", "content": f"Extract metadata from this logbook entry:\n\n{improved_text}"}
                 ],
                 temperature=0.1
             )
             
-            return json.loads(response.choices[0].message.content)
+            response_text = response.choices[0].message.content.strip()
+            
+            # Try to extract JSON from the response if it contains extra text
+            import re
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                json_text = json_match.group(0)
+            else:
+                json_text = response_text
+            
+            return json.loads(json_text)
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON parsing failed: {e}. Response was: {response_text[:200]}...")
+            return {"date_entry": None, "location": None, "weather": None, "activities": None, "people_mentioned": None}
         except Exception as e:
             logger.error(f"Metadata extraction failed: {e}")
             return {"date_entry": None, "location": None, "weather": None, "activities": None, "people_mentioned": None}
@@ -293,15 +310,31 @@ async def main():
     if args.max_files:
         png_files = png_files[:args.max_files]
     
-    logger.info(f"Processing {len(png_files)} PNG files")
+    # Initialize tracking variables
+    start_time = datetime.now()
+    entries = []
+    failed_files = []
+    processing_stats = {
+        "tesseract": 0,
+        "google_vision": 0,
+        "openai_vision": 0,
+        "failed": 0
+    }
+    confidence_scores = []
+    
+    logger.info(f"Starting processing of {len(png_files)} PNG files at {start_time}")
+    logger.info(f"Output directory: {output_dir.absolute()}")
     
     # Process files
-    entries = []
     for i, png_file in enumerate(png_files, 1):
-        logger.info(f"Progress: {i}/{len(png_files)}")
+        logger.info(f"Progress: {i}/{len(png_files)} ({i/len(png_files)*100:.1f}%)")
         try:
             entry = await digitizer.process_image(str(png_file))
             entries.append(entry)
+            
+            # Update statistics
+            processing_stats[entry.processing_method] += 1
+            confidence_scores.append(entry.confidence_score)
             
             # Save individual entry
             entry_file = output_dir / f"{entry.filename.replace('.png', '.json')}"
@@ -314,14 +347,75 @@ async def main():
                 f.write(entry.content)
                 
         except Exception as e:
-            logger.error(f"Failed to process {png_file}: {e}")
+            error_msg = f"Failed to process {png_file}: {e}"
+            logger.error(error_msg)
+            failed_files.append({
+                "filename": png_file.name,
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            })
+            processing_stats["failed"] += 1
+    
+    # Calculate final statistics
+    end_time = datetime.now()
+    total_time = end_time - start_time
+    successful_files = len(entries)
+    total_files = len(png_files)
+    success_rate = (successful_files / total_files * 100) if total_files > 0 else 0
+    avg_confidence = sum(confidence_scores) / len(confidence_scores) if confidence_scores else 0
+    
+    # Create comprehensive report
+    report = {
+        "processing_summary": {
+            "start_time": start_time.isoformat(),
+            "end_time": end_time.isoformat(),
+            "total_processing_time": str(total_time),
+            "total_files_attempted": total_files,
+            "successful_files": successful_files,
+            "failed_files": len(failed_files),
+            "success_rate_percent": round(success_rate, 2),
+            "average_confidence_score": round(avg_confidence, 3)
+        },
+        "method_statistics": processing_stats,
+        "confidence_distribution": {
+            "min": min(confidence_scores) if confidence_scores else 0,
+            "max": max(confidence_scores) if confidence_scores else 0,
+            "average": round(avg_confidence, 3),
+            "high_confidence_files": len([c for c in confidence_scores if c >= 0.9]),
+            "medium_confidence_files": len([c for c in confidence_scores if 0.7 <= c < 0.9]),
+            "low_confidence_files": len([c for c in confidence_scores if c < 0.7])
+        },
+        "failed_files": failed_files
+    }
+    
+    # Save processing report
+    report_file = output_dir / "processing_report.json"
+    with open(report_file, 'w', encoding='utf-8') as f:
+        json.dump(report, f, indent=2, ensure_ascii=False)
+    
+    # Save failed files list
+    if failed_files:
+        failed_file = output_dir / "failed_files.json"
+        with open(failed_file, 'w', encoding='utf-8') as f:
+            json.dump(failed_files, f, indent=2, ensure_ascii=False)
+        
+        # Also create a simple text list
+        failed_txt = output_dir / "failed_files.txt"
+        with open(failed_txt, 'w', encoding='utf-8') as f:
+            f.write("Failed Files List\n")
+            f.write("================\n\n")
+            for fail in failed_files:
+                f.write(f"{fail['filename']}: {fail['error']}\n")
     
     # Save complete dataset
     complete_data = {
         "metadata": {
-            "total_entries": len(entries),
-            "processing_date": datetime.now().isoformat(),
-            "source": "Ernest K. Gann 1933 World Tour Logbook"
+            "total_entries": successful_files,
+            "processing_date": end_time.isoformat(),
+            "source": "Ernest K. Gann 1933 World Tour Logbook",
+            "processing_stats": processing_stats,
+            "success_rate": success_rate,
+            "average_confidence": avg_confidence
         },
         "entries": [asdict(entry) for entry in entries]
     }
@@ -329,12 +423,58 @@ async def main():
     with open(output_dir / "complete_logbook.json", 'w', encoding='utf-8') as f:
         json.dump(complete_data, f, indent=2, ensure_ascii=False)
     
-    # Generate summary
-    logger.info(f"\nProcessing complete!")
-    logger.info(f"Total entries: {len(entries)}")
-    if entries:
-        logger.info(f"Average confidence: {sum(e.confidence_score for e in entries) / len(entries):.2f}")
-    logger.info(f"Output directory: {output_dir}")
+    # Generate detailed summary log
+    summary_log = output_dir / "processing_summary.txt"
+    with open(summary_log, 'w', encoding='utf-8') as f:
+        f.write("ERNEST K. GANN 1933 LOGBOOK DIGITIZATION REPORT\n")
+        f.write("=" * 50 + "\n\n")
+        f.write(f"Processing completed: {end_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Total processing time: {total_time}\n")
+        f.write(f"Files processed: {successful_files}/{total_files} ({success_rate:.1f}% success)\n\n")
+        
+        f.write("AI METHOD PERFORMANCE:\n")
+        f.write("-" * 25 + "\n")
+        for method, count in processing_stats.items():
+            if method != "failed":
+                percentage = (count / successful_files * 100) if successful_files > 0 else 0
+                f.write(f"{method.replace('_', ' ').title()}: {count} files ({percentage:.1f}%)\n")
+        f.write(f"Failed: {processing_stats['failed']} files\n\n")
+        
+        f.write("CONFIDENCE SCORE ANALYSIS:\n")
+        f.write("-" * 30 + "\n")
+        f.write(f"Average confidence: {avg_confidence:.3f}\n")
+        f.write(f"High confidence (≥0.9): {report['confidence_distribution']['high_confidence_files']} files\n")
+        f.write(f"Medium confidence (0.7-0.9): {report['confidence_distribution']['medium_confidence_files']} files\n")
+        f.write(f"Low confidence (<0.7): {report['confidence_distribution']['low_confidence_files']} files\n\n")
+        
+        if failed_files:
+            f.write("FAILED FILES:\n")
+            f.write("-" * 15 + "\n")
+            for fail in failed_files:
+                f.write(f"• {fail['filename']}: {fail['error']}\n")
+        else:
+            f.write("✅ ALL FILES PROCESSED SUCCESSFULLY!\n")
+    
+    # Log final summary
+    logger.info(f"\n" + "="*60)
+    logger.info(f"PROCESSING COMPLETE!")
+    logger.info(f"="*60)
+    logger.info(f"Total time: {total_time}")
+    logger.info(f"Success rate: {successful_files}/{total_files} ({success_rate:.1f}%)")
+    logger.info(f"Average confidence: {avg_confidence:.3f}")
+    logger.info(f"Primary method: {max(processing_stats, key=lambda k: processing_stats[k] if k != 'failed' else 0)}")
+    
+    if failed_files:
+        logger.warning(f"Failed files: {len(failed_files)}")
+        logger.info(f"See failed_files.txt for details")
+    
+    logger.info(f"Output files:")
+    logger.info(f"  • Master dataset: complete_logbook.json")
+    logger.info(f"  • Processing report: processing_report.json")
+    logger.info(f"  • Summary: processing_summary.txt")
+    logger.info(f"  • Individual files: {successful_files} JSON + TXT files")
+    logger.info(f"Output directory: {output_dir.absolute()}")
+    logger.info(f"="*60)
 
 if __name__ == "__main__":
     asyncio.run(main()) 
