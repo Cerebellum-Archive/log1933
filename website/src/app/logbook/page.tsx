@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
@@ -34,7 +34,7 @@ interface LogbookData {
   entries: LogbookEntry[]
 }
 
-export default function LogbookPage() {
+function LogbookContent() {
   const [logbookData, setLogbookData] = useState<LogbookData | null>(null)
   const [filteredEntries, setFilteredEntries] = useState<LogbookEntry[]>([])
   const [loading, setLoading] = useState(true)
@@ -220,7 +220,7 @@ export default function LogbookPage() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400">{logbookData.metadata.total_entries}</div>
                 <div className="text-slate-300">Pages Digitized</div>
-        </div>
+              </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400">{Math.round(logbookData.metadata.average_confidence * 100)}%</div>
                 <div className="text-slate-300">Average Accuracy</div>
@@ -375,6 +375,21 @@ export default function LogbookPage() {
         </div>
       )}
     </div>
+  )
+}
+
+export default function LogbookPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"></div>
+          <p className="text-blue-200">Loading logbook...</p>
+        </div>
+      </div>
+    }>
+      <LogbookContent />
+    </Suspense>
   )
 }
 
