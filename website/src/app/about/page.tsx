@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function AboutPage() {
@@ -34,7 +36,7 @@ export default function AboutPage() {
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-white mb-8">Early Life (1910-1933)</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="card">
+              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Birth and Family</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   Ernest Kellogg Gann was born on October 13, 1910, in Lincoln, Nebraska, 
@@ -47,7 +49,7 @@ export default function AboutPage() {
                 </p>
               </div>
               
-              <div className="card">
+              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Education and Early Career</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   After struggling in school, Ernest was sent to Culver Military Academy, 
@@ -79,7 +81,7 @@ export default function AboutPage() {
               </p>
               <Link 
                 href="/journey" 
-                className="btn-primary"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
               >
                 Explore the Journey →
               </Link>
@@ -90,7 +92,7 @@ export default function AboutPage() {
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-white mb-8">Aviation Career (1938-1945)</h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="card">
+              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">Commercial Aviation</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   In 1938, Gann was hired as a First Officer by American Airlines, flying Douglas DC-2 
@@ -103,7 +105,7 @@ export default function AboutPage() {
                 </p>
               </div>
               
-              <div className="card">
+              <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors">
                 <h3 className="text-xl font-bold text-blue-300 mb-4">The Hump and Beyond</h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   Gann flew &quot;The Hump&quot; - the dangerous airlift route across the Himalayas to China, 
@@ -129,7 +131,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Island-Sky-Ernest-K-Gann/dp/1519479034"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1944</div>
                   <div className="font-semibold text-white">Island in the Sky</div>
@@ -140,7 +142,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Blaze-Noon-Ernest-K-Gann/dp/0553290371"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1946</div>
                   <div className="font-semibold text-white">Blaze of Noon</div>
@@ -151,7 +153,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/High-Mighty-Ernest-K-Gann/dp/0450045226"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1953</div>
                   <div className="font-semibold text-white">The High and the Mighty</div>
@@ -162,7 +164,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Fate-Hunter-Ernest-K-Gann/dp/0671636030"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1961</div>
                   <div className="font-semibold text-white">Fate Is the Hunter</div>
@@ -173,7 +175,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Company-Eagles-Ernest-K-Gann/dp/0515054844"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1966</div>
                   <div className="font-semibold text-white">In the Company of Eagles</div>
@@ -184,7 +186,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Aviator-Ernest-K-Gann/dp/0345322533"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1981</div>
                   <div className="font-semibold text-white">The Aviator</div>
@@ -201,7 +203,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Fiddlers-Green-Ernest-K-Gann/dp/1199999903"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1950</div>
                   <div className="font-semibold text-white">Fiddler&apos;s Green</div>
@@ -212,7 +214,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Soldier-Fortune-Ernest-K-Gann/dp/0848804961"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1954</div>
                   <div className="font-semibold text-white">Soldier of Fortune</div>
@@ -223,7 +225,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Twilight-Gods-Ernest-K-Gann/dp/0345021436"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1956</div>
                   <div className="font-semibold text-white">Twilight for the Gods</div>
@@ -234,7 +236,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Antagonists-Ernest-K-Gann/dp/0451078993"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1970</div>
                   <div className="font-semibold text-white">The Antagonists</div>
@@ -245,7 +247,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Gentlemen-Adventure-Ernest-K-Gann/dp/0340508175"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1983</div>
                   <div className="font-semibold text-white">Gentlemen of Adventure</div>
@@ -256,7 +258,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Bad-Angel-Ernest-K-Gann/dp/0877959293"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1987</div>
                   <div className="font-semibold text-white">The Bad Angel</div>
@@ -273,7 +275,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Song-Sirens-Ernest-K-Gann/dp/1574092545"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1968</div>
                   <div className="font-semibold text-white">Song of the Sirens</div>
@@ -284,7 +286,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Ernest-Ganns-Flying-Circus/dp/0553296973"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1974</div>
                   <div className="font-semibold text-white">Ernest K. Gann&apos;s Flying Circus</div>
@@ -295,7 +297,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Hostage-Fortune-Ernest-K-Gann/dp/0345284011"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1978</div>
                   <div className="font-semibold text-white">A Hostage to Fortune</div>
@@ -306,7 +308,7 @@ export default function AboutPage() {
                   href="https://www.amazon.com/Black-Watch-America-Secret-Planes/dp/0394575075"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="book-card"
+                  className="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
                 >
                   <div className="text-sm text-blue-400 mb-1">1989</div>
                   <div className="font-semibold text-white">The Black Watch</div>
@@ -324,7 +326,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0045919/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1953</div>
                 <div className="font-bold text-white text-lg mb-2">Island in the Sky</div>
@@ -340,7 +342,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0047150/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1954</div>
                 <div className="font-bold text-white text-lg mb-2">The High and the Mighty</div>
@@ -356,7 +358,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0048623/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1955</div>
                 <div className="font-bold text-white text-lg mb-2">Soldier of Fortune</div>
@@ -372,7 +374,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0051107/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1958</div>
                 <div className="font-bold text-white text-lg mb-2">Twilight for the Gods</div>
@@ -388,7 +390,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0057065/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1964</div>
                 <div className="font-bold text-white text-lg mb-2">Fate Is the Hunter</div>
@@ -404,7 +406,7 @@ export default function AboutPage() {
                 href="https://www.imdb.com/title/tt0082694/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="film-card"
+                className="bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer"
               >
                 <div className="text-sm text-blue-400 mb-2">1981</div>
                 <div className="font-bold text-white text-lg mb-2">Masada</div>
@@ -458,31 +460,13 @@ export default function AboutPage() {
             </p>
             <Link 
               href="/logbook" 
-              className="btn-primary"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               View the Logbook
             </Link>
           </section>
         </div>
       </main>
-
-      <style jsx>{`
-        .card {
-          @apply bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-500 transition-colors;
-        }
-        
-        .book-card {
-          @apply bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer;
-        }
-        
-        .film-card {
-          @apply bg-slate-800 p-6 rounded-lg border border-slate-700 hover:border-blue-400 transition-all hover:scale-105 cursor-pointer;
-        }
-        
-        .btn-primary {
-          @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold;
-        }
-      `}</style>
     </div>
   )
 }
