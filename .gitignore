@@ -55,6 +55,13 @@ Thumbs.db
 *.bmp
 *.zip
 
+# EXCEPTIONS: Allow website assets
+!website/public/images/journey/*.png
+!website/public/images/journey/*.jpg
+!website/public/images/journey/*.jpeg
+!website/public/data/*.json
+!website/public/data/*.txt
+
 # Large output files
 PNG_Aggregated.pdf
 JPEG_Aggregated.pdf

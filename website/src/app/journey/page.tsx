@@ -38,7 +38,8 @@ const journeyData = [
     location: "Chicago, Illinois",
     title: "The Assignment",
     description: "George Kellogg Gann, a telephone company executive, gives his son Ernest an assignment to travel around the world and review telephone companies in Europe and Asia.",
-    image: "/images/chicago-1933.jpg",
+    image: "/images/journey/chicago-1933.jpg",
+    fallbackImage: "/images/chicago-1933.jpg",
     searchMonth: "01",
     searchYear: "1933"
   },
@@ -47,7 +48,8 @@ const journeyData = [
     location: "New York City",
     title: "Departure",
     description: "Ernest boards a steamship bound for Europe, beginning his world tour. At 23, he was a Yale dropout with dreams of filmmaking.",
-    image: "/images/nyc-1933.jpg",
+    image: "/images/journey/nyc-departure-1933.jpg",
+    fallbackImage: "/images/nyc-1933.jpg",
     searchMonth: "02",
     searchYear: "1933"
   },
@@ -56,7 +58,8 @@ const journeyData = [
     location: "London, England",
     title: "European Telephone Review",
     description: "Ernest begins his review of European telephone systems, starting with the British Post Office telephone network.",
-    image: "/images/london-1933.jpg",
+    image: "/images/journey/london-1933.jpg",
+    fallbackImage: "/images/london-1933.jpg",
     searchMonth: "03",
     searchYear: "1933"
   },
@@ -65,7 +68,8 @@ const journeyData = [
     location: "Paris, France",
     title: "French Telecommunications",
     description: "Continuing his journey through Europe, Ernest studies the French telephone system and experiences the culture of Paris.",
-    image: "/images/paris-1933.jpg",
+    image: "/images/journey/paris-1933.jpg",
+    fallbackImage: "/images/paris-1933.jpg",
     searchMonth: "04",
     searchYear: "1933"
   },
@@ -74,7 +78,8 @@ const journeyData = [
     location: "Berlin, Germany",
     title: "German Innovation",
     description: "Ernest reviews the German telephone infrastructure, witnessing the technological advances of the era.",
-    image: "/images/berlin-1933.jpg",
+    image: "/images/journey/berlin-1933.jpg",
+    fallbackImage: "/images/berlin-1933.jpg",
     searchMonth: "05",
     searchYear: "1933"
   },
@@ -83,7 +88,8 @@ const journeyData = [
     location: "Moscow, Soviet Union",
     title: "Soviet Communications",
     description: "A challenging leg of the journey as Ernest reviews the Soviet telephone system during a period of significant change.",
-    image: "/images/moscow-1933.jpg",
+    image: "/images/journey/moscow-1933.jpg",
+    fallbackImage: "/images/moscow-1933.jpg",
     searchMonth: "06",
     searchYear: "1933"
   },
@@ -92,7 +98,8 @@ const journeyData = [
     location: "Tokyo, Japan",
     title: "Japanese Technology",
     description: "Ernest arrives in Asia, beginning his review of Japanese telecommunications and experiencing a vastly different culture.",
-    image: "/images/tokyo-1933.jpg",
+    image: "/images/journey/tokyo-1933.jpg",
+    fallbackImage: "/images/tokyo-1933.jpg",
     searchMonth: "07",
     searchYear: "1933"
   },
@@ -101,7 +108,8 @@ const journeyData = [
     location: "Shanghai, China",
     title: "Chinese Communications",
     description: "Continuing through Asia, Ernest studies the Chinese telephone system in the international port city of Shanghai.",
-    image: "/images/shanghai-1933.jpg",
+    image: "/images/journey/shanghai-1933.jpg",
+    fallbackImage: "/images/shanghai-1933.jpg",
     searchMonth: "08",
     searchYear: "1933"
   },
@@ -110,7 +118,8 @@ const journeyData = [
     location: "Hong Kong",
     title: "British Colony",
     description: "Ernest reviews the telephone system in the British colony of Hong Kong, experiencing the blend of Eastern and Western influences.",
-    image: "/images/hongkong-1933.jpg",
+    image: "/images/journey/hongkong-1933.jpg",
+    fallbackImage: "/images/hongkong-1933.jpg",
     searchMonth: "09",
     searchYear: "1933"
   },
@@ -119,7 +128,8 @@ const journeyData = [
     location: "Singapore",
     title: "Strait Settlements",
     description: "The journey continues through Southeast Asia as Ernest reviews telecommunications in the British Straits Settlements.",
-    image: "/images/singapore-1933.jpg",
+    image: "/images/journey/singapore-1933.jpg",
+    fallbackImage: "/images/singapore-1933.jpg",
     searchMonth: "10",
     searchYear: "1933"
   },
@@ -128,7 +138,8 @@ const journeyData = [
     location: "Bombay, India",
     title: "Indian Subcontinent",
     description: "Ernest arrives in India, reviewing the telephone systems of the British Raj and experiencing the vastness of the subcontinent.",
-    image: "/images/bombay-1933.jpg",
+    image: "/images/journey/bombay-1933.jpg",
+    fallbackImage: "/images/bombay-1933.jpg",
     searchMonth: "11",
     searchYear: "1933"
   },
@@ -137,7 +148,8 @@ const journeyData = [
     location: "Return to America",
     title: "Homeward Bound",
     description: "After nearly a year of travel, Ernest returns to America with a wealth of experience and observations that would later influence his writing.",
-    image: "/images/return-1933.jpg",
+    image: "/images/journey/return-america-1933.jpg",
+    fallbackImage: "/images/return-1933.jpg",
     searchMonth: "12",
     searchYear: "1933"
   }
@@ -147,6 +159,7 @@ export default function JourneyPage() {
   const [logbookData, setLogbookData] = useState<LogbookData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     const fetchLogbookData = async () => {
@@ -168,6 +181,10 @@ export default function JourneyPage() {
     fetchLogbookData()
   }, [])
 
+  const handleImageError = (imagePath: string) => {
+    setImageErrors(prev => new Set(prev).add(imagePath))
+  }
+
   // Function to find logbook entries for a specific month/year
   const findEntriesForMonth = (month: string, year: string) => {
     if (!logbookData) return []
@@ -175,16 +192,13 @@ export default function JourneyPage() {
     return logbookData.entries.filter(entry => {
       if (!entry.date_entry) return false
       
-      // Handle different date formats
       const dateStr = entry.date_entry.toLowerCase()
       
-      // Format: "1933-01-28" (ISO format)
       if (dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
         const [entryYear, entryMonth] = dateStr.split('-')
         return entryYear === year && entryMonth === month
       }
       
-      // Format: "8th February, 1933" (verbose format)
       if (dateStr.includes(year)) {
         const monthNames = [
           'january', 'february', 'march', 'april', 'may', 'june',
@@ -201,13 +215,29 @@ export default function JourneyPage() {
     })
   }
 
-  // Function to get the best entry for a timeline item
   const getBestEntryForTimelineItem = (timelineItem: any) => {
     const entries = findEntriesForMonth(timelineItem.searchMonth, timelineItem.searchYear)
     if (entries.length === 0) return null
     
-    // Sort by confidence score and return the best one
-    return entries.sort((a, b) => b.confidence_score - a.confidence_score)[0]
+    return entries.reduce((best, current) => 
+      current.confidence_score > best.confidence_score ? current : best
+    )
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading journey data...</div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
+        <div className="text-red-400 text-xl">Error: {error}</div>
+      </div>
+    )
   }
 
   return (
@@ -226,116 +256,93 @@ export default function JourneyPage() {
           </Link>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            The World Tour
+            The 1933 Journey
           </h1>
           <p className="text-xl text-blue-200 max-w-3xl">
-            Follow Ernest K. Gann&apos;s 1933 journey around the world as he reviewed telephone companies 
-            across Europe and Asia, an adventure that would shape his future as an aviation author.
+            Follow Ernest K. Gann&apos;s world tour through Europe and Asia, 
+            reviewing telephone companies and experiencing diverse cultures.
           </p>
         </div>
       </header>
 
-      {/* Timeline */}
-      <section className="py-16 px-4">
+      {/* Journey Timeline */}
+      <main className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="timeline-line hidden md:block"></div>
-            
-            {journeyData.map((entry, index) => {
-              const logbookEntry = getBestEntryForTimelineItem(entry)
-              const entriesCount = findEntriesForMonth(entry.searchMonth, entry.searchYear).length
+          <div className="space-y-16">
+            {journeyData.map((stop, index) => {
+              const logbookEntry = getBestEntryForTimelineItem(stop)
+              const entryCount = findEntriesForMonth(stop.searchMonth, stop.searchYear).length
+              const hasImageError = imageErrors.has(stop.image)
               
               return (
-                <div key={index} className="relative mb-16 md:mb-24">
-                  {/* Timeline Dot */}
-                  <div className="timeline-dot"></div>
+                <div key={index} className="relative">
+                  {/* Timeline connector */}
+                  {index < journeyData.length - 1 && (
+                    <div className="absolute left-8 top-24 w-0.5 h-32 bg-blue-500 opacity-30"></div>
+                  )}
+                  
+                  {/* Timeline node */}
+                  <div className="absolute left-6 top-8 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900"></div>
                   
                   {/* Content */}
-                  <div className="md:ml-16 card">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
-                        <div className="text-blue-400 text-sm font-semibold mb-1">{entry.date}</div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{entry.title}</h3>
-                        <div className="text-blue-300 font-medium">{entry.location}</div>
-                        
-                        {/* Show entry count if available */}
-                        {entriesCount > 0 && (
-                          <div className="text-green-400 text-sm mt-1">
-                            {entriesCount} logbook {entriesCount === 1 ? 'entry' : 'entries'} found
+                  <div className="ml-20 grid md:grid-cols-2 gap-8 items-center">
+                    {/* Image */}
+                    <div className="relative">
+                      <img 
+                        src={hasImageError ? stop.fallbackImage : stop.image}
+                        alt={`${stop.location} in ${stop.date}`}
+                        className="w-full h-64 object-cover rounded-lg shadow-lg"
+                        onError={() => handleImageError(stop.image)}
+                      />
+                      {!hasImageError && (
+                        <div className="absolute top-2 right-2 bg-purple-600 text-white px-2 py-1 rounded text-xs">
+                          🎨 AI Generated
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Text Content */}
+                    <div>
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="text-blue-400 font-semibold">{stop.date}</div>
+                        {entryCount > 0 && (
+                          <div className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs">
+                            {entryCount} logbook {entryCount === 1 ? 'entry' : 'entries'}
                           </div>
                         )}
                       </div>
                       
-                      {/* Placeholder for future images */}
-                      <div className="mt-4 md:mt-0 md:ml-8">
-                        <div className="w-32 h-24 bg-slate-700 rounded-lg flex items-center justify-center">
-                          <span className="text-slate-400 text-sm">Image</span>
+                      <h2 className="text-2xl font-bold text-white mb-2">{stop.title}</h2>
+                      <h3 className="text-lg text-blue-300 mb-4">{stop.location}</h3>
+                      <p className="text-slate-300 leading-relaxed mb-6">{stop.description}</p>
+                      
+                      {logbookEntry && (
+                        <div className="bg-slate-800 p-4 rounded-lg mb-4">
+                          <h4 className="text-sm font-semibold text-blue-300 mb-2">From Ernest&apos;s Logbook:</h4>
+                          <p className="text-slate-300 text-sm italic mb-2">
+                            &quot;{logbookEntry.content.substring(0, 200)}...&quot;
+                          </p>
+                          <div className="text-xs text-slate-400">
+                            Confidence: {(logbookEntry.confidence_score * 100).toFixed(1)}% • 
+                            Method: {logbookEntry.processing_method}
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    
-                    <p className="text-slate-300 leading-relaxed mb-4">
-                      {entry.description}
-                    </p>
-                    
-                    {/* Show preview of logbook content if available */}
-                    {logbookEntry && (
-                      <div className="bg-slate-800 p-4 rounded-lg mb-4">
-                        <h4 className="text-white font-semibold mb-2">From the Logbook:</h4>
-                        <p className="text-slate-300 text-sm leading-relaxed">
-                          {logbookEntry.content.substring(0, 200)}...
-                        </p>
-                        <div className="text-blue-400 text-xs mt-2">
-                          {logbookEntry.date_entry} • {logbookEntry.location || 'Location not specified'}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Link to logbook entries */}
-                    {entriesCount > 0 ? (
+                      )}
+                      
                       <Link 
-                        href={`/logbook?month=${entry.searchMonth}&year=${entry.searchYear}`}
-                        className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
+                        href={`/logbook?month=${stop.searchMonth}&year=${stop.searchYear}`}
+                        className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
                       >
-                        View {entriesCount} Logbook {entriesCount === 1 ? 'Entry' : 'Entries'} →
+                        View Logbook Entries →
                       </Link>
-                    ) : (
-                      <div className="text-slate-500 text-sm">
-                        No logbook entries found for this period
-                      </div>
-                    )}
+                    </div>
                   </div>
                 </div>
               )
             })}
           </div>
         </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 px-4 bg-slate-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Explore the Original Logbook</h2>
-          <p className="text-lg text-blue-100 mb-8">
-            See the actual pages from Ernest&apos;s 1933 world tour logbook, 
-            carefully digitized and preserved for future generations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/logbook" 
-              className="btn-primary"
-            >
-              View All Entries
-            </Link>
-            {logbookData && (
-              <div className="text-blue-200 text-sm self-center">
-                {logbookData.metadata.total_entries} pages digitized with {Math.round(logbookData.metadata.average_confidence * 100)}% accuracy
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      </main>
     </div>
   )
 }
