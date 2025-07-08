@@ -1,0 +1,2212 @@
+2025-06-29 19:27:25,419 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:27:25,421 - INFO - Processing 5 PNG files
+2025-06-29 19:27:25,421 - INFO - Progress: 1/5
+2025-06-29 19:27:25,421 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:27:57,272 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:27:57,273 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:28:00,746 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-06-29 19:28:00,749 - ERROR - OpenAI Vision failed for png/IMG_4270.png: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-06-29 19:28:00,751 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 19:28:12,970 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:28:18,356 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:28:18,359 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:28:18,359 - INFO - Completed png/IMG_4270.png - Method: tesseract, Confidence: 0.76
+2025-06-29 19:28:18,361 - INFO - Progress: 2/5
+2025-06-29 19:28:18,361 - INFO - Processing png/IMG_4099.png
+2025-06-29 19:28:33,750 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 19:28:33,750 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:28:35,440 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-06-29 19:28:35,441 - ERROR - OpenAI Vision failed for png/IMG_4099.png: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-06-29 19:28:35,441 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 19:28:41,736 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:28:48,794 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:28:48,799 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:28:48,799 - INFO - Completed png/IMG_4099.png - Method: tesseract, Confidence: 0.77
+2025-06-29 19:28:48,800 - INFO - Progress: 3/5
+2025-06-29 19:28:48,800 - INFO - Processing png/IMG_4089.png
+2025-06-29 19:29:06,867 - INFO - tesseract: confidence=0.82, length=537
+2025-06-29 19:29:06,867 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:29:08,839 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-06-29 19:29:08,842 - ERROR - OpenAI Vision failed for png/IMG_4089.png: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-06-29 19:29:08,843 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 19:29:16,925 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:29:22,256 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:29:22,257 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:29:22,258 - INFO - Completed png/IMG_4089.png - Method: tesseract, Confidence: 0.82
+2025-06-29 19:29:22,258 - INFO - Progress: 4/5
+2025-06-29 19:29:22,258 - INFO - Processing png/IMG_4248.png
+2025-06-29 19:29:51,536 - INFO - tesseract: confidence=0.68, length=1984
+2025-06-29 19:29:51,536 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:29:53,176 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-06-29 19:29:53,178 - ERROR - OpenAI Vision failed for png/IMG_4248.png: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-06-29 19:29:53,180 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 19:31:16,403 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:31:19,226 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:31:19,228 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:31:19,229 - INFO - Completed png/IMG_4248.png - Method: tesseract, Confidence: 0.68
+2025-06-29 19:31:19,231 - INFO - Progress: 5/5
+2025-06-29 19:31:19,231 - INFO - Processing png/IMG_4274.png
+2025-06-29 19:31:28,461 - INFO - tesseract: confidence=0.73, length=1632
+2025-06-29 19:31:28,462 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:31:30,238 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-06-29 19:31:30,239 - ERROR - OpenAI Vision failed for png/IMG_4274.png: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-06-29 19:31:30,241 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 19:31:46,802 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:31:51,618 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:31:51,642 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:31:51,643 - INFO - Completed png/IMG_4274.png - Method: tesseract, Confidence: 0.73
+2025-06-29 19:31:51,647 - INFO - 
+Processing complete!
+2025-06-29 19:31:51,647 - INFO - Total entries: 5
+2025-06-29 19:31:51,647 - INFO - Average confidence: 0.75
+2025-06-29 19:31:51,647 - INFO - Output directory: digitized_output
+2025-06-29 19:35:37,876 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:35:37,879 - INFO - Processing 5 PNG files
+2025-06-29 19:35:37,879 - INFO - Progress: 1/5
+2025-06-29 19:35:37,879 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:35:40,055 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:35:40,055 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:35:52,413 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:35:52,426 - INFO - openai_vision: confidence=0.85, length=1494
+2025-06-29 19:35:55,301 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:35:56,877 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:35:56,879 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:35:56,879 - INFO - Completed png/IMG_4270.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:35:56,885 - INFO - Progress: 2/5
+2025-06-29 19:35:56,885 - INFO - Processing png/IMG_4099.png
+2025-06-29 19:35:59,257 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 19:35:59,257 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:36:06,838 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:06,844 - INFO - openai_vision: confidence=0.85, length=1093
+2025-06-29 19:36:09,645 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:11,583 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:11,585 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:36:11,586 - INFO - Completed png/IMG_4099.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:36:11,605 - INFO - Progress: 3/5
+2025-06-29 19:36:11,605 - INFO - Processing png/IMG_4089.png
+2025-06-29 19:36:12,810 - INFO - tesseract: confidence=0.82, length=537
+2025-06-29 19:36:12,810 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:36:22,461 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:22,469 - INFO - openai_vision: confidence=0.85, length=899
+2025-06-29 19:36:25,389 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:26,480 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:26,483 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:36:26,484 - INFO - Completed png/IMG_4089.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:36:26,486 - INFO - Progress: 4/5
+2025-06-29 19:36:26,486 - INFO - Processing png/IMG_4248.png
+2025-06-29 19:36:29,428 - INFO - tesseract: confidence=0.68, length=1984
+2025-06-29 19:36:29,432 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:36:38,495 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:38,507 - INFO - openai_vision: confidence=0.85, length=1614
+2025-06-29 19:36:41,760 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:42,577 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:42,578 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:36:42,578 - INFO - Completed png/IMG_4248.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:36:42,580 - INFO - Progress: 5/5
+2025-06-29 19:36:42,580 - INFO - Processing png/IMG_4274.png
+2025-06-29 19:36:44,695 - INFO - tesseract: confidence=0.73, length=1632
+2025-06-29 19:36:44,696 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:36:58,214 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:36:58,221 - INFO - openai_vision: confidence=0.85, length=1523
+2025-06-29 19:37:01,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:37:02,232 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:37:02,241 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:37:02,241 - INFO - Completed png/IMG_4274.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:37:02,249 - INFO - 
+Processing complete!
+2025-06-29 19:37:02,249 - INFO - Total entries: 5
+2025-06-29 19:37:02,249 - INFO - Average confidence: 0.85
+2025-06-29 19:37:02,249 - INFO - Output directory: digitized_output
+2025-06-29 19:38:16,024 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:38:16,028 - INFO - Processing 1 PNG files
+2025-06-29 19:38:16,029 - INFO - Progress: 1/1
+2025-06-29 19:38:16,029 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:38:18,300 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:38:18,300 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:38:30,291 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:38:30,312 - INFO - openai_vision: confidence=0.85, length=1487
+2025-06-29 19:38:33,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:38:35,019 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:38:35,020 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:38:35,021 - INFO - Completed png/IMG_4270.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:38:35,028 - INFO - 
+Processing complete!
+2025-06-29 19:38:35,028 - INFO - Total entries: 1
+2025-06-29 19:38:35,028 - INFO - Average confidence: 0.85
+2025-06-29 19:38:35,028 - INFO - Output directory: digitized_output
+2025-06-29 19:41:11,191 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:41:11,194 - INFO - Processing 194 PNG files
+2025-06-29 19:41:11,194 - INFO - Progress: 1/194
+2025-06-29 19:41:11,194 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:41:13,342 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:41:13,342 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:41:24,389 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:24,396 - INFO - openai_vision: confidence=0.85, length=1506
+2025-06-29 19:41:28,209 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:29,526 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:29,530 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:41:29,530 - INFO - Completed png/IMG_4270.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:41:29,581 - INFO - Progress: 2/194
+2025-06-29 19:41:29,581 - INFO - Processing png/IMG_4099.png
+2025-06-29 19:41:31,937 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 19:41:31,937 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:41:43,298 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:43,310 - INFO - openai_vision: confidence=0.85, length=1451
+2025-06-29 19:41:46,077 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:47,606 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:47,606 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:41:47,607 - INFO - Completed png/IMG_4099.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:41:47,608 - INFO - Progress: 3/194
+2025-06-29 19:41:47,608 - INFO - Processing png/IMG_4089.png
+2025-06-29 19:41:48,839 - INFO - tesseract: confidence=0.82, length=537
+2025-06-29 19:41:48,840 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:41:54,993 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:54,999 - INFO - openai_vision: confidence=0.85, length=532
+2025-06-29 19:41:56,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:57,567 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:41:57,570 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:41:57,571 - INFO - Completed png/IMG_4089.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:41:57,574 - INFO - Progress: 4/194
+2025-06-29 19:41:57,575 - INFO - Processing png/IMG_4248.png
+2025-06-29 19:42:00,490 - INFO - tesseract: confidence=0.68, length=1984
+2025-06-29 19:42:00,491 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:42:11,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:42:11,394 - INFO - openai_vision: confidence=0.85, length=1415
+2025-06-29 19:42:14,451 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:42:15,484 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:42:15,484 - ERROR - Metadata extraction failed: Expecting value: line 1 column 1 (char 0)
+2025-06-29 19:42:15,485 - INFO - Completed png/IMG_4248.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:42:15,499 - INFO - Progress: 5/194
+2025-06-29 19:42:15,499 - INFO - Processing png/IMG_4274.png
+2025-06-29 19:42:17,721 - INFO - tesseract: confidence=0.73, length=1632
+2025-06-29 19:42:17,721 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:43:12,210 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:43:12,233 - INFO - Processing 194 PNG files
+2025-06-29 19:43:12,233 - INFO - Progress: 1/194
+2025-06-29 19:43:12,233 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:43:14,577 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:43:14,577 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:43:27,228 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:43:27,246 - INFO - openai_vision: confidence=0.85, length=1482
+2025-06-29 19:43:34,259 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:43:35,174 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:43:35,176 - INFO - Completed png/IMG_4270.png - Method: openai_vision, Confidence: 0.85
+2025-06-29 19:43:35,178 - INFO - Progress: 2/194
+2025-06-29 19:43:35,178 - INFO - Processing png/IMG_4099.png
+2025-06-29 19:43:37,546 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 19:43:37,546 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:43:46,712 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:43:46,719 - INFO - openai_vision: confidence=0.85, length=1122
+2025-06-29 19:43:49,594 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:44:31,481 - INFO - Google Vision API initialized
+2025-06-29 19:44:31,483 - INFO - Processing 1 PNG files
+2025-06-29 19:44:31,483 - INFO - Progress: 1/1
+2025-06-29 19:44:31,483 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:44:33,886 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:44:33,888 - ERROR - Google Vision failed for png/IMG_4270.png: 'ImageAnnotatorClient' object has no attribute 'types'
+2025-06-29 19:44:33,888 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:45:02,587 - WARNING - Google Cloud Vision not available, install with: pip install google-cloud-vision
+2025-06-29 19:45:02,589 - INFO - Processing 1 PNG files
+2025-06-29 19:45:02,589 - INFO - Progress: 1/1
+2025-06-29 19:45:02,590 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:45:04,741 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:45:04,741 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 19:46:17,949 - INFO - Google Vision API initialized
+2025-06-29 19:46:17,950 - INFO - Processing 1 PNG files
+2025-06-29 19:46:17,950 - INFO - Progress: 1/1
+2025-06-29 19:46:17,950 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:46:20,112 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:46:30,266 - INFO - google_vision: confidence=1.00, length=1493
+2025-06-29 19:46:41,777 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:46:41,788 - INFO - openai_vision: confidence=0.85, length=1482
+2025-06-29 19:46:45,642 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:46:46,962 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:46:46,964 - INFO - Completed png/IMG_4270.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:46:46,984 - INFO - 
+Processing complete!
+2025-06-29 19:46:46,984 - INFO - Total entries: 1
+2025-06-29 19:46:46,984 - INFO - Average confidence: 1.00
+2025-06-29 19:46:46,984 - INFO - Output directory: digitized_output
+2025-06-29 19:47:30,221 - INFO - Google Vision API initialized
+2025-06-29 19:47:30,222 - INFO - Processing 1 PNG files
+2025-06-29 19:47:30,222 - INFO - Progress: 1/1
+2025-06-29 19:47:30,222 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:47:32,362 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:47:44,120 - INFO - google_vision: confidence=1.00, length=1493
+2025-06-29 19:47:59,324 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:47:59,337 - INFO - openai_vision: confidence=0.85, length=1511
+2025-06-29 19:48:04,177 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:48:06,268 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:48:06,271 - INFO - Completed png/IMG_4270.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:48:06,277 - INFO - 
+Processing complete!
+2025-06-29 19:48:06,277 - INFO - Total entries: 1
+2025-06-29 19:48:06,277 - INFO - Average confidence: 1.00
+2025-06-29 19:48:06,277 - INFO - Output directory: digitized_output
+2025-06-29 19:51:53,903 - INFO - Google Vision API initialized
+2025-06-29 19:51:53,905 - INFO - Processing 194 PNG files
+2025-06-29 19:51:53,905 - INFO - Progress: 1/194
+2025-06-29 19:51:53,905 - INFO - Processing png/IMG_4270.png
+2025-06-29 19:51:56,078 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 19:52:08,420 - INFO - google_vision: confidence=1.00, length=1493
+2025-06-29 19:52:22,502 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:22,517 - INFO - openai_vision: confidence=0.85, length=1482
+2025-06-29 19:52:25,854 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:27,068 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:27,071 - INFO - Completed png/IMG_4270.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:52:27,074 - INFO - Progress: 2/194
+2025-06-29 19:52:27,074 - INFO - Processing png/IMG_4099.png
+2025-06-29 19:52:29,384 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 19:52:37,536 - INFO - google_vision: confidence=1.00, length=1137
+2025-06-29 19:52:48,200 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:48,209 - INFO - openai_vision: confidence=0.85, length=1099
+2025-06-29 19:52:52,135 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:53,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:52:53,238 - INFO - Completed png/IMG_4099.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:52:53,246 - INFO - Progress: 3/194
+2025-06-29 19:52:53,246 - INFO - Processing png/IMG_4089.png
+2025-06-29 19:52:57,485 - INFO - tesseract: confidence=0.82, length=537
+2025-06-29 19:53:05,196 - INFO - google_vision: confidence=1.00, length=1237
+2025-06-29 19:53:15,513 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:15,522 - INFO - openai_vision: confidence=0.85, length=561
+2025-06-29 19:53:19,640 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:20,962 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:20,966 - INFO - Completed png/IMG_4089.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:53:20,968 - INFO - Progress: 4/194
+2025-06-29 19:53:20,969 - INFO - Processing png/IMG_4248.png
+2025-06-29 19:53:23,808 - INFO - tesseract: confidence=0.68, length=1984
+2025-06-29 19:53:32,344 - INFO - google_vision: confidence=1.00, length=1364
+2025-06-29 19:53:41,966 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:41,973 - INFO - openai_vision: confidence=0.85, length=1376
+2025-06-29 19:53:47,427 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:48,054 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:53:48,055 - INFO - Completed png/IMG_4248.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:53:48,057 - INFO - Progress: 5/194
+2025-06-29 19:53:48,057 - INFO - Processing png/IMG_4274.png
+2025-06-29 19:53:53,106 - INFO - tesseract: confidence=0.73, length=1632
+2025-06-29 19:54:04,767 - INFO - google_vision: confidence=1.00, length=1535
+2025-06-29 19:54:18,637 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:18,642 - INFO - openai_vision: confidence=0.85, length=1548
+2025-06-29 19:54:21,710 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:22,551 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:22,554 - INFO - Completed png/IMG_4274.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:54:22,561 - INFO - Progress: 6/194
+2025-06-29 19:54:22,562 - INFO - Processing png/IMG_4260.png
+2025-06-29 19:54:35,276 - INFO - tesseract: confidence=0.74, length=2086
+2025-06-29 19:54:44,694 - INFO - google_vision: confidence=1.00, length=254
+2025-06-29 19:54:52,755 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:52,777 - INFO - openai_vision: confidence=0.85, length=362
+2025-06-29 19:54:54,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:55,057 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:54:55,060 - INFO - Completed png/IMG_4260.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:54:55,062 - INFO - Progress: 7/194
+2025-06-29 19:54:55,062 - INFO - Processing png/IMG_4300.png
+2025-06-29 19:55:04,110 - INFO - tesseract: confidence=0.68, length=1401
+2025-06-29 19:55:11,382 - INFO - google_vision: confidence=1.00, length=725
+2025-06-29 19:55:16,580 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:55:16,583 - INFO - openai_vision: confidence=0.85, length=338
+2025-06-29 19:55:20,123 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:55:21,306 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:55:21,309 - INFO - Completed png/IMG_4300.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:55:21,311 - INFO - Progress: 8/194
+2025-06-29 19:55:21,311 - INFO - Processing png/IMG_4314.png
+2025-06-29 19:55:29,851 - INFO - tesseract: confidence=0.74, length=2362
+2025-06-29 19:55:38,294 - INFO - google_vision: confidence=1.00, length=2092
+2025-06-29 19:56:00,871 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:00,880 - INFO - openai_vision: confidence=0.85, length=4122
+2025-06-29 19:56:09,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:10,253 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:10,256 - INFO - Completed png/IMG_4314.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:56:10,258 - INFO - Progress: 9/194
+2025-06-29 19:56:10,258 - INFO - Processing png/IMG_4116.png
+2025-06-29 19:56:14,344 - INFO - tesseract: confidence=0.82, length=1578
+2025-06-29 19:56:22,203 - INFO - google_vision: confidence=1.00, length=1443
+2025-06-29 19:56:34,224 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:34,234 - INFO - openai_vision: confidence=0.85, length=1390
+2025-06-29 19:56:38,335 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:39,911 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:56:39,914 - INFO - Completed png/IMG_4116.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:56:39,916 - INFO - Progress: 10/194
+2025-06-29 19:56:39,916 - INFO - Processing png/IMG_4117.png
+2025-06-29 19:56:48,083 - INFO - tesseract: confidence=0.85, length=1560
+2025-06-29 19:56:56,163 - INFO - google_vision: confidence=1.00, length=1414
+2025-06-29 19:57:06,175 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:06,182 - INFO - openai_vision: confidence=0.85, length=1418
+2025-06-29 19:57:09,797 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:11,038 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:11,049 - INFO - Completed png/IMG_4117.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:57:11,051 - INFO - Progress: 11/194
+2025-06-29 19:57:11,051 - INFO - Processing png/IMG_4315.png
+2025-06-29 19:57:18,143 - INFO - tesseract: confidence=0.63, length=851
+2025-06-29 19:57:25,743 - INFO - google_vision: confidence=1.00, length=692
+2025-06-29 19:57:35,781 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:35,791 - INFO - openai_vision: confidence=0.85, length=843
+2025-06-29 19:57:38,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:39,292 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:57:39,294 - INFO - Completed png/IMG_4315.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:57:39,295 - INFO - Progress: 12/194
+2025-06-29 19:57:39,295 - INFO - Processing png/IMG_4301.png
+2025-06-29 19:57:53,965 - INFO - tesseract: confidence=0.70, length=1770
+2025-06-29 19:58:02,228 - INFO - google_vision: confidence=1.00, length=1628
+2025-06-29 19:58:16,377 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:16,387 - INFO - openai_vision: confidence=0.85, length=1677
+2025-06-29 19:58:20,302 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:21,878 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:21,883 - INFO - Completed png/IMG_4301.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:58:21,885 - INFO - Progress: 13/194
+2025-06-29 19:58:21,885 - INFO - Processing png/IMG_4261.png
+2025-06-29 19:58:25,962 - INFO - tesseract: confidence=0.74, length=1413
+2025-06-29 19:58:37,347 - INFO - google_vision: confidence=1.00, length=1409
+2025-06-29 19:58:50,457 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:50,467 - INFO - openai_vision: confidence=0.85, length=1404
+2025-06-29 19:58:55,977 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:57,483 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:58:57,484 - INFO - Completed png/IMG_4261.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:58:57,485 - INFO - Progress: 14/194
+2025-06-29 19:58:57,485 - INFO - Processing png/IMG_4275.png
+2025-06-29 19:59:07,514 - INFO - tesseract: confidence=0.69, length=1296
+2025-06-29 19:59:18,766 - INFO - google_vision: confidence=1.00, length=1271
+2025-06-29 19:59:30,296 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:59:30,320 - INFO - openai_vision: confidence=0.85, length=1262
+2025-06-29 19:59:34,333 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:59:35,538 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 19:59:35,541 - INFO - Completed png/IMG_4275.png - Method: google_vision, Confidence: 1.00
+2025-06-29 19:59:35,543 - INFO - Progress: 15/194
+2025-06-29 19:59:35,544 - INFO - Processing png/IMG_4249.png
+2025-06-29 19:59:42,700 - INFO - tesseract: confidence=0.67, length=1470
+2025-06-29 19:59:51,581 - INFO - google_vision: confidence=1.00, length=1204
+2025-06-29 20:00:02,991 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:02,995 - INFO - openai_vision: confidence=0.85, length=1198
+2025-06-29 20:00:06,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:07,128 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:07,131 - INFO - Completed png/IMG_4249.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:00:07,133 - INFO - Progress: 16/194
+2025-06-29 20:00:07,133 - INFO - Processing png/IMG_4088.png
+2025-06-29 20:00:12,700 - INFO - tesseract: confidence=0.80, length=1416
+2025-06-29 20:00:21,423 - INFO - google_vision: confidence=1.00, length=1136
+2025-06-29 20:00:30,990 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:30,998 - INFO - openai_vision: confidence=0.85, length=1180
+2025-06-29 20:00:34,480 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:35,633 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:00:35,637 - INFO - Completed png/IMG_4088.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:00:35,639 - INFO - Progress: 17/194
+2025-06-29 20:00:35,639 - INFO - Processing png/IMG_4263.png
+2025-06-29 20:11:52,933 - ERROR - Tesseract OCR failed for png/IMG_4263.png: [Errno 89] Operation canceled
+2025-06-29 20:11:52,949 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 20:19:33,115 - INFO - Google Vision API initialized
+2025-06-29 20:19:33,119 - INFO - Starting processing of 1 PNG files at 2025-06-29 20:19:33.119756
+2025-06-29 20:19:33,119 - INFO - Output directory: /Users/conradgann/Library/Mobile Documents/com~apple~CloudDocs/sandbox/log1933/digitized_output
+2025-06-29 20:19:33,119 - INFO - Progress: 1/1 (100.0%)
+2025-06-29 20:19:33,119 - INFO - Processing png/IMG_4270.png
+2025-06-29 20:19:35,273 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 20:19:46,778 - INFO - google_vision: confidence=1.00, length=1493
+2025-06-29 20:20:04,956 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:20:04,965 - INFO - openai_vision: confidence=0.85, length=1492
+2025-06-29 20:20:09,275 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:20:11,500 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:20:11,506 - INFO - Completed png/IMG_4270.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:20:11,508 - INFO - 
+============================================================
+2025-06-29 20:20:11,508 - INFO - PROCESSING COMPLETE!
+2025-06-29 20:20:11,508 - INFO - ============================================================
+2025-06-29 20:20:11,508 - INFO - Total time: 0:00:38.387587
+2025-06-29 20:20:11,508 - INFO - Success rate: 1/1 (100.0%)
+2025-06-29 20:20:11,508 - INFO - Average confidence: 1.000
+2025-06-29 20:20:11,508 - INFO - Primary method: google_vision
+2025-06-29 20:20:11,508 - INFO - Output files:
+2025-06-29 20:20:11,508 - INFO -   • Master dataset: complete_logbook.json
+2025-06-29 20:20:11,508 - INFO -   • Processing report: processing_report.json
+2025-06-29 20:20:11,508 - INFO -   • Summary: processing_summary.txt
+2025-06-29 20:20:11,508 - INFO -   • Individual files: 1 JSON + TXT files
+2025-06-29 20:20:11,508 - INFO - Output directory: /Users/conradgann/Library/Mobile Documents/com~apple~CloudDocs/sandbox/log1933/digitized_output
+2025-06-29 20:20:11,508 - INFO - ============================================================
+2025-06-29 20:29:39,965 - INFO - Google Vision API initialized
+2025-06-29 20:29:39,969 - INFO - Starting processing of 194 PNG files at 2025-06-29 20:29:39.969809
+2025-06-29 20:29:39,969 - INFO - Output directory: /Users/conradgann/Library/Mobile Documents/com~apple~CloudDocs/sandbox/log1933/digitized_output
+2025-06-29 20:29:39,969 - INFO - Progress: 1/194 (0.5%)
+2025-06-29 20:29:39,969 - INFO - Processing png/IMG_4270.png
+2025-06-29 20:29:42,082 - INFO - tesseract: confidence=0.76, length=1576
+2025-06-29 20:29:53,942 - INFO - google_vision: confidence=1.00, length=1493
+2025-06-29 20:30:04,989 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:04,999 - INFO - openai_vision: confidence=0.85, length=1482
+2025-06-29 20:30:08,486 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:10,184 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:10,192 - INFO - Completed png/IMG_4270.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:30:10,196 - INFO - Progress: 2/194 (1.0%)
+2025-06-29 20:30:10,196 - INFO - Processing png/IMG_4099.png
+2025-06-29 20:30:12,472 - INFO - tesseract: confidence=0.77, length=1402
+2025-06-29 20:30:19,897 - INFO - google_vision: confidence=1.00, length=1137
+2025-06-29 20:30:30,920 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:30,929 - INFO - openai_vision: confidence=0.85, length=1131
+2025-06-29 20:30:34,878 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:35,835 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:35,839 - INFO - Completed png/IMG_4099.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:30:35,842 - INFO - Progress: 3/194 (1.5%)
+2025-06-29 20:30:35,842 - INFO - Processing png/IMG_4089.png
+2025-06-29 20:30:37,077 - INFO - tesseract: confidence=0.82, length=537
+2025-06-29 20:30:44,376 - INFO - google_vision: confidence=1.00, length=1237
+2025-06-29 20:30:51,673 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:51,678 - INFO - openai_vision: confidence=0.85, length=531
+2025-06-29 20:30:55,203 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:56,622 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:30:56,625 - INFO - Completed png/IMG_4089.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:30:56,631 - INFO - Progress: 4/194 (2.1%)
+2025-06-29 20:30:56,631 - INFO - Processing png/IMG_4248.png
+2025-06-29 20:30:59,380 - INFO - tesseract: confidence=0.68, length=1984
+2025-06-29 20:31:07,836 - INFO - google_vision: confidence=1.00, length=1364
+2025-06-29 20:31:18,359 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:18,369 - INFO - openai_vision: confidence=0.85, length=1361
+2025-06-29 20:31:21,623 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:22,421 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:22,424 - INFO - Completed png/IMG_4248.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:31:22,427 - INFO - Progress: 5/194 (2.6%)
+2025-06-29 20:31:22,427 - INFO - Processing png/IMG_4274.png
+2025-06-29 20:31:24,457 - INFO - tesseract: confidence=0.73, length=1632
+2025-06-29 20:31:34,478 - INFO - google_vision: confidence=1.00, length=1535
+2025-06-29 20:31:45,630 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:45,640 - INFO - openai_vision: confidence=0.85, length=1525
+2025-06-29 20:31:49,159 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:50,073 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:31:50,077 - INFO - Completed png/IMG_4274.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:31:50,081 - INFO - Progress: 6/194 (3.1%)
+2025-06-29 20:31:50,081 - INFO - Processing png/IMG_4260.png
+2025-06-29 20:31:54,188 - INFO - tesseract: confidence=0.74, length=2086
+2025-06-29 20:32:03,576 - INFO - google_vision: confidence=1.00, length=254
+2025-06-29 20:32:08,497 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:08,504 - INFO - openai_vision: confidence=0.85, length=281
+2025-06-29 20:32:09,633 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:10,691 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:10,694 - INFO - Completed png/IMG_4260.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:32:10,698 - INFO - Progress: 7/194 (3.6%)
+2025-06-29 20:32:10,698 - INFO - Processing png/IMG_4300.png
+2025-06-29 20:32:13,436 - INFO - tesseract: confidence=0.68, length=1401
+2025-06-29 20:32:20,493 - INFO - google_vision: confidence=1.00, length=725
+2025-06-29 20:32:25,959 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:25,964 - INFO - openai_vision: confidence=0.85, length=322
+2025-06-29 20:32:29,478 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:31,057 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:32:31,061 - INFO - Completed png/IMG_4300.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:32:31,064 - INFO - Progress: 8/194 (4.1%)
+2025-06-29 20:32:31,064 - INFO - Processing png/IMG_4314.png
+2025-06-29 20:32:33,730 - INFO - tesseract: confidence=0.74, length=2362
+2025-06-29 20:32:41,981 - INFO - google_vision: confidence=1.00, length=2092
+2025-06-29 20:33:14,303 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:14,315 - INFO - openai_vision: confidence=0.85, length=4678
+2025-06-29 20:33:20,996 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:22,010 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:22,013 - INFO - Completed png/IMG_4314.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:33:22,017 - INFO - Progress: 9/194 (4.6%)
+2025-06-29 20:33:22,017 - INFO - Processing png/IMG_4116.png
+2025-06-29 20:33:24,036 - INFO - tesseract: confidence=0.82, length=1578
+2025-06-29 20:33:33,879 - INFO - google_vision: confidence=1.00, length=1443
+2025-06-29 20:33:44,433 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:44,439 - INFO - openai_vision: confidence=0.85, length=1480
+2025-06-29 20:33:48,186 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:49,720 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:33:49,723 - INFO - Completed png/IMG_4116.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:33:49,726 - INFO - Progress: 10/194 (5.2%)
+2025-06-29 20:33:49,726 - INFO - Processing png/IMG_4117.png
+2025-06-29 20:33:51,769 - INFO - tesseract: confidence=0.85, length=1560
+2025-06-29 20:34:00,616 - INFO - google_vision: confidence=1.00, length=1414
+2025-06-29 20:34:15,814 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:15,819 - INFO - openai_vision: confidence=0.85, length=1444
+2025-06-29 20:34:18,792 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:20,006 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:20,021 - INFO - Completed png/IMG_4117.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:34:20,022 - INFO - Progress: 11/194 (5.7%)
+2025-06-29 20:34:20,022 - INFO - Processing png/IMG_4315.png
+2025-06-29 20:34:21,780 - INFO - tesseract: confidence=0.63, length=851
+2025-06-29 20:34:28,055 - INFO - google_vision: confidence=1.00, length=692
+2025-06-29 20:34:38,511 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:38,518 - INFO - openai_vision: confidence=0.85, length=1153
+2025-06-29 20:34:40,977 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:41,789 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:34:41,797 - INFO - Completed png/IMG_4315.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:34:41,802 - INFO - Progress: 12/194 (6.2%)
+2025-06-29 20:34:41,802 - INFO - Processing png/IMG_4301.png
+2025-06-29 20:34:44,336 - INFO - tesseract: confidence=0.70, length=1770
+2025-06-29 20:34:52,856 - INFO - google_vision: confidence=1.00, length=1628
+2025-06-29 20:35:05,183 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:05,189 - INFO - openai_vision: confidence=0.85, length=1675
+2025-06-29 20:35:08,940 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:10,474 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:10,476 - INFO - Completed png/IMG_4301.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:35:10,490 - INFO - Progress: 13/194 (6.7%)
+2025-06-29 20:35:10,491 - INFO - Processing png/IMG_4261.png
+2025-06-29 20:35:12,261 - INFO - tesseract: confidence=0.74, length=1413
+2025-06-29 20:35:24,218 - INFO - google_vision: confidence=1.00, length=1409
+2025-06-29 20:35:36,037 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:36,046 - INFO - openai_vision: confidence=0.85, length=1398
+2025-06-29 20:35:39,343 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:40,291 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:35:40,293 - INFO - Completed png/IMG_4261.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:35:40,299 - INFO - Progress: 14/194 (7.2%)
+2025-06-29 20:35:40,299 - INFO - Processing png/IMG_4275.png
+2025-06-29 20:35:42,199 - INFO - tesseract: confidence=0.69, length=1296
+2025-06-29 20:35:52,677 - INFO - google_vision: confidence=1.00, length=1271
+2025-06-29 20:36:07,063 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:07,067 - INFO - openai_vision: confidence=0.85, length=1283
+2025-06-29 20:36:10,105 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:11,676 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:11,678 - INFO - Completed png/IMG_4275.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:36:11,681 - INFO - Progress: 15/194 (7.7%)
+2025-06-29 20:36:11,681 - INFO - Processing png/IMG_4249.png
+2025-06-29 20:36:13,984 - INFO - tesseract: confidence=0.67, length=1470
+2025-06-29 20:36:22,508 - INFO - google_vision: confidence=1.00, length=1204
+2025-06-29 20:36:32,738 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:32,745 - INFO - openai_vision: confidence=0.85, length=1482
+2025-06-29 20:36:36,372 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:37,385 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:37,388 - INFO - Completed png/IMG_4249.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:36:37,391 - INFO - Progress: 16/194 (8.2%)
+2025-06-29 20:36:37,391 - INFO - Processing png/IMG_4088.png
+2025-06-29 20:36:39,665 - INFO - tesseract: confidence=0.80, length=1416
+2025-06-29 20:36:47,513 - INFO - google_vision: confidence=1.00, length=1136
+2025-06-29 20:36:57,915 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:36:57,920 - INFO - openai_vision: confidence=0.85, length=1148
+2025-06-29 20:37:02,626 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:37:04,103 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 20:37:04,107 - INFO - Completed png/IMG_4088.png - Method: google_vision, Confidence: 1.00
+2025-06-29 20:37:04,110 - INFO - Progress: 17/194 (8.8%)
+2025-06-29 20:37:04,110 - INFO - Processing png/IMG_4263.png
+2025-06-29 20:47:22,738 - ERROR - Tesseract OCR failed for png/IMG_4263.png: [Errno 89] Operation canceled
+2025-06-29 20:47:22,744 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 20:57:52,753 - ERROR - Google Vision failed for png/IMG_4263.png: [Errno 89] Operation canceled
+2025-06-29 20:57:52,759 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 21:08:22,731 - ERROR - OpenAI Vision failed for png/IMG_4263.png: [Errno 89] Operation canceled
+2025-06-29 21:08:22,738 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 21:08:23,979 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:08:25,157 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:08:25,160 - INFO - Completed png/IMG_4263.png - Method: none, Confidence: 0.00
+2025-06-29 21:08:25,161 - ERROR - Failed to process png/IMG_4263.png: 'none'
+2025-06-29 21:08:25,161 - INFO - Progress: 18/194 (9.3%)
+2025-06-29 21:08:25,161 - INFO - Processing png/IMG_4277.png
+2025-06-29 21:08:28,440 - INFO - tesseract: confidence=0.73, length=1646
+2025-06-29 21:08:38,311 - INFO - google_vision: confidence=1.00, length=1543
+2025-06-29 21:08:50,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:08:50,539 - INFO - openai_vision: confidence=0.85, length=1507
+2025-06-29 21:08:55,042 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:08:56,090 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:08:56,095 - INFO - Completed png/IMG_4277.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:08:56,097 - INFO - Progress: 19/194 (9.8%)
+2025-06-29 21:08:56,097 - INFO - Processing png/IMG_4288.png
+2025-06-29 21:09:00,189 - INFO - tesseract: confidence=0.67, length=1914
+2025-06-29 21:09:08,190 - INFO - google_vision: confidence=1.00, length=1441
+2025-06-29 21:09:23,360 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:23,370 - INFO - openai_vision: confidence=0.85, length=1525
+2025-06-29 21:09:29,117 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:30,464 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:30,470 - INFO - Completed png/IMG_4288.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:09:30,473 - INFO - Progress: 20/194 (10.3%)
+2025-06-29 21:09:30,473 - INFO - Processing png/IMG_4317.png
+2025-06-29 21:09:34,108 - INFO - tesseract: confidence=0.73, length=1293
+2025-06-29 21:09:41,849 - INFO - google_vision: confidence=1.00, length=259
+2025-06-29 21:09:47,996 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:48,001 - INFO - openai_vision: confidence=0.85, length=242
+2025-06-29 21:09:50,091 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:51,269 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:09:51,273 - INFO - Completed png/IMG_4317.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:09:51,276 - INFO - Progress: 21/194 (10.8%)
+2025-06-29 21:09:51,276 - INFO - Processing png/IMG_4303.png
+2025-06-29 21:09:55,810 - INFO - tesseract: confidence=0.69, length=2206
+2025-06-29 21:10:03,732 - INFO - google_vision: confidence=1.00, length=1481
+2025-06-29 21:10:17,743 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:17,749 - INFO - openai_vision: confidence=0.85, length=1742
+2025-06-29 21:10:23,772 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:24,792 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:24,798 - INFO - Completed png/IMG_4303.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:10:24,800 - INFO - Progress: 22/194 (11.3%)
+2025-06-29 21:10:24,800 - INFO - Processing png/IMG_4100.png
+2025-06-29 21:10:28,162 - INFO - tesseract: confidence=0.77, length=1113
+2025-06-29 21:10:34,977 - INFO - google_vision: confidence=1.00, length=605
+2025-06-29 21:10:43,718 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:43,722 - INFO - openai_vision: confidence=0.85, length=616
+2025-06-29 21:10:46,190 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:47,235 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:10:47,240 - INFO - Completed png/IMG_4100.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:10:47,244 - INFO - Progress: 23/194 (11.9%)
+2025-06-29 21:10:47,244 - INFO - Processing png/IMG_4128.png
+2025-06-29 21:10:51,869 - INFO - tesseract: confidence=0.73, length=3130
+2025-06-29 21:11:01,529 - INFO - google_vision: confidence=1.00, length=3001
+2025-06-29 21:11:21,602 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:11:21,608 - INFO - openai_vision: confidence=0.85, length=2951
+2025-06-29 21:11:29,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:11:30,751 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:11:30,756 - INFO - Completed png/IMG_4128.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:11:30,758 - INFO - Progress: 24/194 (12.4%)
+2025-06-29 21:11:30,758 - INFO - Processing png/IMG_4302.png
+2025-06-29 21:11:35,612 - INFO - tesseract: confidence=0.74, length=1997
+2025-06-29 21:11:44,380 - INFO - google_vision: confidence=1.00, length=1647
+2025-06-29 21:11:57,149 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:11:57,157 - INFO - openai_vision: confidence=0.85, length=1620
+2025-06-29 21:12:01,301 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:02,609 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:02,731 - INFO - Completed png/IMG_4302.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:12:02,733 - INFO - Progress: 25/194 (12.9%)
+2025-06-29 21:12:02,733 - INFO - Processing png/IMG_4316.png
+2025-06-29 21:12:11,523 - INFO - tesseract: confidence=0.69, length=932
+2025-06-29 21:12:18,984 - INFO - google_vision: confidence=1.00, length=575
+2025-06-29 21:12:28,062 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:28,068 - INFO - openai_vision: confidence=0.85, length=630
+2025-06-29 21:12:31,799 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:32,874 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:32,904 - INFO - Completed png/IMG_4316.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:12:32,904 - INFO - Progress: 26/194 (13.4%)
+2025-06-29 21:12:32,904 - INFO - Processing png/IMG_4289.png
+2025-06-29 21:12:36,300 - INFO - tesseract: confidence=0.70, length=1228
+2025-06-29 21:12:44,153 - INFO - google_vision: confidence=1.00, length=686
+2025-06-29 21:12:50,584 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:50,590 - INFO - openai_vision: confidence=0.85, length=467
+2025-06-29 21:12:53,676 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:54,637 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:12:54,643 - INFO - Completed png/IMG_4289.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:12:54,644 - INFO - Progress: 27/194 (13.9%)
+2025-06-29 21:12:54,645 - INFO - Processing png/IMG_4276.png
+2025-06-29 21:12:57,887 - INFO - tesseract: confidence=0.70, length=1781
+2025-06-29 21:13:09,843 - INFO - google_vision: confidence=1.00, length=1647
+2025-06-29 21:13:24,283 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:13:24,291 - INFO - openai_vision: confidence=0.85, length=1648
+2025-06-29 21:13:38,235 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:13:39,063 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:13:39,066 - INFO - Completed png/IMG_4276.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:13:39,068 - INFO - Progress: 28/194 (14.4%)
+2025-06-29 21:13:39,068 - INFO - Processing png/IMG_4205.png
+2025-06-29 21:13:42,349 - INFO - tesseract: confidence=0.75, length=1012
+2025-06-29 21:13:49,732 - INFO - google_vision: confidence=1.00, length=250
+2025-06-29 21:13:56,588 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:13:56,593 - INFO - openai_vision: confidence=0.85, length=264
+2025-06-29 21:13:59,645 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:00,320 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:00,325 - INFO - Completed png/IMG_4205.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:14:00,327 - INFO - Progress: 29/194 (14.9%)
+2025-06-29 21:14:00,327 - INFO - Processing png/IMG_4211.png
+2025-06-29 21:14:03,257 - INFO - tesseract: confidence=0.76, length=1612
+2025-06-29 21:14:11,816 - INFO - google_vision: confidence=1.00, length=1840
+2025-06-29 21:14:25,054 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:25,060 - INFO - openai_vision: confidence=0.85, length=1452
+2025-06-29 21:14:30,299 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:31,624 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:31,629 - INFO - Completed png/IMG_4211.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:14:31,633 - INFO - Progress: 30/194 (15.5%)
+2025-06-29 21:14:31,633 - INFO - Processing png/IMG_4239.png
+2025-06-29 21:14:37,315 - INFO - tesseract: confidence=0.67, length=2844
+2025-06-29 21:14:44,760 - INFO - google_vision: confidence=1.00, length=2000
+2025-06-29 21:14:52,597 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:14:52,603 - INFO - openai_vision: confidence=0.85, length=237
+2025-06-29 21:14:59,147 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:15:00,850 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:15:00,853 - INFO - Completed png/IMG_4239.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:15:00,855 - INFO - Progress: 31/194 (16.0%)
+2025-06-29 21:15:00,855 - INFO - Processing png/IMG_4173.png
+2025-06-29 21:25:22,734 - ERROR - Tesseract OCR failed for png/IMG_4173.png: [Errno 89] Operation canceled
+2025-06-29 21:25:22,741 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 21:35:52,735 - ERROR - Google Vision failed for png/IMG_4173.png: [Errno 89] Operation canceled
+2025-06-29 21:35:52,741 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 21:46:22,716 - ERROR - OpenAI Vision failed for png/IMG_4173.png: [Errno 89] Operation canceled
+2025-06-29 21:46:22,719 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 21:46:23,625 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:46:28,416 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:46:28,420 - INFO - Completed png/IMG_4173.png - Method: none, Confidence: 0.00
+2025-06-29 21:46:28,420 - ERROR - Failed to process png/IMG_4173.png: 'none'
+2025-06-29 21:46:28,421 - INFO - Progress: 32/194 (16.5%)
+2025-06-29 21:46:28,421 - INFO - Processing png/IMG_4167.png
+2025-06-29 21:46:32,411 - INFO - tesseract: confidence=0.76, length=983
+2025-06-29 21:46:41,227 - INFO - google_vision: confidence=1.00, length=965
+2025-06-29 21:46:49,527 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:46:49,533 - INFO - openai_vision: confidence=0.85, length=1024
+2025-06-29 21:46:53,524 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:46:54,553 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:46:54,556 - INFO - Completed png/IMG_4167.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:46:54,557 - INFO - Progress: 33/194 (17.0%)
+2025-06-29 21:46:54,557 - INFO - Processing png/IMG_4198.png
+2025-06-29 21:46:57,994 - INFO - tesseract: confidence=0.70, length=2129
+2025-06-29 21:47:07,740 - INFO - google_vision: confidence=1.00, length=2507
+2025-06-29 21:47:23,914 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:47:23,922 - INFO - openai_vision: confidence=0.85, length=2451
+2025-06-29 21:47:30,311 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:47:34,925 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 21:47:34,950 - INFO - Completed png/IMG_4198.png - Method: google_vision, Confidence: 1.00
+2025-06-29 21:47:34,952 - INFO - Progress: 34/194 (17.5%)
+2025-06-29 21:47:34,952 - INFO - Processing png/IMG_4199.png
+2025-06-29 21:57:52,737 - ERROR - Tesseract OCR failed for png/IMG_4199.png: [Errno 89] Operation canceled
+2025-06-29 21:57:52,745 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 22:08:22,738 - ERROR - Google Vision failed for png/IMG_4199.png: [Errno 89] Operation canceled
+2025-06-29 22:08:22,746 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 22:18:52,813 - ERROR - OpenAI Vision failed for png/IMG_4199.png: [Errno 89] Operation canceled
+2025-06-29 22:18:52,841 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 22:18:54,389 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:18:55,409 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:18:55,412 - INFO - Completed png/IMG_4199.png - Method: none, Confidence: 0.00
+2025-06-29 22:18:55,412 - ERROR - Failed to process png/IMG_4199.png: 'none'
+2025-06-29 22:18:55,413 - INFO - Progress: 35/194 (18.0%)
+2025-06-29 22:18:55,413 - INFO - Processing png/IMG_4166.png
+2025-06-29 22:18:58,868 - INFO - tesseract: confidence=0.70, length=177
+2025-06-29 22:19:06,088 - INFO - google_vision: confidence=1.00, length=565
+2025-06-29 22:19:12,196 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:12,199 - INFO - openai_vision: confidence=0.85, length=228
+2025-06-29 22:19:16,696 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:18,160 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:18,163 - INFO - Completed png/IMG_4166.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:19:18,165 - INFO - Progress: 36/194 (18.6%)
+2025-06-29 22:19:18,165 - INFO - Processing png/IMG_4172.png
+2025-06-29 22:19:21,448 - INFO - tesseract: confidence=0.74, length=1740
+2025-06-29 22:19:30,030 - INFO - google_vision: confidence=1.00, length=1692
+2025-06-29 22:19:41,713 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:41,723 - INFO - openai_vision: confidence=0.85, length=1568
+2025-06-29 22:19:46,506 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:48,513 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:19:48,519 - INFO - Completed png/IMG_4172.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:19:48,521 - INFO - Progress: 37/194 (19.1%)
+2025-06-29 22:19:48,521 - INFO - Processing png/IMG_4238.png
+2025-06-29 22:19:51,873 - INFO - tesseract: confidence=0.77, length=1340
+2025-06-29 22:20:00,138 - INFO - google_vision: confidence=1.00, length=968
+2025-06-29 22:20:09,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:09,965 - INFO - openai_vision: confidence=0.85, length=1032
+2025-06-29 22:20:13,313 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:15,342 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:15,381 - INFO - Completed png/IMG_4238.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:20:15,382 - INFO - Progress: 38/194 (19.6%)
+2025-06-29 22:20:15,382 - INFO - Processing png/IMG_4210.png
+2025-06-29 22:20:18,609 - INFO - tesseract: confidence=0.70, length=1800
+2025-06-29 22:20:28,403 - INFO - google_vision: confidence=1.00, length=1905
+2025-06-29 22:20:43,938 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:43,945 - INFO - openai_vision: confidence=0.85, length=1591
+2025-06-29 22:20:49,756 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:51,566 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:20:51,571 - INFO - Completed png/IMG_4210.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:20:51,573 - INFO - Progress: 39/194 (20.1%)
+2025-06-29 22:20:51,573 - INFO - Processing png/IMG_4204.png
+2025-06-29 22:20:59,248 - INFO - tesseract: confidence=0.74, length=4332
+2025-06-29 22:21:07,642 - INFO - google_vision: confidence=1.00, length=214
+2025-06-29 22:21:15,431 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:15,433 - INFO - openai_vision: confidence=0.85, length=270
+2025-06-29 22:21:17,000 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:18,536 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:18,543 - INFO - Completed png/IMG_4204.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:21:18,545 - INFO - Progress: 40/194 (20.6%)
+2025-06-29 22:21:18,545 - INFO - Processing png/IMG_4212.png
+2025-06-29 22:21:22,329 - INFO - tesseract: confidence=0.69, length=1755
+2025-06-29 22:21:31,288 - INFO - google_vision: confidence=1.00, length=1640
+2025-06-29 22:21:35,060 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:35,066 - INFO - openai_vision: confidence=0.60, length=39
+2025-06-29 22:21:39,783 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:41,290 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:21:41,293 - INFO - Completed png/IMG_4212.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:21:41,294 - INFO - Progress: 41/194 (21.1%)
+2025-06-29 22:21:41,295 - INFO - Processing png/IMG_4206.png
+2025-06-29 22:21:49,402 - INFO - tesseract: confidence=0.76, length=4566
+2025-06-29 22:21:59,450 - INFO - google_vision: confidence=1.00, length=1368
+2025-06-29 22:22:04,745 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:04,754 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 22:22:08,913 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:10,436 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:10,440 - INFO - Completed png/IMG_4206.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:22:10,441 - INFO - Progress: 42/194 (21.6%)
+2025-06-29 22:22:10,441 - INFO - Processing png/IMG_4164.png
+2025-06-29 22:22:12,776 - INFO - tesseract: confidence=0.67, length=700
+2025-06-29 22:22:20,424 - INFO - google_vision: confidence=1.00, length=1898
+2025-06-29 22:22:29,873 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:29,878 - INFO - openai_vision: confidence=0.85, length=986
+2025-06-29 22:22:37,569 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:39,051 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:22:39,057 - INFO - Completed png/IMG_4164.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:22:39,060 - INFO - Progress: 43/194 (22.2%)
+2025-06-29 22:22:39,060 - INFO - Processing png/IMG_4170.png
+2025-06-29 22:32:52,856 - ERROR - Tesseract OCR failed for png/IMG_4170.png: [Errno 89] Operation canceled
+2025-06-29 22:32:52,868 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 22:43:22,736 - ERROR - Google Vision failed for png/IMG_4170.png: [Errno 89] Operation canceled
+2025-06-29 22:43:22,741 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 22:53:52,722 - ERROR - OpenAI Vision failed for png/IMG_4170.png: [Errno 89] Operation canceled
+2025-06-29 22:53:52,725 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 22:53:54,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:53:55,177 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:53:55,184 - INFO - Completed png/IMG_4170.png - Method: none, Confidence: 0.00
+2025-06-29 22:53:55,184 - ERROR - Failed to process png/IMG_4170.png: 'none'
+2025-06-29 22:53:55,185 - INFO - Progress: 44/194 (22.7%)
+2025-06-29 22:53:55,185 - INFO - Processing png/IMG_4158.png
+2025-06-29 22:54:06,966 - INFO - tesseract: confidence=0.72, length=1005
+2025-06-29 22:54:13,247 - INFO - google_vision: confidence=1.00, length=826
+2025-06-29 22:54:23,506 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:23,516 - INFO - openai_vision: confidence=0.85, length=830
+2025-06-29 22:54:26,580 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:27,737 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:27,740 - INFO - Completed png/IMG_4158.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:54:27,742 - INFO - Progress: 45/194 (23.2%)
+2025-06-29 22:54:27,743 - INFO - Processing png/IMG_4159.png
+2025-06-29 22:54:30,525 - INFO - tesseract: confidence=0.78, length=1038
+2025-06-29 22:54:36,095 - INFO - google_vision: confidence=1.00, length=937
+2025-06-29 22:54:45,430 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:45,437 - INFO - openai_vision: confidence=0.85, length=931
+2025-06-29 22:54:49,006 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:50,231 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:54:50,236 - INFO - Completed png/IMG_4159.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:54:50,238 - INFO - Progress: 46/194 (23.7%)
+2025-06-29 22:54:50,238 - INFO - Processing png/IMG_4171.png
+2025-06-29 22:54:53,965 - INFO - tesseract: confidence=0.79, length=1579
+2025-06-29 22:55:00,640 - INFO - google_vision: confidence=1.00, length=1670
+2025-06-29 22:55:16,440 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:55:16,449 - INFO - openai_vision: confidence=0.85, length=1504
+2025-06-29 22:55:21,321 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:55:22,126 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:55:22,129 - INFO - Completed png/IMG_4171.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:55:22,131 - INFO - Progress: 47/194 (24.2%)
+2025-06-29 22:55:22,131 - INFO - Processing png/IMG_4165.png
+2025-06-29 22:55:28,451 - INFO - tesseract: confidence=0.70, length=1698
+2025-06-29 22:55:35,562 - INFO - google_vision: confidence=1.00, length=2115
+2025-06-29 22:55:54,167 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:55:54,174 - INFO - openai_vision: confidence=0.85, length=2406
+2025-06-29 22:56:00,114 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:02,497 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:02,499 - INFO - Completed png/IMG_4165.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:56:02,501 - INFO - Progress: 48/194 (24.7%)
+2025-06-29 22:56:02,501 - INFO - Processing png/IMG_4213.png
+2025-06-29 22:56:15,453 - INFO - tesseract: confidence=0.74, length=1610
+2025-06-29 22:56:21,387 - INFO - google_vision: confidence=1.00, length=1653
+2025-06-29 22:56:35,918 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:35,922 - INFO - openai_vision: confidence=0.85, length=1522
+2025-06-29 22:56:40,778 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:42,057 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:42,058 - INFO - Completed png/IMG_4213.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:56:42,060 - INFO - Progress: 49/194 (25.3%)
+2025-06-29 22:56:42,060 - INFO - Processing png/IMG_4217.png
+2025-06-29 22:56:45,227 - INFO - tesseract: confidence=0.70, length=1552
+2025-06-29 22:56:53,039 - INFO - google_vision: confidence=1.00, length=1525
+2025-06-29 22:56:58,601 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:56:58,605 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 22:57:03,427 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:04,361 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:04,364 - INFO - Completed png/IMG_4217.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:57:04,367 - INFO - Progress: 50/194 (25.8%)
+2025-06-29 22:57:04,367 - INFO - Processing png/IMG_4203.png
+2025-06-29 22:57:08,061 - INFO - tesseract: confidence=0.78, length=1946
+2025-06-29 22:57:13,606 - INFO - google_vision: confidence=1.00, length=1596
+2025-06-29 22:57:27,143 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:27,150 - INFO - openai_vision: confidence=0.85, length=1605
+2025-06-29 22:57:31,798 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:32,671 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:32,674 - INFO - Completed png/IMG_4203.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:57:32,676 - INFO - Progress: 51/194 (26.3%)
+2025-06-29 22:57:32,676 - INFO - Processing png/IMG_4149.png
+2025-06-29 22:57:35,207 - INFO - tesseract: confidence=0.71, length=810
+2025-06-29 22:57:39,712 - INFO - google_vision: confidence=1.00, length=412
+2025-06-29 22:57:45,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:45,809 - INFO - openai_vision: confidence=0.85, length=421
+2025-06-29 22:57:47,472 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:48,564 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:57:48,598 - INFO - Completed png/IMG_4149.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:57:48,600 - INFO - Progress: 52/194 (26.8%)
+2025-06-29 22:57:48,600 - INFO - Processing png/IMG_4161.png
+2025-06-29 22:57:54,612 - INFO - tesseract: confidence=0.79, length=1447
+2025-06-29 22:58:02,762 - INFO - google_vision: confidence=1.00, length=1349
+2025-06-29 22:58:13,812 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:13,819 - INFO - openai_vision: confidence=0.85, length=1279
+2025-06-29 22:58:18,511 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:19,749 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:19,854 - INFO - Completed png/IMG_4161.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:58:19,855 - INFO - Progress: 53/194 (27.3%)
+2025-06-29 22:58:19,855 - INFO - Processing png/IMG_4175.png
+2025-06-29 22:58:22,935 - INFO - tesseract: confidence=0.78, length=1497
+2025-06-29 22:58:28,257 - INFO - google_vision: confidence=1.00, length=1449
+2025-06-29 22:58:40,414 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:40,428 - INFO - openai_vision: confidence=0.85, length=1424
+2025-06-29 22:58:45,622 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:48,358 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:58:48,362 - INFO - Completed png/IMG_4175.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:58:48,364 - INFO - Progress: 54/194 (27.8%)
+2025-06-29 22:58:48,365 - INFO - Processing png/IMG_4174.png
+2025-06-29 22:58:53,009 - INFO - tesseract: confidence=0.74, length=1507
+2025-06-29 22:58:57,337 - INFO - google_vision: confidence=1.00, length=1510
+2025-06-29 22:59:10,725 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:10,733 - INFO - openai_vision: confidence=0.85, length=1470
+2025-06-29 22:59:17,110 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:20,208 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:20,212 - INFO - Completed png/IMG_4174.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:59:20,214 - INFO - Progress: 55/194 (28.4%)
+2025-06-29 22:59:20,214 - INFO - Processing png/IMG_4160.png
+2025-06-29 22:59:22,531 - INFO - tesseract: confidence=0.77, length=406
+2025-06-29 22:59:28,016 - INFO - google_vision: confidence=1.00, length=998
+2025-06-29 22:59:35,221 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:35,227 - INFO - openai_vision: confidence=0.85, length=410
+2025-06-29 22:59:40,066 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:41,733 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 22:59:41,740 - INFO - Completed png/IMG_4160.png - Method: google_vision, Confidence: 1.00
+2025-06-29 22:59:41,742 - INFO - Progress: 56/194 (28.9%)
+2025-06-29 22:59:41,742 - INFO - Processing png/IMG_4148.png
+2025-06-29 22:59:45,636 - INFO - tesseract: confidence=0.73, length=1587
+2025-06-29 22:59:50,037 - INFO - google_vision: confidence=1.00, length=1235
+2025-06-29 23:00:05,537 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:05,546 - INFO - openai_vision: confidence=0.85, length=1494
+2025-06-29 23:00:10,998 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:12,114 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:12,117 - INFO - Completed png/IMG_4148.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:00:12,119 - INFO - Progress: 57/194 (29.4%)
+2025-06-29 23:00:12,119 - INFO - Processing png/IMG_4202.png
+2025-06-29 23:00:14,898 - INFO - tesseract: confidence=0.67, length=622
+2025-06-29 23:00:19,409 - INFO - google_vision: confidence=1.00, length=223
+2025-06-29 23:00:25,683 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:25,689 - INFO - openai_vision: confidence=0.85, length=204
+2025-06-29 23:00:28,300 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:29,929 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:29,933 - INFO - Completed png/IMG_4202.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:00:29,935 - INFO - Progress: 58/194 (29.9%)
+2025-06-29 23:00:29,935 - INFO - Processing png/IMG_4216.png
+2025-06-29 23:00:33,890 - INFO - tesseract: confidence=0.68, length=1712
+2025-06-29 23:00:40,893 - INFO - google_vision: confidence=1.00, length=1743
+2025-06-29 23:00:57,140 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:00:57,149 - INFO - openai_vision: confidence=0.85, length=1613
+2025-06-29 23:01:03,143 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:01:04,492 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:01:04,493 - INFO - Completed png/IMG_4216.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:01:04,495 - INFO - Progress: 59/194 (30.4%)
+2025-06-29 23:01:04,495 - INFO - Processing png/IMG_4228.png
+2025-06-29 23:01:07,878 - INFO - tesseract: confidence=0.67, length=1482
+2025-06-29 23:01:12,650 - INFO - google_vision: confidence=1.00, length=1524
+2025-06-29 23:01:26,527 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:01:26,536 - INFO - openai_vision: confidence=0.85, length=1425
+2025-06-29 23:01:49,327 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:01:50,681 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:01:50,684 - INFO - Completed png/IMG_4228.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:01:50,686 - INFO - Progress: 60/194 (30.9%)
+2025-06-29 23:01:50,687 - INFO - Processing png/IMG_4200.png
+2025-06-29 23:01:54,667 - INFO - tesseract: confidence=0.71, length=2262
+2025-06-29 23:01:59,803 - INFO - google_vision: confidence=1.00, length=2310
+2025-06-29 23:02:21,062 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:21,068 - INFO - openai_vision: confidence=0.85, length=2297
+2025-06-29 23:02:33,634 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:35,278 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:35,284 - INFO - Completed png/IMG_4200.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:02:35,286 - INFO - Progress: 61/194 (31.4%)
+2025-06-29 23:02:35,286 - INFO - Processing png/IMG_4214.png
+2025-06-29 23:02:38,969 - INFO - tesseract: confidence=0.68, length=1908
+2025-06-29 23:02:45,689 - INFO - google_vision: confidence=1.00, length=1742
+2025-06-29 23:02:52,610 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:52,620 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 23:02:57,959 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:58,763 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:02:58,765 - INFO - Completed png/IMG_4214.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:02:58,766 - INFO - Progress: 62/194 (32.0%)
+2025-06-29 23:02:58,766 - INFO - Processing png/IMG_4176.png
+2025-06-29 23:03:04,770 - INFO - tesseract: confidence=0.73, length=1459
+2025-06-29 23:03:09,883 - INFO - google_vision: confidence=1.00, length=1324
+2025-06-29 23:03:24,276 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:24,280 - INFO - openai_vision: confidence=0.85, length=1329
+2025-06-29 23:03:30,985 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:32,967 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:32,968 - INFO - Completed png/IMG_4176.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:03:32,969 - INFO - Progress: 63/194 (32.5%)
+2025-06-29 23:03:32,969 - INFO - Processing png/IMG_4162.png
+2025-06-29 23:03:35,969 - INFO - tesseract: confidence=0.86, length=1174
+2025-06-29 23:03:40,063 - INFO - google_vision: confidence=1.00, length=1181
+2025-06-29 23:03:49,096 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:49,101 - INFO - openai_vision: confidence=0.85, length=1094
+2025-06-29 23:03:54,369 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:55,614 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:03:55,616 - INFO - Completed png/IMG_4162.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:03:55,618 - INFO - Progress: 64/194 (33.0%)
+2025-06-29 23:03:55,618 - INFO - Processing png/IMG_4189.png
+2025-06-29 23:03:59,504 - INFO - tesseract: confidence=0.78, length=1544
+2025-06-29 23:04:03,878 - INFO - google_vision: confidence=1.00, length=1395
+2025-06-29 23:04:20,552 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:04:20,558 - INFO - openai_vision: confidence=0.85, length=1491
+2025-06-29 23:04:26,569 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:04:28,939 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:04:28,946 - INFO - Completed png/IMG_4189.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:04:28,947 - INFO - Progress: 65/194 (33.5%)
+2025-06-29 23:04:28,948 - INFO - Processing png/IMG_4188.png
+2025-06-29 23:04:32,193 - INFO - tesseract: confidence=0.76, length=1415
+2025-06-29 23:04:38,710 - INFO - google_vision: confidence=1.00, length=1314
+2025-06-29 23:04:53,417 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:04:53,422 - INFO - openai_vision: confidence=0.85, length=1328
+2025-06-29 23:04:59,246 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:00,070 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:00,076 - INFO - Completed png/IMG_4188.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:05:00,077 - INFO - Progress: 66/194 (34.0%)
+2025-06-29 23:05:00,077 - INFO - Processing png/IMG_4163.png
+2025-06-29 23:05:03,432 - INFO - tesseract: confidence=0.76, length=1060
+2025-06-29 23:05:07,737 - INFO - google_vision: confidence=1.00, length=1040
+2025-06-29 23:05:20,674 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:20,681 - INFO - openai_vision: confidence=0.85, length=928
+2025-06-29 23:05:28,417 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:29,889 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:29,893 - INFO - Completed png/IMG_4163.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:05:29,895 - INFO - Progress: 67/194 (34.5%)
+2025-06-29 23:05:29,895 - INFO - Processing png/IMG_4177.png
+2025-06-29 23:05:35,747 - INFO - tesseract: confidence=0.80, length=1432
+2025-06-29 23:05:42,511 - INFO - google_vision: confidence=1.00, length=1380
+2025-06-29 23:05:57,365 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:05:57,373 - INFO - openai_vision: confidence=0.85, length=1401
+2025-06-29 23:06:02,554 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:06:04,409 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:06:04,416 - INFO - Completed png/IMG_4177.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:06:04,421 - INFO - Progress: 68/194 (35.1%)
+2025-06-29 23:06:04,421 - INFO - Processing png/IMG_4215.png
+2025-06-29 23:06:16,478 - INFO - tesseract: confidence=0.69, length=1624
+2025-06-29 23:06:22,257 - INFO - google_vision: confidence=1.00, length=1686
+2025-06-29 23:06:39,485 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:06:39,495 - INFO - openai_vision: confidence=0.85, length=1529
+2025-06-29 23:06:46,821 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:06:48,612 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:06:48,616 - INFO - Completed png/IMG_4215.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:06:48,617 - INFO - Progress: 69/194 (35.6%)
+2025-06-29 23:06:48,617 - INFO - Processing png/IMG_4201.png
+2025-06-29 23:06:52,793 - INFO - tesseract: confidence=0.71, length=1219
+2025-06-29 23:06:56,896 - INFO - google_vision: confidence=1.00, length=1077
+2025-06-29 23:07:09,433 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:07:09,441 - INFO - openai_vision: confidence=0.85, length=1195
+2025-06-29 23:07:15,956 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:07:17,751 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:07:17,753 - INFO - Completed png/IMG_4201.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:07:17,754 - INFO - Progress: 70/194 (36.1%)
+2025-06-29 23:07:17,754 - INFO - Processing png/IMG_4229.png
+2025-06-29 23:17:22,725 - ERROR - Tesseract OCR failed for png/IMG_4229.png: [Errno 89] Operation canceled
+2025-06-29 23:17:22,728 - INFO - tesseract: confidence=0.00, length=0
+2025-06-29 23:27:52,740 - ERROR - Google Vision failed for png/IMG_4229.png: [Errno 89] Operation canceled
+2025-06-29 23:27:52,747 - INFO - google_vision: confidence=0.00, length=0
+2025-06-29 23:38:22,740 - ERROR - OpenAI Vision failed for png/IMG_4229.png: [Errno 89] Operation canceled
+2025-06-29 23:38:22,746 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-29 23:38:24,435 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:38:27,903 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:38:27,906 - INFO - Completed png/IMG_4229.png - Method: none, Confidence: 0.00
+2025-06-29 23:38:27,906 - ERROR - Failed to process png/IMG_4229.png: 'none'
+2025-06-29 23:38:27,907 - INFO - Progress: 71/194 (36.6%)
+2025-06-29 23:38:27,907 - INFO - Processing png/IMG_4224.png
+2025-06-29 23:38:32,098 - INFO - tesseract: confidence=0.68, length=2015
+2025-06-29 23:38:41,991 - INFO - google_vision: confidence=1.00, length=1816
+2025-06-29 23:38:54,140 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:38:54,148 - INFO - openai_vision: confidence=0.85, length=1747
+2025-06-29 23:39:00,862 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:39:02,941 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:39:02,945 - INFO - Completed png/IMG_4224.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:39:02,947 - INFO - Progress: 72/194 (37.1%)
+2025-06-29 23:39:02,948 - INFO - Processing png/IMG_4230.png
+2025-06-29 23:39:07,307 - INFO - tesseract: confidence=0.68, length=2040
+2025-06-29 23:39:16,934 - INFO - google_vision: confidence=1.00, length=2055
+2025-06-29 23:39:38,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:39:38,167 - INFO - openai_vision: confidence=0.85, length=1853
+2025-06-29 23:39:47,338 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:39:48,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:39:48,392 - INFO - Completed png/IMG_4230.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:39:48,395 - INFO - Progress: 73/194 (37.6%)
+2025-06-29 23:39:48,395 - INFO - Processing png/IMG_4218.png
+2025-06-29 23:39:51,445 - INFO - tesseract: confidence=0.61, length=777
+2025-06-29 23:39:58,685 - INFO - google_vision: confidence=1.00, length=767
+2025-06-29 23:40:09,094 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:09,101 - INFO - openai_vision: confidence=0.85, length=816
+2025-06-29 23:40:14,243 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:16,902 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:16,908 - INFO - Completed png/IMG_4218.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:40:16,911 - INFO - Progress: 74/194 (38.1%)
+2025-06-29 23:40:16,911 - INFO - Processing png/IMG_4152.png
+2025-06-29 23:40:20,385 - INFO - tesseract: confidence=0.77, length=1743
+2025-06-29 23:40:28,941 - INFO - google_vision: confidence=1.00, length=1833
+2025-06-29 23:40:44,191 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:44,209 - INFO - openai_vision: confidence=0.85, length=1511
+2025-06-29 23:40:50,415 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:52,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:40:52,715 - INFO - Completed png/IMG_4152.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:40:52,719 - INFO - Progress: 75/194 (38.7%)
+2025-06-29 23:40:52,719 - INFO - Processing png/IMG_4146.png
+2025-06-29 23:40:56,095 - INFO - tesseract: confidence=0.77, length=1571
+2025-06-29 23:41:04,254 - INFO - google_vision: confidence=1.00, length=1283
+2025-06-29 23:41:10,110 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:10,111 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 23:41:14,053 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:15,055 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:15,058 - INFO - Completed png/IMG_4146.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:41:15,060 - INFO - Progress: 76/194 (39.2%)
+2025-06-29 23:41:15,060 - INFO - Processing png/IMG_4191.png
+2025-06-29 23:41:22,478 - INFO - tesseract: confidence=0.75, length=1458
+2025-06-29 23:41:31,543 - INFO - google_vision: confidence=1.00, length=1417
+2025-06-29 23:41:44,082 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:44,097 - INFO - openai_vision: confidence=0.85, length=1403
+2025-06-29 23:41:49,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:50,575 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:41:50,579 - INFO - Completed png/IMG_4191.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:41:50,580 - INFO - Progress: 77/194 (39.7%)
+2025-06-29 23:41:50,580 - INFO - Processing png/IMG_4185.png
+2025-06-29 23:42:00,564 - INFO - tesseract: confidence=0.73, length=1880
+2025-06-29 23:42:10,213 - INFO - google_vision: confidence=1.00, length=1835
+2025-06-29 23:42:26,195 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:42:26,206 - INFO - openai_vision: confidence=0.85, length=1725
+2025-06-29 23:42:34,616 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:42:35,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:42:35,984 - INFO - Completed png/IMG_4185.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:42:35,986 - INFO - Progress: 78/194 (40.2%)
+2025-06-29 23:42:35,986 - INFO - Processing png/IMG_4184.png
+2025-06-29 23:42:39,891 - INFO - tesseract: confidence=0.74, length=2391
+2025-06-29 23:42:51,225 - INFO - google_vision: confidence=1.00, length=2878
+2025-06-29 23:43:11,978 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:43:11,985 - INFO - openai_vision: confidence=0.85, length=2826
+2025-06-29 23:43:24,357 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:43:25,418 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:43:25,419 - INFO - Completed png/IMG_4184.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:43:25,420 - INFO - Progress: 79/194 (40.7%)
+2025-06-29 23:43:25,420 - INFO - Processing png/IMG_4190.png
+2025-06-29 23:43:36,635 - INFO - tesseract: confidence=0.73, length=1685
+2025-06-29 23:43:45,289 - INFO - google_vision: confidence=1.00, length=1523
+2025-06-29 23:44:02,296 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:02,302 - INFO - openai_vision: confidence=0.85, length=1515
+2025-06-29 23:44:08,411 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:09,634 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:09,637 - INFO - Completed png/IMG_4190.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:44:09,639 - INFO - Progress: 80/194 (41.2%)
+2025-06-29 23:44:09,639 - INFO - Processing png/IMG_4147.png
+2025-06-29 23:44:13,490 - INFO - tesseract: confidence=0.78, length=2057
+2025-06-29 23:44:22,874 - INFO - google_vision: confidence=1.00, length=2297
+2025-06-29 23:44:40,045 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:40,054 - INFO - openai_vision: confidence=0.85, length=2062
+2025-06-29 23:44:48,961 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:50,716 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:44:50,744 - INFO - Completed png/IMG_4147.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:44:50,747 - INFO - Progress: 81/194 (41.8%)
+2025-06-29 23:44:50,747 - INFO - Processing png/IMG_4153.png
+2025-06-29 23:44:55,239 - INFO - tesseract: confidence=0.80, length=1745
+2025-06-29 23:45:06,979 - INFO - google_vision: confidence=1.00, length=2013
+2025-06-29 23:45:23,564 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:45:23,578 - INFO - openai_vision: confidence=0.85, length=1665
+2025-06-29 23:45:29,470 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:45:30,672 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:45:30,675 - INFO - Completed png/IMG_4153.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:45:30,677 - INFO - Progress: 82/194 (42.3%)
+2025-06-29 23:45:30,677 - INFO - Processing png/IMG_4219.png
+2025-06-29 23:45:34,417 - INFO - tesseract: confidence=0.68, length=1296
+2025-06-29 23:45:41,739 - INFO - google_vision: confidence=1.00, length=2269
+2025-06-29 23:45:57,654 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:45:57,662 - INFO - openai_vision: confidence=0.85, length=1599
+2025-06-29 23:46:11,446 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:46:12,517 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:46:12,518 - INFO - Completed png/IMG_4219.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:46:12,521 - INFO - Progress: 83/194 (42.8%)
+2025-06-29 23:46:12,521 - INFO - Processing png/IMG_4231.png
+2025-06-29 23:46:16,663 - INFO - tesseract: confidence=0.71, length=1965
+2025-06-29 23:46:26,727 - INFO - google_vision: confidence=1.00, length=1883
+2025-06-29 23:46:43,568 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:46:43,574 - INFO - openai_vision: confidence=0.85, length=1829
+2025-06-29 23:46:52,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:46:53,224 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:46:53,228 - INFO - Completed png/IMG_4231.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:46:53,231 - INFO - Progress: 84/194 (43.3%)
+2025-06-29 23:46:53,231 - INFO - Processing png/IMG_4225.png
+2025-06-29 23:46:56,998 - INFO - tesseract: confidence=0.75, length=1856
+2025-06-29 23:47:05,792 - INFO - google_vision: confidence=1.00, length=1849
+2025-06-29 23:47:21,520 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:47:21,526 - INFO - openai_vision: confidence=0.85, length=1623
+2025-06-29 23:47:27,809 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:47:29,379 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:47:29,382 - INFO - Completed png/IMG_4225.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:47:29,383 - INFO - Progress: 85/194 (43.8%)
+2025-06-29 23:47:29,383 - INFO - Processing png/IMG_4233.png
+2025-06-29 23:47:39,061 - INFO - tesseract: confidence=0.69, length=2411
+2025-06-29 23:47:50,366 - INFO - google_vision: confidence=1.00, length=2130
+2025-06-29 23:48:10,802 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:48:10,812 - INFO - openai_vision: confidence=0.85, length=1990
+2025-06-29 23:48:21,812 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:48:23,776 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:48:23,780 - INFO - Completed png/IMG_4233.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:48:23,782 - INFO - Progress: 86/194 (44.3%)
+2025-06-29 23:48:23,782 - INFO - Processing png/IMG_4227.png
+2025-06-29 23:48:34,627 - INFO - tesseract: confidence=0.68, length=1883
+2025-06-29 23:48:44,359 - INFO - google_vision: confidence=1.00, length=1785
+2025-06-29 23:48:55,469 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:48:55,471 - INFO - openai_vision: confidence=0.85, length=1636
+2025-06-29 23:49:01,893 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:49:03,551 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:49:03,555 - INFO - Completed png/IMG_4227.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:49:03,557 - INFO - Progress: 87/194 (44.8%)
+2025-06-29 23:49:03,557 - INFO - Processing png/IMG_4145.png
+2025-06-29 23:49:15,652 - INFO - tesseract: confidence=0.75, length=2969
+2025-06-29 23:49:25,477 - INFO - google_vision: confidence=1.00, length=3098
+2025-06-29 23:49:47,203 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:49:47,211 - INFO - openai_vision: confidence=0.85, length=3084
+2025-06-29 23:49:58,831 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:00,045 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:00,049 - INFO - Completed png/IMG_4145.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:50:00,052 - INFO - Progress: 88/194 (45.4%)
+2025-06-29 23:50:00,052 - INFO - Processing png/IMG_4151.png
+2025-06-29 23:50:03,165 - INFO - tesseract: confidence=0.78, length=1571
+2025-06-29 23:50:11,605 - INFO - google_vision: confidence=1.00, length=1396
+2025-06-29 23:50:28,105 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:28,111 - INFO - openai_vision: confidence=0.85, length=1381
+2025-06-29 23:50:32,677 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:34,489 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:34,492 - INFO - Completed png/IMG_4151.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:50:34,494 - INFO - Progress: 89/194 (45.9%)
+2025-06-29 23:50:34,494 - INFO - Processing png/IMG_4179.png
+2025-06-29 23:50:41,387 - INFO - tesseract: confidence=0.80, length=1594
+2025-06-29 23:50:49,144 - INFO - google_vision: confidence=1.00, length=1329
+2025-06-29 23:50:53,918 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:50:53,924 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 23:50:59,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:51:01,816 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:51:01,821 - INFO - Completed png/IMG_4179.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:51:01,823 - INFO - Progress: 90/194 (46.4%)
+2025-06-29 23:51:01,823 - INFO - Processing png/IMG_4186.png
+2025-06-29 23:51:04,227 - INFO - tesseract: confidence=0.67, length=950
+2025-06-29 23:51:11,875 - INFO - google_vision: confidence=1.00, length=950
+2025-06-29 23:51:25,870 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:51:25,877 - INFO - openai_vision: confidence=0.85, length=1001
+2025-06-29 23:51:32,087 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:51:33,731 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:51:33,775 - INFO - Completed png/IMG_4186.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:51:33,777 - INFO - Progress: 91/194 (46.9%)
+2025-06-29 23:51:33,777 - INFO - Processing png/IMG_4192.png
+2025-06-29 23:51:37,504 - INFO - tesseract: confidence=0.75, length=2258
+2025-06-29 23:51:46,775 - INFO - google_vision: confidence=1.00, length=2250
+2025-06-29 23:52:12,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:52:12,719 - INFO - openai_vision: confidence=0.85, length=2260
+2025-06-29 23:52:23,435 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:52:24,665 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:52:24,672 - INFO - Completed png/IMG_4192.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:52:24,674 - INFO - Progress: 92/194 (47.4%)
+2025-06-29 23:52:24,674 - INFO - Processing png/IMG_4193.png
+2025-06-29 23:52:31,207 - INFO - tesseract: confidence=0.67, length=1816
+2025-06-29 23:52:42,051 - INFO - google_vision: confidence=1.00, length=2389
+2025-06-29 23:53:00,208 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:00,217 - INFO - openai_vision: confidence=0.85, length=2360
+2025-06-29 23:53:12,326 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:14,285 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:14,288 - INFO - Completed png/IMG_4193.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:53:14,290 - INFO - Progress: 93/194 (47.9%)
+2025-06-29 23:53:14,291 - INFO - Processing png/IMG_4187.png
+2025-06-29 23:53:17,730 - INFO - tesseract: confidence=0.84, length=1441
+2025-06-29 23:53:25,822 - INFO - google_vision: confidence=1.00, length=1226
+2025-06-29 23:53:40,046 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:40,058 - INFO - openai_vision: confidence=0.85, length=1229
+2025-06-29 23:53:45,215 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:46,456 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:53:46,459 - INFO - Completed png/IMG_4187.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:53:46,461 - INFO - Progress: 94/194 (48.5%)
+2025-06-29 23:53:46,461 - INFO - Processing png/IMG_4178.png
+2025-06-29 23:53:50,725 - INFO - tesseract: confidence=0.81, length=1369
+2025-06-29 23:53:58,465 - INFO - google_vision: confidence=1.00, length=1326
+2025-06-29 23:54:20,077 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:20,082 - INFO - openai_vision: confidence=0.85, length=1276
+2025-06-29 23:54:25,585 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:27,278 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:27,289 - INFO - Completed png/IMG_4178.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:54:27,291 - INFO - Progress: 95/194 (49.0%)
+2025-06-29 23:54:27,291 - INFO - Processing png/IMG_4150.png
+2025-06-29 23:54:29,045 - INFO - tesseract: confidence=0.78, length=137
+2025-06-29 23:54:35,203 - INFO - google_vision: confidence=1.00, length=492
+2025-06-29 23:54:42,368 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:42,374 - INFO - openai_vision: confidence=0.85, length=112
+2025-06-29 23:54:45,263 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:46,254 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:54:46,256 - INFO - Completed png/IMG_4150.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:54:46,258 - INFO - Progress: 96/194 (49.5%)
+2025-06-29 23:54:46,258 - INFO - Processing png/IMG_4144.png
+2025-06-29 23:54:50,022 - INFO - tesseract: confidence=0.69, length=2077
+2025-06-29 23:55:00,357 - INFO - google_vision: confidence=1.00, length=2943
+2025-06-29 23:55:25,881 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:55:25,884 - INFO - openai_vision: confidence=0.85, length=2968
+2025-06-29 23:55:41,836 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:55:45,131 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:55:45,134 - INFO - Completed png/IMG_4144.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:55:45,136 - INFO - Progress: 97/194 (50.0%)
+2025-06-29 23:55:45,136 - INFO - Processing png/IMG_4226.png
+2025-06-29 23:55:48,667 - INFO - tesseract: confidence=0.73, length=1763
+2025-06-29 23:55:58,722 - INFO - google_vision: confidence=1.00, length=1768
+2025-06-29 23:56:02,210 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:02,215 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-29 23:56:10,703 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:12,403 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:12,410 - INFO - Completed png/IMG_4226.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:56:12,419 - INFO - Progress: 98/194 (50.5%)
+2025-06-29 23:56:12,419 - INFO - Processing png/IMG_4232.png
+2025-06-29 23:56:16,835 - INFO - tesseract: confidence=0.71, length=1987
+2025-06-29 23:56:25,699 - INFO - google_vision: confidence=1.00, length=1953
+2025-06-29 23:56:42,083 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:42,090 - INFO - openai_vision: confidence=0.85, length=1906
+2025-06-29 23:56:53,131 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:54,771 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:56:54,775 - INFO - Completed png/IMG_4232.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:56:54,777 - INFO - Progress: 99/194 (51.0%)
+2025-06-29 23:56:54,777 - INFO - Processing png/IMG_4236.png
+2025-06-29 23:56:59,814 - INFO - tesseract: confidence=0.65, length=2288
+2025-06-29 23:57:09,684 - INFO - google_vision: confidence=1.00, length=2333
+2025-06-29 23:57:37,990 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:57:37,995 - INFO - openai_vision: confidence=0.85, length=2438
+2025-06-29 23:57:50,575 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:57:52,172 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:57:52,180 - INFO - Completed png/IMG_4236.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:57:52,182 - INFO - Progress: 100/194 (51.5%)
+2025-06-29 23:57:52,182 - INFO - Processing png/IMG_4222.png
+2025-06-29 23:57:55,324 - INFO - tesseract: confidence=0.73, length=1699
+2025-06-29 23:58:03,737 - INFO - google_vision: confidence=1.00, length=1503
+2025-06-29 23:58:18,358 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:18,365 - INFO - openai_vision: confidence=0.85, length=1489
+2025-06-29 23:58:24,654 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:26,222 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:26,225 - INFO - Completed png/IMG_4222.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:58:26,227 - INFO - Progress: 101/194 (52.1%)
+2025-06-29 23:58:26,227 - INFO - Processing png/IMG_4168.png
+2025-06-29 23:58:28,730 - INFO - tesseract: confidence=0.76, length=703
+2025-06-29 23:58:36,457 - INFO - google_vision: confidence=1.00, length=563
+2025-06-29 23:58:46,148 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:46,156 - INFO - openai_vision: confidence=0.85, length=662
+2025-06-29 23:58:49,941 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:51,910 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:58:51,914 - INFO - Completed png/IMG_4168.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:58:51,915 - INFO - Progress: 102/194 (52.6%)
+2025-06-29 23:58:51,916 - INFO - Processing png/IMG_4140.png
+2025-06-29 23:58:55,112 - INFO - tesseract: confidence=0.73, length=937
+2025-06-29 23:59:02,499 - INFO - google_vision: confidence=1.00, length=1005
+2025-06-29 23:59:12,934 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:59:12,940 - INFO - openai_vision: confidence=0.85, length=578
+2025-06-29 23:59:20,447 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:59:23,004 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:59:23,011 - INFO - Completed png/IMG_4140.png - Method: google_vision, Confidence: 1.00
+2025-06-29 23:59:23,013 - INFO - Progress: 103/194 (53.1%)
+2025-06-29 23:59:23,013 - INFO - Processing png/IMG_4154.png
+2025-06-29 23:59:25,901 - INFO - tesseract: confidence=0.83, length=1736
+2025-06-29 23:59:37,192 - INFO - google_vision: confidence=1.00, length=2040
+2025-06-29 23:59:55,099 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-29 23:59:55,106 - INFO - openai_vision: confidence=0.85, length=1634
+2025-06-30 00:01:31,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:01:32,984 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:01:32,988 - INFO - Completed png/IMG_4154.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:01:32,991 - INFO - Progress: 104/194 (53.6%)
+2025-06-30 00:01:32,991 - INFO - Processing png/IMG_4183.png
+2025-06-30 00:01:45,919 - INFO - tesseract: confidence=0.70, length=1909
+2025-06-30 00:01:56,608 - INFO - google_vision: confidence=1.00, length=2725
+2025-06-30 00:02:29,125 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:02:29,128 - INFO - openai_vision: confidence=0.85, length=2851
+2025-06-30 00:02:44,164 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:02:45,790 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:02:45,793 - INFO - Completed png/IMG_4183.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:02:45,796 - INFO - Progress: 105/194 (54.1%)
+2025-06-30 00:02:45,796 - INFO - Processing png/IMG_4197.png
+2025-06-30 00:02:50,807 - INFO - tesseract: confidence=0.65, length=2409
+2025-06-30 00:02:59,250 - INFO - google_vision: confidence=1.00, length=2143
+2025-06-30 00:03:06,444 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:03:06,449 - INFO - openai_vision: confidence=0.85, length=555
+2025-06-30 00:03:18,552 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:03:20,860 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:03:20,864 - INFO - Completed png/IMG_4197.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:03:20,868 - INFO - Progress: 106/194 (54.6%)
+2025-06-30 00:03:20,870 - INFO - Processing png/IMG_4196.png
+2025-06-30 00:03:30,040 - INFO - tesseract: confidence=0.68, length=1885
+2025-06-30 00:03:41,513 - INFO - google_vision: confidence=1.00, length=2406
+2025-06-30 00:04:17,155 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:04:17,160 - INFO - openai_vision: confidence=0.85, length=2410
+2025-06-30 00:04:27,752 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:04:29,637 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:04:29,641 - INFO - Completed png/IMG_4196.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:04:29,643 - INFO - Progress: 107/194 (55.2%)
+2025-06-30 00:04:29,643 - INFO - Processing png/IMG_4182.png
+2025-06-30 00:04:35,408 - INFO - tesseract: confidence=0.77, length=1325
+2025-06-30 00:04:44,749 - INFO - google_vision: confidence=1.00, length=2516
+2025-06-30 00:04:59,316 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:04:59,324 - INFO - openai_vision: confidence=0.85, length=1266
+2025-06-30 00:05:11,002 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:05:13,102 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:05:13,106 - INFO - Completed png/IMG_4182.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:05:13,108 - INFO - Progress: 108/194 (55.7%)
+2025-06-30 00:05:13,108 - INFO - Processing png/IMG_4155.png
+2025-06-30 00:05:16,974 - INFO - tesseract: confidence=0.73, length=1689
+2025-06-30 00:05:26,308 - INFO - google_vision: confidence=1.00, length=1520
+2025-06-30 00:05:45,034 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:05:45,039 - INFO - openai_vision: confidence=0.85, length=1518
+2025-06-30 00:05:51,355 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:05:52,611 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:05:52,614 - INFO - Completed png/IMG_4155.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:05:52,617 - INFO - Progress: 109/194 (56.2%)
+2025-06-30 00:05:52,617 - INFO - Processing png/IMG_4141.png
+2025-06-30 00:05:56,629 - INFO - tesseract: confidence=0.83, length=1224
+2025-06-30 00:06:04,177 - INFO - google_vision: confidence=1.00, length=1300
+2025-06-30 00:06:14,917 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:14,922 - INFO - openai_vision: confidence=0.85, length=1241
+2025-06-30 00:06:22,260 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:24,140 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:24,143 - INFO - Completed png/IMG_4141.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:06:24,145 - INFO - Progress: 110/194 (56.7%)
+2025-06-30 00:06:24,145 - INFO - Processing png/IMG_4169.png
+2025-06-30 00:06:27,202 - INFO - tesseract: confidence=0.83, length=1588
+2025-06-30 00:06:35,892 - INFO - google_vision: confidence=1.00, length=1526
+2025-06-30 00:06:48,492 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:48,496 - INFO - openai_vision: confidence=0.85, length=1528
+2025-06-30 00:06:54,141 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:55,460 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:06:55,464 - INFO - Completed png/IMG_4169.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:06:55,467 - INFO - Progress: 111/194 (57.2%)
+2025-06-30 00:06:55,467 - INFO - Processing png/IMG_4223.png
+2025-06-30 00:07:02,811 - INFO - tesseract: confidence=0.73, length=1887
+2025-06-30 00:07:12,071 - INFO - google_vision: confidence=1.00, length=1691
+2025-06-30 00:07:27,861 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:07:27,868 - INFO - openai_vision: confidence=0.85, length=1615
+2025-06-30 00:07:35,383 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:07:36,516 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:07:36,526 - INFO - Completed png/IMG_4223.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:07:36,530 - INFO - Progress: 112/194 (57.7%)
+2025-06-30 00:07:36,530 - INFO - Processing png/IMG_4237.png
+2025-06-30 00:07:39,769 - INFO - tesseract: confidence=0.74, length=1454
+2025-06-30 00:07:47,893 - INFO - google_vision: confidence=1.00, length=1397
+2025-06-30 00:07:59,424 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:07:59,430 - INFO - openai_vision: confidence=0.85, length=1680
+2025-06-30 00:08:05,327 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:08:06,914 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:08:06,916 - INFO - Completed png/IMG_4237.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:08:06,918 - INFO - Progress: 113/194 (58.2%)
+2025-06-30 00:08:06,918 - INFO - Processing png/IMG_4209.png
+2025-06-30 00:08:10,301 - INFO - tesseract: confidence=0.71, length=1870
+2025-06-30 00:08:19,178 - INFO - google_vision: confidence=1.00, length=2244
+2025-06-30 00:08:35,825 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:08:35,830 - INFO - openai_vision: confidence=0.85, length=1605
+2025-06-30 00:08:43,338 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:08:44,332 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:08:44,335 - INFO - Completed png/IMG_4209.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:08:44,338 - INFO - Progress: 114/194 (58.8%)
+2025-06-30 00:08:44,338 - INFO - Processing png/IMG_4221.png
+2025-06-30 00:08:47,106 - INFO - tesseract: confidence=0.71, length=1117
+2025-06-30 00:08:55,878 - INFO - google_vision: confidence=1.00, length=1198
+2025-06-30 00:09:14,936 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:09:14,942 - INFO - openai_vision: confidence=0.85, length=1324
+2025-06-30 00:09:19,322 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:09:20,536 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:09:20,539 - INFO - Completed png/IMG_4221.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:09:20,541 - INFO - Progress: 115/194 (59.3%)
+2025-06-30 00:09:20,541 - INFO - Processing png/IMG_4235.png
+2025-06-30 00:09:28,928 - INFO - tesseract: confidence=0.68, length=3076
+2025-06-30 00:09:38,700 - INFO - google_vision: confidence=1.00, length=2830
+2025-06-30 00:10:05,674 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:05,680 - INFO - openai_vision: confidence=0.85, length=2928
+2025-06-30 00:10:20,026 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:21,695 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:21,698 - INFO - Completed png/IMG_4235.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:10:21,701 - INFO - Progress: 116/194 (59.8%)
+2025-06-30 00:10:21,701 - INFO - Processing png/IMG_4157.png
+2025-06-30 00:10:25,400 - INFO - tesseract: confidence=0.82, length=1862
+2025-06-30 00:10:34,674 - INFO - google_vision: confidence=1.00, length=1547
+2025-06-30 00:10:48,208 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:48,213 - INFO - openai_vision: confidence=0.85, length=2156
+2025-06-30 00:10:53,528 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:55,476 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:10:55,507 - INFO - Completed png/IMG_4157.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:10:55,509 - INFO - Progress: 117/194 (60.3%)
+2025-06-30 00:10:55,509 - INFO - Processing png/IMG_4143.png
+2025-06-30 00:10:59,746 - INFO - tesseract: confidence=0.79, length=2661
+2025-06-30 00:11:10,226 - INFO - google_vision: confidence=1.00, length=2543
+2025-06-30 00:11:44,291 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:11:44,299 - INFO - openai_vision: confidence=0.85, length=2496
+2025-06-30 00:11:58,878 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:12:00,411 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:12:00,414 - INFO - Completed png/IMG_4143.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:12:00,415 - INFO - Progress: 118/194 (60.8%)
+2025-06-30 00:12:00,415 - INFO - Processing png/IMG_4194.png
+2025-06-30 00:12:04,376 - INFO - tesseract: confidence=0.77, length=2471
+2025-06-30 00:12:14,580 - INFO - google_vision: confidence=1.00, length=2462
+2025-06-30 00:12:40,593 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:12:40,597 - INFO - openai_vision: confidence=0.85, length=2442
+2025-06-30 00:12:50,647 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:12:52,045 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:12:52,049 - INFO - Completed png/IMG_4194.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:12:52,051 - INFO - Progress: 119/194 (61.3%)
+2025-06-30 00:12:52,051 - INFO - Processing png/IMG_4180.png
+2025-06-30 00:12:56,031 - INFO - tesseract: confidence=0.71, length=776
+2025-06-30 00:13:03,851 - INFO - google_vision: confidence=1.00, length=630
+2025-06-30 00:13:13,416 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:13:13,420 - INFO - openai_vision: confidence=0.85, length=611
+2025-06-30 00:13:18,000 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:13:19,164 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:13:19,174 - INFO - Completed png/IMG_4180.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:13:19,174 - INFO - Progress: 120/194 (61.9%)
+2025-06-30 00:13:19,174 - INFO - Processing png/IMG_4181.png
+2025-06-30 00:13:22,571 - INFO - tesseract: confidence=0.75, length=2541
+2025-06-30 00:13:31,652 - INFO - google_vision: confidence=1.00, length=2485
+2025-06-30 00:13:58,899 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:13:58,906 - INFO - openai_vision: confidence=0.85, length=2624
+2025-06-30 00:14:07,856 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:10,028 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:10,029 - INFO - Completed png/IMG_4181.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:14:10,035 - INFO - Progress: 121/194 (62.4%)
+2025-06-30 00:14:10,035 - INFO - Processing png/IMG_4195.png
+2025-06-30 00:14:12,905 - INFO - tesseract: confidence=0.73, length=304
+2025-06-30 00:14:20,194 - INFO - google_vision: confidence=1.00, length=546
+2025-06-30 00:14:27,844 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:27,850 - INFO - openai_vision: confidence=0.85, length=609
+2025-06-30 00:14:31,929 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:33,496 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:33,500 - INFO - Completed png/IMG_4195.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:14:33,503 - INFO - Progress: 122/194 (62.9%)
+2025-06-30 00:14:33,503 - INFO - Processing png/IMG_4142.png
+2025-06-30 00:14:36,346 - INFO - tesseract: confidence=0.63, length=307
+2025-06-30 00:14:43,141 - INFO - google_vision: confidence=1.00, length=639
+2025-06-30 00:14:53,708 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:53,712 - INFO - openai_vision: confidence=0.85, length=652
+2025-06-30 00:14:57,497 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:59,183 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:14:59,186 - INFO - Completed png/IMG_4142.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:14:59,189 - INFO - Progress: 123/194 (63.4%)
+2025-06-30 00:14:59,189 - INFO - Processing png/IMG_4156.png
+2025-06-30 00:15:02,389 - INFO - tesseract: confidence=0.76, length=1560
+2025-06-30 00:15:11,422 - INFO - google_vision: confidence=1.00, length=2081
+2025-06-30 00:15:28,019 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:15:28,024 - INFO - openai_vision: confidence=0.85, length=1409
+2025-06-30 00:15:37,504 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:15:39,553 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:15:39,557 - INFO - Completed png/IMG_4156.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:15:39,560 - INFO - Progress: 124/194 (63.9%)
+2025-06-30 00:15:39,560 - INFO - Processing png/IMG_4234.png
+2025-06-30 00:15:43,337 - INFO - tesseract: confidence=0.70, length=2079
+2025-06-30 00:15:51,714 - INFO - google_vision: confidence=1.00, length=1763
+2025-06-30 00:15:55,309 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:15:55,313 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 00:16:02,376 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:16:07,088 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:16:07,090 - INFO - Completed png/IMG_4234.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:16:07,091 - INFO - Progress: 125/194 (64.4%)
+2025-06-30 00:16:07,091 - INFO - Processing png/IMG_4220.png
+2025-06-30 00:16:10,479 - INFO - tesseract: confidence=0.73, length=2214
+2025-06-30 00:16:21,500 - INFO - google_vision: confidence=1.00, length=2550
+2025-06-30 00:16:47,245 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:16:47,250 - INFO - openai_vision: confidence=0.85, length=2609
+2025-06-30 00:16:57,930 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:17:00,477 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:17:00,485 - INFO - Completed png/IMG_4220.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:17:00,488 - INFO - Progress: 126/194 (64.9%)
+2025-06-30 00:17:00,489 - INFO - Processing png/IMG_4208.png
+2025-06-30 00:17:04,056 - INFO - tesseract: confidence=0.69, length=1744
+2025-06-30 00:17:13,470 - INFO - google_vision: confidence=1.00, length=2041
+2025-06-30 00:17:30,702 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:17:30,707 - INFO - openai_vision: confidence=0.85, length=1496
+2025-06-30 00:17:38,246 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:17:39,208 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:17:39,213 - INFO - Completed png/IMG_4208.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:17:39,215 - INFO - Progress: 127/194 (65.5%)
+2025-06-30 00:17:39,216 - INFO - Processing png/IMG_4086.png
+2025-06-30 00:17:47,959 - INFO - tesseract: confidence=0.71, length=2390
+2025-06-30 00:17:59,089 - INFO - google_vision: confidence=1.00, length=2975
+2025-06-30 00:18:05,304 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:18:05,312 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 00:18:14,737 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:18:15,999 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:18:16,007 - INFO - Completed png/IMG_4086.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:18:16,011 - INFO - Progress: 128/194 (66.0%)
+2025-06-30 00:18:16,011 - INFO - Processing png/IMG_4092.png
+2025-06-30 00:18:20,472 - INFO - tesseract: confidence=0.86, length=2585
+2025-06-30 00:18:31,027 - INFO - google_vision: confidence=1.00, length=2588
+2025-06-30 00:18:54,787 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:18:54,796 - INFO - openai_vision: confidence=0.85, length=2605
+2025-06-30 00:19:01,919 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:19:03,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:19:03,552 - INFO - Completed png/IMG_4092.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:19:03,555 - INFO - Progress: 129/194 (66.5%)
+2025-06-30 00:19:03,555 - INFO - Processing png/IMG_4247.png
+2025-06-30 00:19:07,052 - INFO - tesseract: confidence=0.65, length=1794
+2025-06-30 00:19:15,570 - INFO - google_vision: confidence=1.00, length=1355
+2025-06-30 00:19:29,081 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:19:29,089 - INFO - openai_vision: confidence=0.85, length=1336
+2025-06-30 00:19:33,522 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:19:34,485 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:19:34,488 - INFO - Completed png/IMG_4247.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:19:34,490 - INFO - Progress: 130/194 (67.0%)
+2025-06-30 00:19:34,490 - INFO - Processing png/IMG_4253.png
+2025-06-30 00:19:40,021 - INFO - tesseract: confidence=0.74, length=2825
+2025-06-30 00:19:51,487 - INFO - google_vision: confidence=1.00, length=1275
+2025-06-30 00:20:06,412 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:06,419 - INFO - openai_vision: confidence=0.85, length=1293
+2025-06-30 00:20:11,186 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:13,222 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:13,227 - INFO - Completed png/IMG_4253.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:20:13,229 - INFO - Progress: 131/194 (67.5%)
+2025-06-30 00:20:13,229 - INFO - Processing png/IMG_4284.png
+2025-06-30 00:20:16,060 - INFO - tesseract: confidence=0.69, length=1364
+2025-06-30 00:20:27,421 - INFO - google_vision: confidence=1.00, length=1748
+2025-06-30 00:20:43,632 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:43,639 - INFO - openai_vision: confidence=0.85, length=1526
+2025-06-30 00:20:55,688 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:57,785 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:20:57,792 - INFO - Completed png/IMG_4284.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:20:57,795 - INFO - Progress: 132/194 (68.0%)
+2025-06-30 00:20:57,795 - INFO - Processing png/IMG_4290.png
+2025-06-30 00:21:01,074 - INFO - tesseract: confidence=0.69, length=789
+2025-06-30 00:21:08,427 - INFO - google_vision: confidence=1.00, length=259
+2025-06-30 00:21:16,912 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:16,917 - INFO - openai_vision: confidence=0.85, length=307
+2025-06-30 00:21:19,278 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:20,143 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:20,149 - INFO - Completed png/IMG_4290.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:21:20,151 - INFO - Progress: 133/194 (68.6%)
+2025-06-30 00:21:20,152 - INFO - Processing png/IMG_4131.png
+2025-06-30 00:21:22,888 - INFO - tesseract: confidence=0.76, length=1270
+2025-06-30 00:21:30,651 - INFO - google_vision: confidence=1.00, length=1698
+2025-06-30 00:21:41,539 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:41,545 - INFO - openai_vision: confidence=0.85, length=1212
+2025-06-30 00:21:48,765 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:50,735 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:21:50,738 - INFO - Completed png/IMG_4131.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:21:50,740 - INFO - Progress: 134/194 (69.1%)
+2025-06-30 00:21:50,740 - INFO - Processing png/IMG_4125.png
+2025-06-30 00:21:53,570 - INFO - tesseract: confidence=0.74, length=588
+2025-06-30 00:22:00,700 - INFO - google_vision: confidence=1.00, length=461
+2025-06-30 00:22:09,614 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:09,619 - INFO - openai_vision: confidence=0.85, length=494
+2025-06-30 00:22:12,764 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:13,943 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:13,949 - INFO - Completed png/IMG_4125.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:22:13,950 - INFO - Progress: 135/194 (69.6%)
+2025-06-30 00:22:13,951 - INFO - Processing png/IMG_4119.png
+2025-06-30 00:22:16,301 - INFO - tesseract: confidence=0.80, length=930
+2025-06-30 00:22:24,106 - INFO - google_vision: confidence=1.00, length=1307
+2025-06-30 00:22:34,523 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:34,528 - INFO - openai_vision: confidence=0.85, length=978
+2025-06-30 00:22:40,019 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:42,636 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:22:42,638 - INFO - Completed png/IMG_4119.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:22:42,639 - INFO - Progress: 136/194 (70.1%)
+2025-06-30 00:22:42,639 - INFO - Processing png/IMG_4118.png
+2025-06-30 00:22:46,199 - INFO - tesseract: confidence=0.77, length=1191
+2025-06-30 00:22:53,323 - INFO - google_vision: confidence=1.00, length=831
+2025-06-30 00:23:02,580 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:02,585 - INFO - openai_vision: confidence=0.85, length=762
+2025-06-30 00:23:05,587 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:07,040 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:07,042 - INFO - Completed png/IMG_4118.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:23:07,045 - INFO - Progress: 137/194 (70.6%)
+2025-06-30 00:23:07,045 - INFO - Processing png/IMG_4124.png
+2025-06-30 00:23:10,670 - INFO - tesseract: confidence=0.80, length=1866
+2025-06-30 00:23:19,135 - INFO - google_vision: confidence=1.00, length=1753
+2025-06-30 00:23:24,155 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:24,164 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 00:23:29,994 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:31,717 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:31,722 - INFO - Completed png/IMG_4124.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:23:31,723 - INFO - Progress: 138/194 (71.1%)
+2025-06-30 00:23:31,724 - INFO - Processing png/IMG_4130.png
+2025-06-30 00:23:33,749 - INFO - tesseract: confidence=0.67, length=125
+2025-06-30 00:23:40,838 - INFO - google_vision: confidence=1.00, length=1037
+2025-06-30 00:23:51,352 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:51,362 - INFO - openai_vision: confidence=0.85, length=922
+2025-06-30 00:23:58,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:59,257 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:23:59,266 - INFO - Completed png/IMG_4130.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:23:59,267 - INFO - Progress: 139/194 (71.6%)
+2025-06-30 00:23:59,267 - INFO - Processing png/IMG_4291.png
+2025-06-30 00:24:01,149 - INFO - tesseract: confidence=0.69, length=161
+2025-06-30 00:24:07,576 - INFO - google_vision: confidence=1.00, length=158
+2025-06-30 00:24:11,946 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:24:11,950 - INFO - openai_vision: confidence=0.85, length=169
+2025-06-30 00:24:13,096 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:24:14,159 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:24:14,164 - INFO - Completed png/IMG_4291.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:24:14,165 - INFO - Progress: 140/194 (72.2%)
+2025-06-30 00:24:14,165 - INFO - Processing png/IMG_4285.png
+2025-06-30 00:34:22,723 - ERROR - Tesseract OCR failed for png/IMG_4285.png: [Errno 89] Operation canceled
+2025-06-30 00:34:22,725 - INFO - tesseract: confidence=0.00, length=0
+2025-06-30 00:44:52,758 - ERROR - Google Vision failed for png/IMG_4285.png: [Errno 89] Operation canceled
+2025-06-30 00:44:52,761 - INFO - google_vision: confidence=0.00, length=0
+2025-06-30 00:55:22,726 - ERROR - OpenAI Vision failed for png/IMG_4285.png: [Errno 89] Operation canceled
+2025-06-30 00:55:22,728 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-30 00:55:23,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:55:24,785 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:55:24,789 - INFO - Completed png/IMG_4285.png - Method: none, Confidence: 0.00
+2025-06-30 00:55:24,789 - ERROR - Failed to process png/IMG_4285.png: 'none'
+2025-06-30 00:55:24,790 - INFO - Progress: 141/194 (72.7%)
+2025-06-30 00:55:24,790 - INFO - Processing png/IMG_4252.png
+2025-06-30 00:55:31,184 - INFO - tesseract: confidence=0.69, length=2140
+2025-06-30 00:55:41,929 - INFO - google_vision: confidence=1.00, length=1248
+2025-06-30 00:55:54,694 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:55:54,700 - INFO - openai_vision: confidence=0.85, length=1273
+2025-06-30 00:55:59,510 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:00,948 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:00,950 - INFO - Completed png/IMG_4252.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:56:00,952 - INFO - Progress: 142/194 (73.2%)
+2025-06-30 00:56:00,952 - INFO - Processing png/IMG_4246.png
+2025-06-30 00:56:14,948 - INFO - tesseract: confidence=0.71, length=1432
+2025-06-30 00:56:20,808 - INFO - google_vision: confidence=1.00, length=118
+2025-06-30 00:56:26,907 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:26,911 - INFO - openai_vision: confidence=0.85, length=154
+2025-06-30 00:56:28,063 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:29,462 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:29,465 - INFO - Completed png/IMG_4246.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:56:29,465 - INFO - Progress: 143/194 (73.7%)
+2025-06-30 00:56:29,466 - INFO - Processing png/IMG_4093.png
+2025-06-30 00:56:36,023 - INFO - tesseract: confidence=0.70, length=781
+2025-06-30 00:56:43,220 - INFO - google_vision: confidence=1.00, length=579
+2025-06-30 00:56:50,583 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:50,588 - INFO - openai_vision: confidence=0.85, length=681
+2025-06-30 00:56:53,103 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:53,918 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:56:53,931 - INFO - Completed png/IMG_4093.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:56:53,951 - INFO - Progress: 144/194 (74.2%)
+2025-06-30 00:56:53,952 - INFO - Processing png/IMG_4087.png
+2025-06-30 00:56:59,654 - INFO - tesseract: confidence=0.72, length=2106
+2025-06-30 00:57:09,785 - INFO - google_vision: confidence=1.00, length=2969
+2025-06-30 00:57:36,262 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:57:36,267 - INFO - openai_vision: confidence=0.85, length=3013
+2025-06-30 00:57:47,853 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:57:49,806 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:57:49,809 - INFO - Completed png/IMG_4087.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:57:49,812 - INFO - Progress: 145/194 (74.7%)
+2025-06-30 00:57:49,812 - INFO - Processing png/IMG_4091.png
+2025-06-30 00:57:54,016 - INFO - tesseract: confidence=0.84, length=2136
+2025-06-30 00:58:04,364 - INFO - google_vision: confidence=1.00, length=2139
+2025-06-30 00:58:23,287 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:58:23,296 - INFO - openai_vision: confidence=0.85, length=2117
+2025-06-30 00:58:30,108 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:58:32,879 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:58:32,882 - INFO - Completed png/IMG_4091.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:58:32,885 - INFO - Progress: 146/194 (75.3%)
+2025-06-30 00:58:32,885 - INFO - Processing png/IMG_4085.png
+2025-06-30 00:58:38,537 - INFO - tesseract: confidence=0.87, length=2971
+2025-06-30 00:58:49,143 - INFO - google_vision: confidence=1.00, length=2934
+2025-06-30 00:59:14,701 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:59:14,706 - INFO - openai_vision: confidence=0.85, length=3140
+2025-06-30 00:59:29,745 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:59:31,840 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 00:59:31,842 - INFO - Completed png/IMG_4085.png - Method: google_vision, Confidence: 1.00
+2025-06-30 00:59:31,844 - INFO - Progress: 147/194 (75.8%)
+2025-06-30 00:59:31,844 - INFO - Processing png/IMG_4250.png
+2025-06-30 00:59:38,040 - INFO - tesseract: confidence=0.73, length=2963
+2025-06-30 00:59:49,145 - INFO - google_vision: confidence=1.00, length=1471
+2025-06-30 01:00:05,641 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:05,648 - INFO - openai_vision: confidence=0.85, length=1624
+2025-06-30 01:00:10,284 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:12,731 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:12,734 - INFO - Completed png/IMG_4250.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:00:12,736 - INFO - Progress: 148/194 (76.3%)
+2025-06-30 01:00:12,736 - INFO - Processing png/IMG_4244.png
+2025-06-30 01:00:15,975 - INFO - tesseract: confidence=0.57, length=1260
+2025-06-30 01:00:25,013 - INFO - google_vision: confidence=1.00, length=1179
+2025-06-30 01:00:37,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:37,987 - INFO - openai_vision: confidence=0.85, length=1196
+2025-06-30 01:00:43,787 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:44,737 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:00:44,743 - INFO - Completed png/IMG_4244.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:00:44,745 - INFO - Progress: 149/194 (76.8%)
+2025-06-30 01:00:44,745 - INFO - Processing png/IMG_4278.png
+2025-06-30 01:00:48,169 - INFO - tesseract: confidence=0.68, length=1651
+2025-06-30 01:00:59,927 - INFO - google_vision: confidence=1.00, length=1605
+2025-06-30 01:01:19,314 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:01:19,325 - INFO - openai_vision: confidence=0.85, length=1582
+2025-06-30 01:01:31,598 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:01:33,264 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:01:33,268 - INFO - Completed png/IMG_4278.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:01:33,271 - INFO - Progress: 150/194 (77.3%)
+2025-06-30 01:01:33,272 - INFO - Processing png/IMG_4293.png
+2025-06-30 01:11:52,727 - ERROR - Tesseract OCR failed for png/IMG_4293.png: [Errno 89] Operation canceled
+2025-06-30 01:11:52,729 - INFO - tesseract: confidence=0.00, length=0
+2025-06-30 01:22:22,728 - ERROR - Google Vision failed for png/IMG_4293.png: [Errno 89] Operation canceled
+2025-06-30 01:22:22,731 - INFO - google_vision: confidence=0.00, length=0
+2025-06-30 01:32:52,725 - ERROR - OpenAI Vision failed for png/IMG_4293.png: [Errno 89] Operation canceled
+2025-06-30 01:32:52,728 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-30 01:32:54,777 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:32:55,422 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:32:55,424 - INFO - Completed png/IMG_4293.png - Method: none, Confidence: 0.00
+2025-06-30 01:32:55,424 - ERROR - Failed to process png/IMG_4293.png: 'none'
+2025-06-30 01:32:55,425 - INFO - Progress: 151/194 (77.8%)
+2025-06-30 01:32:55,425 - INFO - Processing png/IMG_4287.png
+2025-06-30 01:33:02,539 - INFO - tesseract: confidence=0.74, length=2026
+2025-06-30 01:33:10,499 - INFO - google_vision: confidence=1.00, length=1686
+2025-06-30 01:33:30,710 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:33:30,715 - INFO - openai_vision: confidence=0.85, length=1686
+2025-06-30 01:33:37,598 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:33:40,794 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:33:40,798 - INFO - Completed png/IMG_4287.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:33:40,801 - INFO - Progress: 152/194 (78.4%)
+2025-06-30 01:33:40,801 - INFO - Processing png/IMG_4318.png
+2025-06-30 01:33:44,240 - INFO - tesseract: confidence=0.76, length=1065
+2025-06-30 01:33:51,569 - INFO - google_vision: confidence=1.00, length=192
+2025-06-30 01:33:56,080 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:33:56,083 - INFO - openai_vision: confidence=0.85, length=174
+2025-06-30 01:33:57,972 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:34:00,068 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:34:00,072 - INFO - Completed png/IMG_4318.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:34:00,074 - INFO - Progress: 153/194 (78.9%)
+2025-06-30 01:34:00,074 - INFO - Processing png/IMG_4126.png
+2025-06-30 01:34:06,770 - INFO - tesseract: confidence=0.77, length=2530
+2025-06-30 01:34:17,447 - INFO - google_vision: confidence=1.00, length=2861
+2025-06-30 01:34:46,901 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:34:46,907 - INFO - openai_vision: confidence=0.85, length=2768
+2025-06-30 01:34:56,821 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:34:57,920 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:34:57,925 - INFO - Completed png/IMG_4126.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:34:57,927 - INFO - Progress: 154/194 (79.4%)
+2025-06-30 01:34:57,927 - INFO - Processing png/IMG_4132.png
+2025-06-30 01:35:01,300 - INFO - tesseract: confidence=0.80, length=1635
+2025-06-30 01:35:09,423 - INFO - google_vision: confidence=1.00, length=1540
+2025-06-30 01:35:12,952 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:12,956 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 01:35:18,399 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:20,445 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:20,449 - INFO - Completed png/IMG_4132.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:35:20,451 - INFO - Progress: 155/194 (79.9%)
+2025-06-30 01:35:20,452 - INFO - Processing png/IMG_4133.png
+2025-06-30 01:35:23,497 - INFO - tesseract: confidence=0.80, length=1776
+2025-06-30 01:35:33,127 - INFO - google_vision: confidence=1.00, length=1799
+2025-06-30 01:35:49,639 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:49,649 - INFO - openai_vision: confidence=0.85, length=1531
+2025-06-30 01:35:55,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:57,010 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:35:57,013 - INFO - Completed png/IMG_4133.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:35:57,015 - INFO - Progress: 156/194 (80.4%)
+2025-06-30 01:35:57,015 - INFO - Processing png/IMG_4127.png
+2025-06-30 01:36:01,227 - INFO - tesseract: confidence=0.69, length=2636
+2025-06-30 01:36:11,152 - INFO - google_vision: confidence=1.00, length=3099
+2025-06-30 01:36:39,321 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:36:39,327 - INFO - openai_vision: confidence=0.85, length=3139
+2025-06-30 01:36:48,755 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:36:50,256 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:36:50,259 - INFO - Completed png/IMG_4127.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:36:50,261 - INFO - Progress: 157/194 (80.9%)
+2025-06-30 01:36:50,261 - INFO - Processing png/IMG_4319.png
+2025-06-30 01:36:54,127 - INFO - tesseract: confidence=0.85, length=2434
+2025-06-30 01:37:03,567 - INFO - google_vision: confidence=0.49, length=49
+2025-06-30 01:37:08,005 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:08,015 - INFO - openai_vision: confidence=0.60, length=50
+2025-06-30 01:37:10,111 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:11,251 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:11,254 - INFO - Completed png/IMG_4319.png - Method: tesseract, Confidence: 0.85
+2025-06-30 01:37:11,256 - INFO - Progress: 158/194 (81.4%)
+2025-06-30 01:37:11,256 - INFO - Processing png/IMG_4286.png
+2025-06-30 01:37:18,176 - INFO - tesseract: confidence=0.77, length=2007
+2025-06-30 01:37:28,569 - INFO - google_vision: confidence=1.00, length=1809
+2025-06-30 01:37:49,276 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:49,286 - INFO - openai_vision: confidence=0.85, length=1787
+2025-06-30 01:37:56,512 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:58,275 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:37:58,279 - INFO - Completed png/IMG_4286.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:37:58,281 - INFO - Progress: 159/194 (82.0%)
+2025-06-30 01:37:58,281 - INFO - Processing png/IMG_4292.png
+2025-06-30 01:38:07,885 - INFO - tesseract: confidence=0.69, length=1557
+2025-06-30 01:38:16,441 - INFO - google_vision: confidence=1.00, length=1634
+2025-06-30 01:38:30,120 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:38:30,126 - INFO - openai_vision: confidence=0.85, length=1470
+2025-06-30 01:38:36,945 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:38:38,084 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:38:38,086 - INFO - Completed png/IMG_4292.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:38:38,088 - INFO - Progress: 160/194 (82.5%)
+2025-06-30 01:38:38,088 - INFO - Processing png/IMG_4279.png
+2025-06-30 01:38:41,466 - INFO - tesseract: confidence=0.68, length=1432
+2025-06-30 01:38:51,567 - INFO - google_vision: confidence=1.00, length=1325
+2025-06-30 01:39:04,683 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:39:04,688 - INFO - openai_vision: confidence=0.85, length=1255
+2025-06-30 01:39:09,543 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:39:11,225 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 01:39:11,228 - INFO - Completed png/IMG_4279.png - Method: google_vision, Confidence: 1.00
+2025-06-30 01:39:11,231 - INFO - Progress: 161/194 (83.0%)
+2025-06-30 01:39:11,231 - INFO - Processing png/IMG_4245.png
+2025-06-30 01:49:22,721 - ERROR - Tesseract OCR failed for png/IMG_4245.png: [Errno 89] Operation canceled
+2025-06-30 01:49:22,723 - INFO - tesseract: confidence=0.00, length=0
+2025-06-30 01:59:52,722 - ERROR - Google Vision failed for png/IMG_4245.png: [Errno 89] Operation canceled
+2025-06-30 01:59:52,725 - INFO - google_vision: confidence=0.00, length=0
+2025-06-30 02:10:22,766 - ERROR - OpenAI Vision failed for png/IMG_4245.png: [Errno 89] Operation canceled
+2025-06-30 02:10:22,771 - INFO - openai_vision: confidence=0.00, length=0
+2025-06-30 02:10:24,624 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:10:25,405 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:10:25,409 - INFO - Completed png/IMG_4245.png - Method: none, Confidence: 0.00
+2025-06-30 02:10:25,409 - ERROR - Failed to process png/IMG_4245.png: 'none'
+2025-06-30 02:10:25,409 - INFO - Progress: 162/194 (83.5%)
+2025-06-30 02:10:25,409 - INFO - Processing png/IMG_4251.png
+2025-06-30 02:10:29,796 - INFO - tesseract: confidence=0.72, length=1665
+2025-06-30 02:10:39,845 - INFO - google_vision: confidence=1.00, length=1402
+2025-06-30 02:10:45,324 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:10:45,328 - INFO - openai_vision: confidence=0.60, length=27
+2025-06-30 02:10:49,823 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:10:52,733 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:10:52,742 - INFO - Completed png/IMG_4251.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:10:52,744 - INFO - Progress: 163/194 (84.0%)
+2025-06-30 02:10:52,744 - INFO - Processing png/IMG_4090.png
+2025-06-30 02:10:57,823 - INFO - tesseract: confidence=0.86, length=1616
+2025-06-30 02:11:06,390 - INFO - google_vision: confidence=1.00, length=1640
+2025-06-30 02:11:25,650 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:11:25,656 - INFO - openai_vision: confidence=0.85, length=1654
+2025-06-30 02:11:31,586 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:11:33,408 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:11:33,410 - INFO - Completed png/IMG_4090.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:11:33,414 - INFO - Progress: 164/194 (84.5%)
+2025-06-30 02:11:33,414 - INFO - Processing png/IMG_4094.png
+2025-06-30 02:11:41,983 - INFO - tesseract: confidence=0.71, length=1730
+2025-06-30 02:11:49,659 - INFO - google_vision: confidence=1.00, length=1244
+2025-06-30 02:12:02,238 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:02,245 - INFO - openai_vision: confidence=0.85, length=1148
+2025-06-30 02:12:08,186 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:09,656 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:09,660 - INFO - Completed png/IMG_4094.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:12:09,663 - INFO - Progress: 165/194 (85.1%)
+2025-06-30 02:12:09,663 - INFO - Processing png/IMG_4269.png
+2025-06-30 02:12:13,869 - INFO - tesseract: confidence=0.75, length=1592
+2025-06-30 02:12:25,474 - INFO - google_vision: confidence=1.00, length=1530
+2025-06-30 02:12:42,049 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:42,054 - INFO - openai_vision: confidence=0.85, length=1556
+2025-06-30 02:12:47,831 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:50,437 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:12:50,443 - INFO - Completed png/IMG_4269.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:12:50,445 - INFO - Progress: 166/194 (85.6%)
+2025-06-30 02:12:50,445 - INFO - Processing png/IMG_4255.png
+2025-06-30 02:12:56,681 - INFO - tesseract: confidence=0.70, length=1350
+2025-06-30 02:13:07,767 - INFO - google_vision: confidence=1.00, length=1475
+2025-06-30 02:13:25,526 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:13:25,535 - INFO - openai_vision: confidence=0.85, length=1547
+2025-06-30 02:13:31,513 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:13:33,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:13:33,135 - INFO - Completed png/IMG_4255.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:13:33,137 - INFO - Progress: 167/194 (86.1%)
+2025-06-30 02:13:33,137 - INFO - Processing png/IMG_4241.png
+2025-06-30 02:13:36,814 - INFO - tesseract: confidence=0.64, length=1938
+2025-06-30 02:13:48,583 - INFO - google_vision: confidence=1.00, length=2894
+2025-06-30 02:14:20,176 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:14:20,183 - INFO - openai_vision: confidence=0.85, length=2842
+2025-06-30 02:14:31,572 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:14:34,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:14:34,239 - INFO - Completed png/IMG_4241.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:14:34,244 - INFO - Progress: 168/194 (86.6%)
+2025-06-30 02:14:34,244 - INFO - Processing png/IMG_4296.png
+2025-06-30 02:14:37,723 - INFO - tesseract: confidence=0.70, length=1949
+2025-06-30 02:14:47,287 - INFO - google_vision: confidence=1.00, length=1793
+2025-06-30 02:15:06,033 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:06,040 - INFO - openai_vision: confidence=0.85, length=1680
+2025-06-30 02:15:11,477 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:13,184 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:13,188 - INFO - Completed png/IMG_4296.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:15:13,190 - INFO - Progress: 169/194 (87.1%)
+2025-06-30 02:15:13,190 - INFO - Processing png/IMG_4282.png
+2025-06-30 02:15:16,541 - INFO - tesseract: confidence=0.74, length=1737
+2025-06-30 02:15:26,640 - INFO - google_vision: confidence=1.00, length=2046
+2025-06-30 02:15:45,479 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:45,484 - INFO - openai_vision: confidence=0.85, length=1775
+2025-06-30 02:15:52,478 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:53,621 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:15:53,623 - INFO - Completed png/IMG_4282.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:15:53,624 - INFO - Progress: 170/194 (87.6%)
+2025-06-30 02:15:53,624 - INFO - Processing png/IMG_4309.png
+2025-06-30 02:15:57,630 - INFO - tesseract: confidence=0.67, length=1559
+2025-06-30 02:16:06,033 - INFO - google_vision: confidence=1.00, length=1440
+2025-06-30 02:16:21,130 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:16:21,136 - INFO - openai_vision: confidence=0.85, length=1500
+2025-06-30 02:16:25,716 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:16:26,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:16:26,898 - INFO - Completed png/IMG_4309.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:16:26,900 - INFO - Progress: 171/194 (88.1%)
+2025-06-30 02:16:26,900 - INFO - Processing png/IMG_4123.png
+2025-06-30 02:16:31,142 - INFO - tesseract: confidence=0.81, length=2942
+2025-06-30 02:16:42,147 - INFO - google_vision: confidence=1.00, length=2912
+2025-06-30 02:17:03,660 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:03,666 - INFO - openai_vision: confidence=0.85, length=2845
+2025-06-30 02:17:19,061 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:20,498 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:20,527 - INFO - Completed png/IMG_4123.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:17:20,531 - INFO - Progress: 172/194 (88.7%)
+2025-06-30 02:17:20,531 - INFO - Processing png/IMG_4137.png
+2025-06-30 02:17:25,424 - INFO - tesseract: confidence=0.83, length=855
+2025-06-30 02:17:33,050 - INFO - google_vision: confidence=1.00, length=765
+2025-06-30 02:17:38,322 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:38,330 - INFO - openai_vision: confidence=0.60, length=34
+2025-06-30 02:17:40,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:41,699 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:17:41,703 - INFO - Completed png/IMG_4137.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:17:41,705 - INFO - Progress: 173/194 (89.2%)
+2025-06-30 02:17:41,705 - INFO - Processing png/IMG_4136.png
+2025-06-30 02:17:44,829 - INFO - tesseract: confidence=0.84, length=1685
+2025-06-30 02:17:54,788 - INFO - google_vision: confidence=1.00, length=1750
+2025-06-30 02:18:10,883 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:18:10,893 - INFO - openai_vision: confidence=0.85, length=1523
+2025-06-30 02:18:15,596 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:18:16,989 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:18:16,990 - INFO - Completed png/IMG_4136.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:18:16,991 - INFO - Progress: 174/194 (89.7%)
+2025-06-30 02:18:16,991 - INFO - Processing png/IMG_4122.png
+2025-06-30 02:18:22,482 - INFO - tesseract: confidence=0.83, length=2928
+2025-06-30 02:18:31,850 - INFO - google_vision: confidence=1.00, length=2800
+2025-06-30 02:18:54,862 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:18:54,870 - INFO - openai_vision: confidence=0.85, length=2787
+2025-06-30 02:19:03,728 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:19:05,056 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:19:05,061 - INFO - Completed png/IMG_4122.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:19:05,064 - INFO - Progress: 175/194 (90.2%)
+2025-06-30 02:19:05,064 - INFO - Processing png/IMG_4308.png
+2025-06-30 02:19:08,694 - INFO - tesseract: confidence=0.66, length=1454
+2025-06-30 02:19:16,241 - INFO - google_vision: confidence=1.00, length=1259
+2025-06-30 02:19:29,341 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:19:29,346 - INFO - openai_vision: confidence=0.85, length=1237
+2025-06-30 02:19:35,190 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:19:35,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:19:35,889 - INFO - Completed png/IMG_4308.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:19:35,890 - INFO - Progress: 176/194 (90.7%)
+2025-06-30 02:19:35,890 - INFO - Processing png/IMG_4283.png
+2025-06-30 02:19:39,977 - INFO - tesseract: confidence=0.73, length=1893
+2025-06-30 02:19:50,850 - INFO - google_vision: confidence=1.00, length=1752
+2025-06-30 02:20:12,679 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:12,686 - INFO - openai_vision: confidence=0.85, length=1707
+2025-06-30 02:20:20,437 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:22,185 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:22,187 - INFO - Completed png/IMG_4283.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:20:22,189 - INFO - Progress: 177/194 (91.2%)
+2025-06-30 02:20:22,189 - INFO - Processing png/IMG_4297.png
+2025-06-30 02:20:26,550 - INFO - tesseract: confidence=0.71, length=2161
+2025-06-30 02:20:35,216 - INFO - google_vision: confidence=1.00, length=1875
+2025-06-30 02:20:40,177 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:40,183 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 02:20:47,525 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:48,862 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:20:48,865 - INFO - Completed png/IMG_4297.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:20:48,867 - INFO - Progress: 178/194 (91.8%)
+2025-06-30 02:20:48,867 - INFO - Processing png/IMG_4254.png
+2025-06-30 02:20:51,216 - INFO - tesseract: confidence=0.63, length=474
+2025-06-30 02:20:58,091 - INFO - google_vision: confidence=1.00, length=417
+2025-06-30 02:21:04,947 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:04,953 - INFO - openai_vision: confidence=0.85, length=566
+2025-06-30 02:21:06,851 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:08,824 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:08,829 - INFO - Completed png/IMG_4254.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:21:08,832 - INFO - Progress: 179/194 (92.3%)
+2025-06-30 02:21:08,832 - INFO - Processing png/IMG_4268.png
+2025-06-30 02:21:12,229 - INFO - tesseract: confidence=0.77, length=1664
+2025-06-30 02:21:23,114 - INFO - google_vision: confidence=1.00, length=1583
+2025-06-30 02:21:47,423 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:47,428 - INFO - openai_vision: confidence=0.85, length=1586
+2025-06-30 02:21:53,160 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:55,391 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:21:55,418 - INFO - Completed png/IMG_4268.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:21:55,420 - INFO - Progress: 180/194 (92.8%)
+2025-06-30 02:21:55,420 - INFO - Processing png/IMG_4095.png
+2025-06-30 02:21:59,184 - INFO - tesseract: confidence=0.77, length=1712
+2025-06-30 02:22:07,874 - INFO - google_vision: confidence=1.00, length=1140
+2025-06-30 02:22:22,412 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:22:22,420 - INFO - openai_vision: confidence=0.85, length=1193
+2025-06-30 02:22:27,956 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:22:29,927 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:22:29,933 - INFO - Completed png/IMG_4095.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:22:29,935 - INFO - Progress: 181/194 (93.3%)
+2025-06-30 02:22:29,935 - INFO - Processing png/IMG_4097.png
+2025-06-30 02:22:34,396 - INFO - tesseract: confidence=0.77, length=2002
+2025-06-30 02:22:43,327 - INFO - google_vision: confidence=1.00, length=1620
+2025-06-30 02:23:01,875 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:23:01,879 - INFO - openai_vision: confidence=0.85, length=1680
+2025-06-30 02:23:07,850 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:23:09,586 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:23:09,590 - INFO - Completed png/IMG_4097.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:23:09,594 - INFO - Progress: 182/194 (93.8%)
+2025-06-30 02:23:09,594 - INFO - Processing png/IMG_4242.png
+2025-06-30 02:23:17,064 - INFO - tesseract: confidence=0.66, length=2133
+2025-06-30 02:23:30,326 - INFO - google_vision: confidence=1.00, length=2944
+2025-06-30 02:24:00,460 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:00,465 - INFO - openai_vision: confidence=0.85, length=2767
+2025-06-30 02:24:17,279 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:18,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:18,860 - INFO - Completed png/IMG_4242.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:24:18,864 - INFO - Progress: 183/194 (94.3%)
+2025-06-30 02:24:18,864 - INFO - Processing png/IMG_4256.png
+2025-06-30 02:24:23,874 - INFO - tesseract: confidence=0.73, length=2304
+2025-06-30 02:24:32,984 - INFO - google_vision: confidence=1.00, length=163
+2025-06-30 02:24:37,643 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:37,650 - INFO - openai_vision: confidence=0.85, length=182
+2025-06-30 02:24:39,201 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:40,268 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:24:40,302 - INFO - Completed png/IMG_4256.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:24:40,303 - INFO - Progress: 184/194 (94.8%)
+2025-06-30 02:24:40,303 - INFO - Processing png/IMG_4281.png
+2025-06-30 02:24:44,124 - INFO - tesseract: confidence=0.70, length=1727
+2025-06-30 02:24:55,544 - INFO - google_vision: confidence=1.00, length=1722
+2025-06-30 02:25:01,312 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:01,321 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 02:25:08,551 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:12,081 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:12,083 - INFO - Completed png/IMG_4281.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:25:12,086 - INFO - Progress: 185/194 (95.4%)
+2025-06-30 02:25:12,086 - INFO - Processing png/IMG_4295.png
+2025-06-30 02:25:15,567 - INFO - tesseract: confidence=0.66, length=2246
+2025-06-30 02:25:25,343 - INFO - google_vision: confidence=1.00, length=1881
+2025-06-30 02:25:29,215 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:29,219 - INFO - openai_vision: confidence=0.60, length=36
+2025-06-30 02:25:37,398 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:38,768 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:25:38,772 - INFO - Completed png/IMG_4295.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:25:38,774 - INFO - Progress: 186/194 (95.9%)
+2025-06-30 02:25:38,774 - INFO - Processing png/IMG_4134.png
+2025-06-30 02:25:42,100 - INFO - tesseract: confidence=0.79, length=1936
+2025-06-30 02:25:51,085 - INFO - google_vision: confidence=1.00, length=1816
+2025-06-30 02:26:11,132 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:11,143 - INFO - openai_vision: confidence=0.85, length=1707
+2025-06-30 02:26:17,581 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:18,862 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:18,867 - INFO - Completed png/IMG_4134.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:26:18,869 - INFO - Progress: 187/194 (96.4%)
+2025-06-30 02:26:18,869 - INFO - Processing png/IMG_4120.png
+2025-06-30 02:26:21,890 - INFO - tesseract: confidence=0.72, length=1092
+2025-06-30 02:26:29,808 - INFO - google_vision: confidence=1.00, length=944
+2025-06-30 02:26:41,159 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:41,164 - INFO - openai_vision: confidence=0.85, length=855
+2025-06-30 02:26:46,448 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:48,448 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:26:48,480 - INFO - Completed png/IMG_4120.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:26:48,481 - INFO - Progress: 188/194 (96.9%)
+2025-06-30 02:26:48,481 - INFO - Processing png/IMG_4121.png
+2025-06-30 02:26:50,967 - INFO - tesseract: confidence=0.75, length=997
+2025-06-30 02:26:58,713 - INFO - google_vision: confidence=1.00, length=1329
+2025-06-30 02:27:14,153 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:27:14,157 - INFO - openai_vision: confidence=0.85, length=1210
+2025-06-30 02:27:21,184 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:27:23,596 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:27:23,606 - INFO - Completed png/IMG_4121.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:27:23,608 - INFO - Progress: 189/194 (97.4%)
+2025-06-30 02:27:23,608 - INFO - Processing png/IMG_4135.png
+2025-06-30 02:27:27,529 - INFO - tesseract: confidence=0.83, length=1642
+2025-06-30 02:27:36,567 - INFO - google_vision: confidence=1.00, length=1935
+2025-06-30 02:27:54,108 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:27:54,113 - INFO - openai_vision: confidence=0.85, length=1550
+2025-06-30 02:27:59,149 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:28:00,282 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:28:00,288 - INFO - Completed png/IMG_4135.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:28:00,289 - INFO - Progress: 190/194 (97.9%)
+2025-06-30 02:28:00,290 - INFO - Processing png/IMG_4294.png
+2025-06-30 02:28:03,700 - INFO - tesseract: confidence=0.72, length=1999
+2025-06-30 02:28:13,087 - INFO - google_vision: confidence=1.00, length=1816
+2025-06-30 02:28:29,534 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:28:29,541 - INFO - openai_vision: confidence=0.85, length=1776
+2025-06-30 02:28:37,281 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:28:38,065 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:28:38,075 - INFO - Completed png/IMG_4294.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:28:38,077 - INFO - Progress: 191/194 (98.5%)
+2025-06-30 02:28:38,077 - INFO - Processing png/IMG_4280.png
+2025-06-30 02:28:42,284 - INFO - tesseract: confidence=0.75, length=1532
+2025-06-30 02:28:50,312 - INFO - google_vision: confidence=1.00, length=1549
+2025-06-30 02:29:05,169 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:05,177 - INFO - openai_vision: confidence=0.85, length=1602
+2025-06-30 02:29:15,348 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:16,557 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:16,562 - INFO - Completed png/IMG_4280.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:29:16,564 - INFO - Progress: 192/194 (99.0%)
+2025-06-30 02:29:16,564 - INFO - Processing png/IMG_4257.png
+2025-06-30 02:29:18,587 - INFO - tesseract: confidence=0.70, length=104
+2025-06-30 02:29:28,367 - INFO - google_vision: confidence=1.00, length=893
+2025-06-30 02:29:38,015 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:38,019 - INFO - openai_vision: confidence=0.85, length=601
+2025-06-30 02:29:44,557 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:45,387 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:29:45,390 - INFO - Completed png/IMG_4257.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:29:45,392 - INFO - Progress: 193/194 (99.5%)
+2025-06-30 02:29:45,392 - INFO - Processing png/IMG_4243.png
+2025-06-30 02:29:49,062 - INFO - tesseract: confidence=0.69, length=2265
+2025-06-30 02:30:00,129 - INFO - google_vision: confidence=1.00, length=2358
+2025-06-30 02:30:25,526 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:30:25,534 - INFO - openai_vision: confidence=0.85, length=2476
+2025-06-30 02:30:41,875 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:30:43,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:30:43,551 - INFO - Completed png/IMG_4243.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:30:43,557 - INFO - Progress: 194/194 (100.0%)
+2025-06-30 02:30:43,557 - INFO - Processing png/IMG_4096.png
+2025-06-30 02:30:47,178 - INFO - tesseract: confidence=0.81, length=1906
+2025-06-30 02:30:57,213 - INFO - google_vision: confidence=1.00, length=1884
+2025-06-30 02:31:13,857 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:31:13,861 - INFO - openai_vision: confidence=0.85, length=1827
+2025-06-30 02:31:19,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:31:21,706 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-30 02:31:21,714 - INFO - Completed png/IMG_4096.png - Method: google_vision, Confidence: 1.00
+2025-06-30 02:31:21,753 - INFO - 
+============================================================
+2025-06-30 02:31:21,753 - INFO - PROCESSING COMPLETE!
+2025-06-30 02:31:21,753 - INFO - ============================================================
+2025-06-30 02:31:21,753 - INFO - Total time: 6:01:41.746704
+2025-06-30 02:31:21,753 - INFO - Success rate: 194/194 (100.0%)
+2025-06-30 02:31:21,754 - INFO - Average confidence: 0.999
+2025-06-30 02:31:21,754 - INFO - Primary method: google_vision
+2025-06-30 02:31:21,754 - WARNING - Failed files: 8
+2025-06-30 02:31:21,754 - INFO - See failed_files.txt for details
+2025-06-30 02:31:21,754 - INFO - Output files:
+2025-06-30 02:31:21,754 - INFO -   • Master dataset: complete_logbook.json
+2025-06-30 02:31:21,754 - INFO -   • Processing report: processing_report.json
+2025-06-30 02:31:21,754 - INFO -   • Summary: processing_summary.txt
+2025-06-30 02:31:21,754 - INFO -   • Individual files: 194 JSON + TXT files
+2025-06-30 02:31:21,754 - INFO - Output directory: /Users/conradgann/Library/Mobile Documents/com~apple~CloudDocs/sandbox/log1933/digitized_output
+2025-06-30 02:31:21,754 - INFO - ============================================================
