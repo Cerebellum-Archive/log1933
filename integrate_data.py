@@ -43,7 +43,10 @@ def integrate_digitized_data():
                 print(f"✅ Copied {report_file}")
         
         print(f"\n🌐 Website data ready at: {website_data_dir.absolute()}")
-        print(f"🚀 Deploy to Vercel to see the results!")
+        print(f"🚀 Next steps:")
+        print(f"   1. cd website")
+        print(f"   2. vercel --prod")
+        print(f"   3. Visit https://log1933.vercel.app/logbook")
         
     else:
         print(f"❌ Source file not found: {source_json}")
