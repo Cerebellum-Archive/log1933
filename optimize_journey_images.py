@@ -4,7 +4,7 @@ Optimize journey images for web display
 Reduces file sizes and resizes for better web performance
 """
 
-from PIL import Image
+from PIL import Image, ImageFilter
 import os
 from pathlib import Path
 
@@ -26,7 +26,8 @@ def optimize_image(input_path, output_path, max_width=800, quality=85):
             if width > max_width:
                 new_width = max_width
                 new_height = int((height * new_width) / width)
-                img = img.resize((new_width, new_height), Image.Lanczos)
+                # Use the correct resampling filter
+                img = img.resize((new_width, new_height), Image.LANCZOS)
             
             # Save with optimization
             img.save(output_path, 'JPEG', quality=quality, optimize=True)
@@ -38,6 +39,30 @@ def optimize_image(input_path, output_path, max_width=800, quality=85):
             print(f"✅ {input_path.name}: {original_size:.1f}MB → {new_size:.1f}MB ({new_size/original_size*100:.0f}%)")
             return True
             
+    except AttributeError:
+        # Handle different PIL versions
+        try:
+            with Image.open(input_path) as img:
+                if img.mode != 'RGB':
+                    img = img.convert('RGB')
+                
+                width, height = img.size
+                if width > max_width:
+                    new_width = max_width
+                    new_height = int((height * new_width) / width)
+                    # Try newer PIL syntax
+                    img = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+                
+                img.save(output_path, 'JPEG', quality=quality, optimize=True)
+                
+                original_size = os.path.getsize(input_path) / 1024 / 1024
+                new_size = os.path.getsize(output_path) / 1024 / 1024
+                
+                print(f"✅ {input_path.name}: {original_size:.1f}MB → {new_size:.1f}MB ({new_size/original_size*100:.0f}%)")
+                return True
+        except Exception as e:
+            print(f"❌ Error optimizing {input_path}: {e}")
+            return False
     except Exception as e:
         print(f"❌ Error optimizing {input_path}: {e}")
         return False
@@ -53,11 +78,19 @@ def main():
     print("🖼️  Optimizing journey images for web...")
     print("=" * 50)
     
+    # Check if images exist
+    image_files = list(input_dir.glob("*.jpg")) + list(input_dir.glob("*.png"))
+    if not image_files:
+        print("❌ No images found in directory!")
+        return
+    
+    print(f"📁 Found {len(image_files)} images to optimize")
+    
     total_original = 0
     total_optimized = 0
     count = 0
     
-    for img_file in input_dir.glob("*.jpg"):
+    for img_file in image_files:
         if "optimized" in img_file.name:
             continue  # Skip already optimized files
             
@@ -78,9 +111,16 @@ def main():
             optimized_path.rename(img_file)  # Rename optimized to original name
     
     print("=" * 50)
-    print(f"🎉 Optimized {count} images")
-    print(f"📊 Total size: {total_original:.1f}MB → {total_optimized:.1f}MB")
-    print(f"💾 Space saved: {total_original - total_optimized:.1f}MB ({(1-total_optimized/total_original)*100:.0f}%)")
+    if count > 0:
+        print(f"🎉 Optimized {count} images")
+        print(f"📊 Total size: {total_original:.1f}MB → {total_optimized:.1f}MB")
+        print(f"💾 Space saved: {total_original - total_optimized:.1f}MB ({(1-total_optimized/total_original)*100:.0f}%)")
+        print("\n✅ Images optimized! Now commit and deploy:")
+        print("   git add website/public/images/journey/")
+        print("   git commit -m 'Optimize journey images for web'")
+        print("   git push")
+    else:
+        print("❌ No images were optimized")
 
 if __name__ == "__main__":
     main() 
