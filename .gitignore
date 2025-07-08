@@ -64,6 +64,9 @@ logbook1933-*.zip
 
 # Data directories (exclude all content)
 data/
+# EXCEPTION: Allow website data for deployment
+!website/public/data/
+
 heic/
 jpeg/
 png/
@@ -79,6 +82,11 @@ path_to_your_output_directory/
 # Output directories (exclude all content)
 output/
 !output/.gitkeep
+
+# Processing logs and output
+digitized_output/
+# EXCEPTION: Allow website data (copy of digitized output)
+!website/public/data/
 
 # Temporary files
 temp/
@@ -103,16 +111,15 @@ credentials/*.json
 credentials/.env
 credentials/google-cloud-vision.json
 
-# Processing logs and output
-digitization.log
-digitized_output/
-
 # Large text files (keep only small samples)
 *.txt
 !sample_*.txt
 !README*.txt
 !requirements*.txt
 !docs/*.txt
+# EXCEPTION: Allow website data files
+!website/public/data/*.txt
+!website/public/data/*.json
 
 # Backup files
 *.bak
@@ -146,4 +153,6 @@ spell_check.py
 aggretate_text.py
 smart_ocr_v1.py
 gemini_fn_gpt.py
-png_ml_txt.py ernest-gann-1933/
+png_ml_txt.py
+
+ernest-gann-1933/
