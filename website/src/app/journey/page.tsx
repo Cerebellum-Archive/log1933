@@ -27,152 +27,24 @@ interface LogbookData {
       failed: number
     }
     success_rate: number
-    average_confidence: number
   }
   entries: LogbookEntry[]
 }
 
-const journeyData = [
-  {
-    date: "January 1933",
-    location: "Chicago, Illinois",
-    title: "The Assignment",
-    description: "George Kellogg Gann, a telephone company executive, gives his son Ernest an assignment to travel around the world and review telephone companies in Europe and Asia.",
-    image: "/images/journey/chicago-1933.jpg",
-    fallbackImage: "/images/chicago-1933.jpg",
-    searchMonth: "01",
-    searchYear: "1933"
-  },
-  {
-    date: "February 1933",
-    location: "New York City",
-    title: "Departure",
-    description: "Ernest boards a steamship bound for Europe, beginning his world tour. At 23, he was a Yale dropout with dreams of filmmaking.",
-    image: "/images/journey/nyc-departure-1933.jpg",
-    fallbackImage: "/images/nyc-1933.jpg",
-    searchMonth: "02",
-    searchYear: "1933"
-  },
-  {
-    date: "March 1933",
-    location: "London, England",
-    title: "European Telephone Review",
-    description: "Ernest begins his review of European telephone systems, starting with the British Post Office telephone network.",
-    image: "/images/journey/london-1933.jpg",
-    fallbackImage: "/images/london-1933.jpg",
-    searchMonth: "03",
-    searchYear: "1933"
-  },
-  {
-    date: "April 1933",
-    location: "Paris, France",
-    title: "French Telecommunications",
-    description: "Continuing his journey through Europe, Ernest studies the French telephone system and experiences the culture of Paris.",
-    image: "/images/journey/paris-1933.jpg",
-    fallbackImage: "/images/paris-1933.jpg",
-    searchMonth: "04",
-    searchYear: "1933"
-  },
-  {
-    date: "May 1933",
-    location: "Berlin, Germany",
-    title: "German Innovation",
-    description: "Ernest reviews the German telephone infrastructure, witnessing the technological advances of the era.",
-    image: "/images/journey/berlin-1933.jpg",
-    fallbackImage: "/images/berlin-1933.jpg",
-    searchMonth: "05",
-    searchYear: "1933"
-  },
-  {
-    date: "June 1933",
-    location: "Moscow, Soviet Union",
-    title: "Soviet Communications",
-    description: "A challenging leg of the journey as Ernest reviews the Soviet telephone system during a period of significant change.",
-    image: "/images/journey/moscow-1933.jpg",
-    fallbackImage: "/images/moscow-1933.jpg",
-    searchMonth: "06",
-    searchYear: "1933"
-  },
-  {
-    date: "July 1933",
-    location: "Tokyo, Japan",
-    title: "Japanese Technology",
-    description: "Ernest arrives in Asia, beginning his review of Japanese telecommunications and experiencing a vastly different culture.",
-    image: "/images/journey/tokyo-1933.jpg",
-    fallbackImage: "/images/tokyo-1933.jpg",
-    searchMonth: "07",
-    searchYear: "1933"
-  },
-  {
-    date: "August 1933",
-    location: "Shanghai, China",
-    title: "Chinese Communications",
-    description: "Continuing through Asia, Ernest studies the Chinese telephone system in the international port city of Shanghai.",
-    image: "/images/journey/shanghai-1933.jpg",
-    fallbackImage: "/images/shanghai-1933.jpg",
-    searchMonth: "08",
-    searchYear: "1933"
-  },
-  {
-    date: "September 1933",
-    location: "Hong Kong",
-    title: "British Colony",
-    description: "Ernest reviews the telephone system in the British colony of Hong Kong, experiencing the blend of Eastern and Western influences.",
-    image: "/images/journey/hongkong-1933.jpg",
-    fallbackImage: "/images/hongkong-1933.jpg",
-    searchMonth: "09",
-    searchYear: "1933"
-  },
-  {
-    date: "October 1933",
-    location: "Singapore",
-    title: "Strait Settlements",
-    description: "The journey continues through Southeast Asia as Ernest reviews telecommunications in the British Straits Settlements.",
-    image: "/images/journey/singapore-1933.jpg",
-    fallbackImage: "/images/singapore-1933.jpg",
-    searchMonth: "10",
-    searchYear: "1933"
-  },
-  {
-    date: "November 1933",
-    location: "Bombay, India",
-    title: "Indian Subcontinent",
-    description: "Ernest arrives in India, reviewing the telephone systems of the British Raj and experiencing the vastness of the subcontinent.",
-    image: "/images/journey/bombay-1933.jpg",
-    fallbackImage: "/images/bombay-1933.jpg",
-    searchMonth: "11",
-    searchYear: "1933"
-  },
-  {
-    date: "December 1933",
-    location: "Return to America",
-    title: "Homeward Bound",
-    description: "After nearly a year of travel, Ernest returns to America with a wealth of experience and observations that would later influence his writing.",
-    image: "/images/journey/return-america-1933.jpg",
-    fallbackImage: "/images/return-1933.jpg",
-    searchMonth: "12",
-    searchYear: "1933"
-  }
-]
-
 export default function JourneyPage() {
   const [logbookData, setLogbookData] = useState<LogbookData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     const fetchLogbookData = async () => {
       try {
         const response = await fetch('/data/complete_logbook.json')
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+        if (response.ok) {
+          const data = await response.json()
+          setLogbookData(data)
         }
-        const data = await response.json()
-        setLogbookData(data)
-      } catch (err) {
-        console.error('Error fetching logbook data:', err)
-        setError(err instanceof Error ? err.message : 'Failed to load logbook data')
+      } catch (error) {
+        console.error('Error loading logbook data:', error)
       } finally {
         setLoading(false)
       }
@@ -181,64 +53,132 @@ export default function JourneyPage() {
     fetchLogbookData()
   }, [])
 
-  const handleImageError = (imagePath: string) => {
-    setImageErrors(prev => new Set(prev).add(imagePath))
-  }
-
-  // Function to find logbook entries for a specific month/year
-  const findEntriesForMonth = (month: string, year: string) => {
+  // Helper function to parse dates and find matching entries
+  const findEntriesForMonth = (targetMonth: string, targetYear: string = "1933") => {
     if (!logbookData) return []
     
     return logbookData.entries.filter(entry => {
       if (!entry.date_entry) return false
       
       const dateStr = entry.date_entry.toLowerCase()
+      const monthStr = targetMonth.toLowerCase()
       
-      if (dateStr.match(/^\d{4}-\d{2}-\d{2}$/)) {
-        const [entryYear, entryMonth] = dateStr.split('-')
-        return entryYear === year && entryMonth === month
-      }
-      
-      if (dateStr.includes(year)) {
-        const monthNames = [
-          'january', 'february', 'march', 'april', 'may', 'june',
-          'july', 'august', 'september', 'october', 'november', 'december'
-        ]
-        const monthIndex = monthNames.findIndex(name => dateStr.includes(name))
-        if (monthIndex !== -1) {
-          const expectedMonth = String(monthIndex + 1).padStart(2, '0')
-          return expectedMonth === month
-        }
-      }
-      
-      return false
+      return (dateStr.includes(monthStr) && dateStr.includes(targetYear)) ||
+             (dateStr.includes(`${targetYear}-${getMonthNumber(targetMonth)}`))
     })
   }
 
-  const getBestEntryForTimelineItem = (timelineItem: any) => {
-    const entries = findEntriesForMonth(timelineItem.searchMonth, timelineItem.searchYear)
-    if (entries.length === 0) return null
-    
-    return entries.reduce((best, current) => 
-      current.confidence_score > best.confidence_score ? current : best
-    )
+  const getMonthNumber = (monthName: string): string => {
+    const months: { [key: string]: string } = {
+      'january': '01', 'february': '02', 'march': '03', 'april': '04',
+      'may': '05', 'june': '06', 'july': '07', 'august': '08',
+      'september': '09', 'october': '10', 'november': '11', 'december': '12'
+    }
+    return months[monthName.toLowerCase()] || '00'
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading journey data...</div>
-      </div>
-    )
+  const getImagePath = (locationId: string): string => {
+    return `/images/journey/${locationId}.jpg`
   }
 
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
-        <div className="text-red-400 text-xl">Error: {error}</div>
-      </div>
-    )
-  }
+  const timelineEvents = [
+    {
+      id: "departure",
+      date: "January 1933",
+      month: "january",
+      location: "San Francisco, California",
+      description: "Ernest K. Gann begins his ambitious world tour, setting off from the bustling San Francisco waterfront with dreams of adventure and discovery.",
+      coordinates: { lat: 37.7749, lng: -122.4194 }
+    },
+    {
+      id: "hawaii",
+      date: "January 1933",
+      month: "january", 
+      location: "Honolulu, Hawaii",
+      description: "First stop in the vast Pacific, experiencing the tropical paradise and unique culture of the Hawaiian Islands.",
+      coordinates: { lat: 21.3099, lng: -157.8581 }
+    },
+    {
+      id: "japan",
+      date: "February 1933",
+      month: "february",
+      location: "Tokyo, Japan",
+      description: "Exploring the fascinating blend of ancient traditions and modern innovation in the Land of the Rising Sun.",
+      coordinates: { lat: 35.6762, lng: 139.6503 }
+    },
+    {
+      id: "china",
+      date: "March 1933",
+      month: "march",
+      location: "Shanghai, China",
+      description: "Witnessing the bustling international hub of Shanghai, where East meets West in a vibrant cultural exchange.",
+      coordinates: { lat: 31.2304, lng: 121.4737 }
+    },
+    {
+      id: "philippines",
+      date: "April 1933",
+      month: "april",
+      location: "Manila, Philippines",
+      description: "Island adventures in the tropical Philippines, experiencing the rich cultural heritage and natural beauty.",
+      coordinates: { lat: 14.5995, lng: 120.9842 }
+    },
+    {
+      id: "singapore",
+      date: "May 1933",
+      month: "may",
+      location: "Singapore",
+      description: "Gateway to Southeast Asia, experiencing the multicultural melting pot of this strategic port city.",
+      coordinates: { lat: 1.3521, lng: 103.8198 }
+    },
+    {
+      id: "india",
+      date: "June 1933",
+      month: "june",
+      location: "Calcutta, India",
+      description: "Immersing in the rich tapestry of Indian culture, from ancient traditions to the grandeur of the British Raj.",
+      coordinates: { lat: 22.5726, lng: 88.3639 }
+    },
+    {
+      id: "middle_east",
+      date: "July 1933",
+      month: "july",
+      location: "Baghdad, Iraq",
+      description: "Journey through ancient Mesopotamia, where civilization began and history echoes through every street.",
+      coordinates: { lat: 33.3152, lng: 44.3661 }
+    },
+    {
+      id: "egypt",
+      date: "August 1933",
+      month: "august",
+      location: "Cairo, Egypt",
+      description: "Standing in awe before the ancient pyramids and experiencing the timeless majesty of Egyptian civilization.",
+      coordinates: { lat: 30.0444, lng: 31.2357 }
+    },
+    {
+      id: "africa",
+      date: "September 1933",
+      month: "september",
+      location: "Nairobi, Kenya",
+      description: "Safari adventures in East Africa, witnessing the incredible wildlife and vast landscapes of the continent.",
+      coordinates: { lat: -1.2921, lng: 36.8219 }
+    },
+    {
+      id: "europe",
+      date: "October 1933",
+      month: "october",
+      location: "London, England",
+      description: "Experiencing the heart of the British Empire, from foggy London streets to the corridors of power.",
+      coordinates: { lat: 51.5074, lng: -0.1278 }
+    },
+    {
+      id: "return",
+      date: "November 1933",
+      month: "november",
+      location: "New York, USA",
+      description: "The triumphant return to America, completing an extraordinary journey around the world with countless stories to tell.",
+      coordinates: { lat: 40.7128, lng: -74.0060 }
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
@@ -255,87 +195,102 @@ export default function JourneyPage() {
             Back to Home
           </Link>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            The 1933 Journey
-          </h1>
-          <p className="text-xl text-blue-200 max-w-3xl">
-            Follow Ernest K. Gann&apos;s world tour through Europe and Asia, 
-            reviewing telephone companies and experiencing diverse cultures.
-          </p>
+          <div className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              The 1933 Journey
+            </h1>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Follow Ernest K. Gann&apos;s extraordinary world tour through twelve remarkable destinations, 
+              spanning four continents and countless adventures.
+            </p>
+            {!loading && logbookData && (
+              <div className="mt-6 text-blue-300">
+                <span className="bg-blue-900/30 px-4 py-2 rounded-full">
+                  {logbookData.metadata.total_entries} digitized logbook pages documenting this incredible journey
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
-      {/* Journey Timeline */}
+      {/* Timeline */}
       <main className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-16">
-            {journeyData.map((stop, index) => {
-              const logbookEntry = getBestEntryForTimelineItem(stop)
-              const entryCount = findEntriesForMonth(stop.searchMonth, stop.searchYear).length
-              const hasImageError = imageErrors.has(stop.image)
+            {timelineEvents.map((event, index) => {
+              const entriesForMonth = findEntriesForMonth(event.month)
+              const isEven = index % 2 === 0
               
               return (
-                <div key={index} className="relative">
-                  {/* Timeline connector */}
-                  {index < journeyData.length - 1 && (
-                    <div className="absolute left-8 top-24 w-0.5 h-32 bg-blue-500 opacity-30"></div>
-                  )}
-                  
-                  {/* Timeline node */}
-                  <div className="absolute left-6 top-8 w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900"></div>
-                  
-                  {/* Content */}
-                  <div className="ml-20 grid md:grid-cols-2 gap-8 items-center">
-                    {/* Image */}
-                    <div className="relative">
-                      <img 
-                        src={hasImageError ? stop.fallbackImage : stop.image}
-                        alt={`${stop.location} in ${stop.date}`}
-                        className="w-full h-64 object-cover rounded-lg shadow-lg"
-                        onError={() => handleImageError(stop.image)}
+                <div key={event.id} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                  {/* Image */}
+                  <div className="lg:w-1/2">
+                    <div className="relative group">
+                      <img
+                        src={getImagePath(event.id)}
+                        alt={`${event.location} in ${event.date}`}
+                        className="w-full h-64 object-cover rounded-xl shadow-2xl transform transition-transform group-hover:scale-105"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement
+                          target.src = '/images/placeholder-journey.jpg'
+                        }}
                       />
-                      {!hasImageError && (
-                        <div className="absolute top-2 right-2 bg-purple-600 text-white px-2 py-1 rounded text-xs">
-                          🎨 AI Generated
-                        </div>
-                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-xl" />
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <div className="text-sm font-medium opacity-90">{event.date}</div>
+                        <div className="text-lg font-bold">{event.location}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="lg:w-1/2 space-y-6">
+                    <div className="space-y-2">
+                      <div className="text-blue-300 font-semibold text-lg">{event.date}</div>
+                      <h2 className="text-3xl font-bold text-white">{event.location}</h2>
                     </div>
                     
-                    {/* Text Content */}
-                    <div>
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="text-blue-400 font-semibold">{stop.date}</div>
-                        {entryCount > 0 && (
-                          <div className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs">
-                            {entryCount} logbook {entryCount === 1 ? 'entry' : 'entries'}
-                          </div>
-                        )}
-                      </div>
-                      
-                      <h2 className="text-2xl font-bold text-white mb-2">{stop.title}</h2>
-                      <h3 className="text-lg text-blue-300 mb-4">{stop.location}</h3>
-                      <p className="text-slate-300 leading-relaxed mb-6">{stop.description}</p>
-                      
-                      {logbookEntry && (
-                        <div className="bg-slate-800 p-4 rounded-lg mb-4">
-                          <h4 className="text-sm font-semibold text-blue-300 mb-2">From Ernest&apos;s Logbook:</h4>
-                          <p className="text-slate-300 text-sm italic mb-2">
-                            &quot;{logbookEntry.content.substring(0, 200)}...&quot;
-                          </p>
-                          <div className="text-xs text-slate-400">
-                            Confidence: {(logbookEntry.confidence_score * 100).toFixed(1)}% • 
-                            Method: {logbookEntry.processing_method}
-                          </div>
+                    <p className="text-slate-300 text-lg leading-relaxed">
+                      {event.description}
+                    </p>
+
+                    {/* Logbook entries for this month */}
+                    {entriesForMonth.length > 0 && (
+                      <div className="bg-slate-800/50 rounded-lg p-6 border border-slate-700">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-lg font-semibold text-white">
+                            Logbook Entries ({entriesForMonth.length})
+                          </h3>
+                          <Link 
+                            href={`/logbook?month=${event.month}`}
+                            className="text-blue-300 hover:text-white transition-colors text-sm font-medium"
+                          >
+                            View All →
+                          </Link>
                         </div>
-                      )}
-                      
-                      <Link 
-                        href={`/logbook?month=${stop.searchMonth}&year=${stop.searchYear}`}
-                        className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                      >
-                        View Logbook Entries →
-                      </Link>
-                    </div>
+                        <div className="space-y-3">
+                          {entriesForMonth.slice(0, 2).map((entry, i) => (
+                            <div key={i} className="text-slate-300 text-sm">
+                              <div className="font-medium text-blue-300">{entry.date_entry}</div>
+                              <div className="mt-1 line-clamp-2">
+                                {entry.content.substring(0, 150)}...
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    <Link 
+                      href={`/logbook?location=${encodeURIComponent(event.location)}`}
+                      className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
+                    >
+                      View Logbook Entries
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               )
@@ -343,6 +298,20 @@ export default function JourneyPage() {
           </div>
         </div>
       </main>
+
+      {/* Footer with AI Generated Disclaimer */}
+      <footer className="bg-slate-900/50 border-t border-slate-700 py-8 px-4 mt-16">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="text-slate-400 text-sm">
+            <p className="mb-2">
+              <sup>*</sup> Location images are AI-generated historical reconstructions based on 1933 period references
+            </p>
+            <p>
+              Created to illustrate Ernest K. Gann&apos;s journey as documented in his original logbook
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
