@@ -561,7 +561,7 @@ function TimelineLogbookContent() {
                          <div className="mb-8 border-b-2 border-brown-400 pb-4">
                            <h2 className="typewriter-title text-brown-800 text-4xl font-bold">{timelineEntry.location}</h2>
                            {(() => {
-                             const dates = [...new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))].sort()
+                             const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                              if (dates.length > 1) {
                                return (
                                  <div className="mt-2">
@@ -675,7 +675,7 @@ function TimelineLogbookContent() {
                       <div className="mb-6 border-b-2 border-brown-400 pb-4">
                         <h2 className="typewriter-title text-brown-800 text-2xl font-bold">{timelineEntry.location}</h2>
                         {(() => {
-                          const dates = [...new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))].sort()
+                          const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                           if (dates.length > 1) {
                             return (
                               <div className="mt-2">
