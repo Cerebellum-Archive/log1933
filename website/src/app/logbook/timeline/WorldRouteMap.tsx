@@ -151,8 +151,8 @@ const WorldRouteMap = () => {
           })
 
         // Add hover effects
-        marker.on('mouseover', function() {
-          this.openPopup()
+        marker.on('mouseover', () => {
+          marker.openPopup()
         })
       })
 
