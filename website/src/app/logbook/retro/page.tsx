@@ -326,13 +326,23 @@ function RetroLogbookContent() {
       {/* Header */}
       <div className="max-w-6xl mx-auto">
         <div className="vintage-paper torn-edges p-6 mb-6 shadow-lg">
-          <Link 
-            href="/logbook"
-            className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors mb-4 typewriter-text"
-          >
-            <span className="mr-2">←</span>
-            Back to Modern View
-          </Link>
+          <div className="flex items-center justify-between mb-4">
+            <Link 
+              href="/logbook"
+              className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+            >
+              <span className="mr-2">←</span>
+              Back to Modern View
+            </Link>
+            
+            <Link 
+              href="/logbook/timeline"
+              className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text bg-brown-100 px-3 py-1 rounded border border-brown-300"
+            >
+              <span className="mr-2">🗓️</span>
+              Timeline View
+            </Link>
+          </div>
           
           <h1 className="text-4xl md:text-6xl typewriter-title text-center mb-4">
             Ernest K. Gann's

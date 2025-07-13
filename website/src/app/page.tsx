@@ -105,6 +105,12 @@ export default function Home() {
               >
                 📖 Retro Typewriter View
               </Link>
+              <Link 
+                href="/logbook/timeline" 
+                className="btn-secondary"
+              >
+                🗓️ Timeline View
+              </Link>
             </div>
           </div>
         </section>
