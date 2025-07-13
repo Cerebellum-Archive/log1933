@@ -92,12 +92,20 @@ export default function Home() {
               Explore the carefully preserved pages of Ernest&apos;s 1933 world tour logbook, 
               digitized and enhanced with modern technology.
             </p>
-            <Link 
-              href="/logbook" 
-              className="btn-primary"
-            >
-              View the Logbook
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/logbook" 
+                className="btn-primary"
+              >
+                View the Logbook
+              </Link>
+              <Link 
+                href="/logbook/retro" 
+                className="btn-secondary"
+              >
+                📖 Retro Typewriter View
+              </Link>
+            </div>
           </div>
         </section>
       </main>
