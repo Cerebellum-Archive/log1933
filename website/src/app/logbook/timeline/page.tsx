@@ -71,8 +71,38 @@ interface TimelineEntry {
 
 // Helper function to break content into logical paragraphs
 const formatContentForReading = (content: string): string[] => {
+  // Function to clean up nonsensical OCR text
+  const cleanupOCRText = (text: string): string => {
+    // Remove nonsensical patterns at the beginning of text
+    const nonsensicalPatterns = [
+      /^GD JO AMBAT[^.]*?\.\s*/,
+      /^[A-Z]{2,}\s+[A-Z]{2,}\s+[A-Z]{2,}[^.]*?\.\s*/,
+      /^[a-zA-Z0-9\s]{0,10}[^a-zA-Z\s][^.]*?\.\s*/,
+      /^[0-9]+\s+[A-Z]{2,}\s+[A-Z]{2,}[^.]*?\.\s*/,
+      /^[^\w\s]+[^.]*?\.\s*/
+    ]
+    
+    let cleanedText = text
+    
+    // Check if text starts with nonsensical patterns
+    for (const pattern of nonsensicalPatterns) {
+      if (pattern.test(cleanedText)) {
+        cleanedText = cleanedText.replace(pattern, '...\n\n')
+        break
+      }
+    }
+    
+    // Also clean up any remaining nonsensical fragments within the text
+    cleanedText = cleanedText.replace(/[^\w\s.,!?;:'"()\-–—]+/g, '')
+    
+    return cleanedText
+  }
+
+  // Clean up the content first
+  const cleanedContent = cleanupOCRText(content)
+  
   // Split by existing line breaks and filter out empty strings
-  const paragraphs = content.split('\n').filter(p => p.trim().length > 0)
+  const paragraphs = cleanedContent.split('\n').filter(p => p.trim().length > 0)
   
   // Further break down very long paragraphs (over 500 characters)
   const formattedParagraphs: string[] = []
@@ -330,14 +360,67 @@ function TimelineLogbookContent() {
   }
 
   const scrollToLocation = (locationName: string) => {
+    // Enhanced location mapping to match map pins with timeline entries
+    const locationMapping: { [key: string]: string } = {
+      'Chicago': 'Chicago',
+      'London': 'London',
+      'Liverpool': 'Liverpool',
+      'Paris': 'Paris',
+      'Brussels': 'Brussels',
+      'Antwerp': 'Antwerp',
+      'Berlin': 'Berlin',
+      'Vienna': 'Vienna',
+      'Switzerland': 'Switzerland',
+      'Italy': 'Italy',
+      'Lisbon': 'Lisbon',
+      'Morocco': 'Morocco',
+      'Suez Canal': 'Egypt',
+      'Ceylon': 'Ceylon',
+      'Singapore': 'Singapore',
+      'Malay States': 'Singapore',
+      'Shanghai': 'China',
+      'Beijing': 'China',
+      'Manchuria': 'China',
+      'Japan': 'Japan',
+      'San Francisco': 'San Francisco',
+      'Los Angeles': 'Los Angeles',
+      'Vancouver': 'Vancouver',
+      'St. Paul': 'St. Paul'
+    }
+    
+    // First try exact mapping
+    const mappedLocation = locationMapping[locationName] || locationName
+    
     // Find the timeline entry that matches the location name
-    const matchingEntry = timelineEntries.find(entry => 
-      entry.location.toLowerCase().includes(locationName.toLowerCase()) ||
-      locationName.toLowerCase().includes(entry.location.toLowerCase())
-    )
+    const matchingEntry = timelineEntries.find(entry => {
+      const entryLocation = entry.location.toLowerCase()
+      const searchLocation = mappedLocation.toLowerCase()
+      
+      // Try exact match first
+      if (entryLocation === searchLocation) return true
+      
+      // Try partial matches
+      if (entryLocation.includes(searchLocation) || searchLocation.includes(entryLocation)) return true
+      
+      // Try matching common variations
+      const variations = [
+        searchLocation,
+        searchLocation.replace(/\s+/g, ''),
+        searchLocation.split(' ')[0],
+        searchLocation.split(',')[0]
+      ]
+      
+      return variations.some(variation => 
+        entryLocation.includes(variation) || variation.includes(entryLocation)
+      )
+    })
     
     if (matchingEntry) {
+      console.log(`Scrolling to location: ${locationName} -> ${matchingEntry.location}`)
       scrollToEntry(matchingEntry.id)
+    } else {
+      console.log(`No matching timeline entry found for: ${locationName}`)
+      console.log('Available locations:', timelineEntries.map(entry => entry.location))
     }
   }
 
@@ -661,7 +744,10 @@ function TimelineLogbookContent() {
                                                              {/* Entry Content - Formatted in readable paragraphs with better spacing */}
                                <div className="space-y-3">
                                  {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-normal">
+                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-normal" style={{
+                                     textIndent: paragraph.startsWith('...') ? '0' : '2.5rem',
+                                     textAlign: 'justify'
+                                   }}>
                                      {paragraph}
                                    </p>
                                  ))}
@@ -777,7 +863,10 @@ function TimelineLogbookContent() {
                             
                             <div className="space-y-2">
                               {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-normal">
+                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-normal" style={{
+                                  textIndent: paragraph.startsWith('...') ? '0' : '2rem',
+                                  textAlign: 'justify'
+                                }}>
                                   {paragraph}
                                 </p>
                               ))}
