@@ -635,9 +635,9 @@ function TimelineLogbookContent() {
                                </div>
 
                                                              {/* Entry Content - Formatted in readable paragraphs with better spacing */}
-                               <div className="space-y-8">
+                               <div className="space-y-3">
                                  {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-base leading-relaxed">
+                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-normal">
                                      {paragraph}
                                    </p>
                                  ))}
@@ -751,9 +751,9 @@ function TimelineLogbookContent() {
                               </div>
                             </div>
                             
-                            <div className="space-y-6">
+                            <div className="space-y-2">
                               {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-relaxed">
+                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-normal">
                                   {paragraph}
                                 </p>
                               ))}
