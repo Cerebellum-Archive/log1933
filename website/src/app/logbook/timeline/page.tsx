@@ -681,7 +681,7 @@ function TimelineLogbookContent() {
                   }}
                   className="scroll-mt-20"
                 >
-                  <div className="vintage-paper p-8 rounded-lg shadow-2xl">
+                  <div className="vintage-paper p-8 px-12 rounded-lg shadow-2xl">
                     {/* Desktop Layout: Full Width */}
                     <div className="hidden md:block">
                                              {/* Content - Full Width */}
@@ -744,9 +744,10 @@ function TimelineLogbookContent() {
                                                              {/* Entry Content - Formatted in readable paragraphs with better spacing */}
                                <div className="space-y-3">
                                  {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-normal" style={{
+                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-tight" style={{
                                      textIndent: paragraph.startsWith('...') ? '0' : '2.5rem',
-                                     textAlign: 'justify'
+                                     textAlign: 'justify',
+                                     lineHeight: '1.2'
                                    }}>
                                      {paragraph}
                                    </p>
@@ -863,9 +864,10 @@ function TimelineLogbookContent() {
                             
                             <div className="space-y-2">
                               {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-normal" style={{
+                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-tight" style={{
                                   textIndent: paragraph.startsWith('...') ? '0' : '2rem',
-                                  textAlign: 'justify'
+                                  textAlign: 'justify',
+                                  lineHeight: '1.2'
                                 }}>
                                   {paragraph}
                                 </p>

@@ -423,17 +423,17 @@ function LogbookContent() {
               
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">Content</h3>
-                <div className="bg-slate-700 p-8 rounded-lg mx-4" style={{ 
+                <div className="bg-slate-700 p-8 px-12 rounded-lg mx-4" style={{ 
                   fontFamily: 'Courier, monospace',
-                  lineHeight: '1.6'
+                  lineHeight: '1.2'
                 }}>
-                  <div className="text-slate-200 leading-relaxed text-sm">
+                  <div className="text-slate-200 leading-tight text-sm">
                     {formatTextWithIndentation(selectedEntry.content).split('\n\n').map((paragraph, index) => (
                       <p key={index} className="mb-4 text-sm" style={{ 
                         textIndent: paragraph.startsWith('...') ? '0' : '3rem',
                         textAlign: 'justify',
                         fontSize: '14px',
-                        lineHeight: '1.5'
+                        lineHeight: '1.2'
                       }}>
                         {paragraph}
                       </p>
