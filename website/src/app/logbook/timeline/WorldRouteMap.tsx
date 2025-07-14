@@ -34,7 +34,11 @@ const journeyStops = [
   { name: 'Chicago', lat: 41.8781, lng: -87.6298, order: 28 }
 ]
 
-const WorldRouteMap = () => {
+interface WorldRouteMapProps {
+  onLocationClick?: (location: string) => void
+}
+
+const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<any>(null)
 
@@ -144,7 +148,7 @@ const WorldRouteMap = () => {
             <div style="font-family: 'Courier Prime', monospace; color: #2c1810;">
               <strong>${stop.name}</strong><br/>
               Stop ${stop.order} of 28<br/>
-              <em>Ernest's 1933 World Tour</em>
+              <em>Click to scroll to timeline location</em>
             </div>
           `, {
             className: 'custom-popup'
@@ -153,6 +157,45 @@ const WorldRouteMap = () => {
         // Add hover effects
         marker.on('mouseover', () => {
           marker.openPopup()
+        })
+
+        // Add click handler to scroll to timeline location
+        marker.on('click', () => {
+          if (onLocationClick) {
+            // Map journey stop names to timeline location names
+            const locationMapping: { [key: string]: string } = {
+              'Chicago': 'Chicago',
+              'Atlantic Ocean': 'Atlantic Ocean',
+              'Southampton': 'Southampton',
+              'London': 'London',
+              'Liverpool': 'Liverpool', 
+              'Paris': 'Paris',
+              'Brussels': 'Brussels',
+              'Antwerp': 'Antwerp',
+              'Berlin': 'Berlin',
+              'Vienna': 'Vienna',
+              'Switzerland': 'Switzerland',
+              'Italy': 'Italy',
+              'Lisbon': 'Lisbon',
+              'Morocco': 'Morocco',
+              'Suez Canal': 'Suez Canal',
+              'Ceylon': 'Ceylon',
+              'Singapore': 'Singapore',
+              'Malay States': 'Malay States',
+              'Shanghai': 'Shanghai',
+              'Beijing': 'Beijing',
+              'Manchuria': 'Manchuria',
+              'Japan': 'Japan',
+              'Pacific Ocean': 'Pacific Ocean',
+              'San Francisco': 'San Francisco',
+              'Los Angeles': 'Los Angeles',
+              'Vancouver': 'Vancouver',
+              'St. Paul': 'St. Paul'
+            }
+            
+            const timelineLocation = locationMapping[stop.name] || stop.name
+            onLocationClick(timelineLocation)
+          }
         })
       })
 

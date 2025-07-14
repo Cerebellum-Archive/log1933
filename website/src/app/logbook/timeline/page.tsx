@@ -104,7 +104,7 @@ const formatContentForReading = (content: string): string[] => {
 }
 
 // Journey Route component with professional world map
-const JourneyRoute = () => {
+const JourneyRoute = ({ onLocationClick }: { onLocationClick?: (location: string) => void }) => {
   return (
     <div className="vintage-paper rounded-lg p-8 mb-8 shadow-2xl">
       <h2 className="text-5xl typewriter-title text-brown-800 mb-8 text-center">
@@ -121,13 +121,14 @@ const JourneyRoute = () => {
         </p>
       </div>
       
-      <div className="relative rounded-lg border-4 border-brown-400 overflow-hidden shadow-inner" style={{ height: '500px' }}>
-        <WorldRouteMap />
+      <div className="relative rounded-lg border-4 border-brown-400 overflow-hidden shadow-inner" style={{ height: '400px' }}>
+        <WorldRouteMap onLocationClick={onLocationClick} />
       </div>
       
       <div className="mt-8 text-center">
         <p className="typewriter-text text-brown-500 text-lg">
-          Interactive map showing Ernest's complete 1933 world tour route
+          Interactive map showing Ernest's complete 1933 world tour route<br/>
+          <span className="text-brown-400 text-base">Click on any location to scroll to that part of the timeline</span>
         </p>
       </div>
     </div>
@@ -143,6 +144,7 @@ function TimelineLogbookContent() {
   const [activeEntry, setActiveEntry] = useState<string | null>(null)
   const [filteredEntries, setFilteredEntries] = useState<TimelineEntry[]>([])
   const [expandedNotes, setExpandedNotes] = useState<{ [key: string]: boolean }>({})
+  const [showBackToTop, setShowBackToTop] = useState(false)
   
   const contentRef = useRef<HTMLDivElement>(null)
   const timelineRefs = useRef<{ [key: string]: HTMLDivElement }>({})
@@ -170,6 +172,16 @@ function TimelineLogbookContent() {
     }
 
     fetchLogbookData()
+  }, [])
+
+  // Back to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const processTimelineEntries = (entries: LogbookEntry[]) => {
@@ -291,6 +303,22 @@ function TimelineLogbookContent() {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       setActiveEntry(entryId)
     }
+  }
+
+  const scrollToLocation = (locationName: string) => {
+    // Find the timeline entry that matches the location name
+    const matchingEntry = timelineEntries.find(entry => 
+      entry.location.toLowerCase().includes(locationName.toLowerCase()) ||
+      locationName.toLowerCase().includes(entry.location.toLowerCase())
+    )
+    
+    if (matchingEntry) {
+      scrollToEntry(matchingEntry.id)
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const toggleNotes = (entryKey: string) => {
@@ -443,25 +471,19 @@ function TimelineLogbookContent() {
               >
                 ← Back to Logbook
               </Link>
-              <Link 
-                href="/logbook/retro"
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
-              >
-                📖 Retro View
-              </Link>
             </div>
             
-            <h1 className="text-6xl typewriter-title text-brown-800">
+            <h1 className="text-3xl md:text-6xl typewriter-title text-brown-800">
               Ernest's 1933 World Tour Timeline
             </h1>
             
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
               <input
                 type="text"
                 placeholder="Search timeline..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-vintage w-96"
+                className="search-vintage w-full md:w-96"
               />
               
               {logbookData && (
@@ -476,12 +498,12 @@ function TimelineLogbookContent() {
 
       {/* Journey Route */}
       <div className="px-8 py-8">
-        <JourneyRoute />
+        <JourneyRoute onLocationClick={scrollToLocation} />
       </div>
 
-      <div className="flex px-8">
+      <div className="flex flex-col lg:flex-row px-4 md:px-8">
         {/* Timeline Sidebar */}
-        <div className="w-80 pr-8 h-screen sticky top-24 overflow-y-auto">
+        <div className="w-full lg:w-80 lg:pr-8 mb-8 lg:mb-0 lg:h-screen lg:sticky lg:top-24 lg:overflow-y-auto">
           <div className="vintage-paper p-6 rounded-lg shadow-lg">
             <h2 className="text-3xl typewriter-title text-brown-800 mb-6 text-center">Journey Timeline</h2>
             
@@ -533,7 +555,7 @@ function TimelineLogbookContent() {
         </div>
 
         {/* Main Content - Much Wider */}
-        <div className="flex-1 py-8 overflow-y-auto" ref={contentRef}>
+        <div className="flex-1 py-4 lg:py-8 overflow-y-auto" ref={contentRef}>
           {filteredEntries.length === 0 ? (
             <div className="vintage-paper p-12 rounded-lg shadow-2xl text-center">
               <div className="text-6xl mb-6">📖</div>
@@ -564,26 +586,29 @@ function TimelineLogbookContent() {
                              const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                              if (dates.length > 1) {
                                return (
-                                 <div className="mt-2">
+                                 <div className="mt-2 flex items-center gap-4">
                                    <span className="typewriter-text text-brown-600 text-xl">
                                      📅 {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
+                                   </span>
+                                   <span className="typewriter-text text-brown-500 text-lg">
+                                     • {timelineEntry.entries.length} documents
                                    </span>
                                  </div>
                                )
                              } else {
                                return (
-                                 <div className="mt-2">
+                                 <div className="mt-2 flex items-center gap-4">
                                    <DateIndicator 
                                      dateStr={timelineEntry.date} 
                                      isInferred={timelineEntry.entries[0]?.date_inferred}
                                    />
+                                   <span className="typewriter-text text-brown-500 text-lg">
+                                     • {timelineEntry.entries.length} documents
+                                   </span>
                                  </div>
                                )
                              }
                            })()}
-                           <div className="mt-2 typewriter-text text-brown-500 text-lg">
-                             {timelineEntry.entries.length} documents
-                           </div>
                          </div>
                          
                          <div className="space-y-8">
@@ -597,7 +622,7 @@ function TimelineLogbookContent() {
                                        type={entry.document_type}
                                        isComplete={entry.is_complete}
                                      />
-                                     <h3 className="typewriter-title text-brown-800 font-bold text-3xl">
+                                     <h3 className="typewriter-title text-brown-800 font-bold text-2xl">
                                        {entry.document_title || `Document ${entryIndex + 1}`}
                                      </h3>
                                    </div>
@@ -612,7 +637,7 @@ function TimelineLogbookContent() {
                                                              {/* Entry Content - Formatted in readable paragraphs with better spacing */}
                                <div className="space-y-8">
                                  {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 leading-relaxed">
+                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-base leading-relaxed">
                                      {paragraph}
                                    </p>
                                  ))}
@@ -678,26 +703,29 @@ function TimelineLogbookContent() {
                           const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                           if (dates.length > 1) {
                             return (
-                              <div className="mt-2">
+                              <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
                                 <span className="typewriter-text text-brown-600 text-lg">
                                   📅 {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
+                                </span>
+                                <span className="typewriter-text text-brown-500 text-base mt-1 sm:mt-0">
+                                  • {timelineEntry.entries.length} documents
                                 </span>
                               </div>
                             )
                           } else {
                             return (
-                              <div className="mt-2">
+                              <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
                                 <DateIndicator 
                                   dateStr={timelineEntry.date} 
                                   isInferred={timelineEntry.entries[0]?.date_inferred}
                                 />
+                                <span className="typewriter-text text-brown-500 text-base mt-1 sm:mt-0">
+                                  • {timelineEntry.entries.length} documents
+                                </span>
                               </div>
                             )
                           }
                         })()}
-                        <div className="mt-2 typewriter-text text-brown-500">
-                          {timelineEntry.entries.length} documents
-                        </div>
                       </div>
 
                       <div className="space-y-6">
@@ -711,7 +739,7 @@ function TimelineLogbookContent() {
                                     type={entry.document_type}
                                     isComplete={entry.is_complete}
                                   />
-                                  <h3 className="typewriter-title text-brown-800 font-bold text-2xl">
+                                  <h3 className="typewriter-title text-brown-800 font-bold text-xl">
                                     {entry.document_title || `Document ${entryIndex + 1}`}
                                   </h3>
                                 </div>
@@ -725,7 +753,7 @@ function TimelineLogbookContent() {
                             
                             <div className="space-y-6">
                               {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="typewriter-text text-brown-800 leading-relaxed">
+                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-relaxed">
                                   {paragraph}
                                 </p>
                               ))}
@@ -825,6 +853,17 @@ function TimelineLogbookContent() {
             </div>
           </div>
         </footer>
+      )}
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-brown-600 hover:bg-brown-700 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+          aria-label="Back to top"
+        >
+          <span className="text-xl md:text-2xl">↑</span>
+        </button>
       )}
     </div>
   )
