@@ -297,6 +297,30 @@ function TimelineLogbookContent() {
     }
   }
 
+  const normalizeLocationName = (location: string) => {
+    // Split by comma and take first part, then normalize
+    const primaryLocation = location.split(',')[0].trim()
+    
+    // Handle special cases where first word alone isn't descriptive enough
+    const locationMappings: { [key: string]: string } = {
+      'New': 'New York',
+      'San': 'San Francisco',
+      'Los': 'Los Angeles',
+      'St.': 'St. Paul',
+      'St': 'St. Paul'
+    }
+    
+    const firstWord = primaryLocation.split(' ')[0]
+    
+    // If first word has a known mapping, use it
+    if (locationMappings[firstWord]) {
+      return locationMappings[firstWord]
+    }
+    
+    // For most locations, first word is sufficient (London, Paris, Berlin, etc.)
+    return firstWord
+  }
+
   const scrollToEntry = (entryId: string) => {
     const element = timelineRefs.current[entryId]
     if (element) {
@@ -543,7 +567,7 @@ function TimelineLogbookContent() {
                           />
                         </div>
                         <div className="typewriter-text text-brown-600 font-semibold text-xl">
-                          {timelineEntry.location.split(',')[0].split(' ')[0]}
+                          {normalizeLocationName(timelineEntry.location)}
                         </div>
                       </button>
                     </div>
