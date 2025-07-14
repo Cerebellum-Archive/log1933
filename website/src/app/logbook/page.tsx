@@ -48,6 +48,46 @@ function LogbookContent() {
   const filterMonth = searchParams.get('month')
   const filterYear = searchParams.get('year')
 
+  // Function to clean up nonsensical OCR text
+  const cleanupOCRText = (text: string): string => {
+    // Remove nonsensical patterns at the beginning of text
+    const nonsensicalPatterns = [
+      /^GD JO AMBAT[^.]*?\.\s*/,
+      /^[A-Z]{2,}\s+[A-Z]{2,}\s+[A-Z]{2,}[^.]*?\.\s*/,
+      /^[a-zA-Z0-9\s]{0,10}[^a-zA-Z\s][^.]*?\.\s*/,
+      /^[0-9]+\s+[A-Z]{2,}\s+[A-Z]{2,}[^.]*?\.\s*/,
+      /^[^\w\s]+[^.]*?\.\s*/
+    ]
+    
+    let cleanedText = text
+    
+    // Check if text starts with nonsensical patterns
+    for (const pattern of nonsensicalPatterns) {
+      if (pattern.test(cleanedText)) {
+        cleanedText = cleanedText.replace(pattern, '...\n\n')
+        break
+      }
+    }
+    
+    // Also clean up any remaining nonsensical fragments within the text
+    cleanedText = cleanedText.replace(/[^\w\s.,!?;:'"()\-–—]+/g, '')
+    
+    return cleanedText
+  }
+
+  // Function to format text with proper paragraph indentation
+  const formatTextWithIndentation = (text: string): string => {
+    const cleanedText = cleanupOCRText(text)
+    
+    // Split into paragraphs and add indentation
+    const paragraphs = cleanedText.split(/\n\s*\n/)
+    
+    return paragraphs
+      .map(paragraph => paragraph.trim())
+      .filter(paragraph => paragraph.length > 0)
+      .join('\n\n')
+  }
+
   useEffect(() => {
     const fetchLogbookData = async () => {
       try {
@@ -383,10 +423,20 @@ function LogbookContent() {
               
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-3">Content</h3>
-                <div className="bg-slate-700 p-4 rounded-lg">
-                  <p className="text-slate-200 leading-relaxed whitespace-pre-wrap">
-                    {selectedEntry.content}
-                  </p>
+                <div className="bg-slate-700 p-8 rounded-lg mx-4" style={{ 
+                  fontFamily: 'Courier, monospace',
+                  lineHeight: '1.6'
+                }}>
+                  <div className="text-slate-200 leading-relaxed">
+                    {formatTextWithIndentation(selectedEntry.content).split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="mb-4" style={{ 
+                        textIndent: paragraph.startsWith('...') ? '0' : '2rem',
+                        textAlign: 'justify'
+                      }}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
               
