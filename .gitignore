@@ -1,0 +1,173 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific - EXCLUDE ALL DATA FILES
+# Large data files
+*.pdf
+*.heic
+*.jpg
+*.jpeg
+*.png
+*.tiff
+*.bmp
+*.zip
+
+# EXCEPTIONS: Allow website assets
+!website/public/images/journey/*.png
+!website/public/images/journey/*.jpg
+!website/public/images/journey/*.jpeg
+!website/public/data/*.json
+!website/public/data/*.txt
+
+# Large output files
+PNG_Aggregated.pdf
+JPEG_Aggregated.pdf
+EKG_1933_*.pdf
+hiecai
+logbook1933-*.zip
+
+# Data directories (exclude all content)
+data/
+# EXCEPTION: Allow website data for deployment
+!website/public/data/
+
+heic/
+jpeg/
+png/
+text_from_jpeg/
+text_from_png/
+pngai_text/
+smart_ocr_output/
+openai_text_from_png/
+png_ml_txt/
+heicai/
+path_to_your_output_directory/
+
+# Output directories (exclude all content)
+output/
+!output/.gitkeep
+
+# Processing logs and output
+digitized_output/
+# EXCEPTION: Allow website data (copy of digitized output)
+!website/public/data/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*_temp.*
+converted_image.png
+
+# Large temporary files
+*.log
+!requirements*.txt
+!setup*.txt
+!README*.txt
+!docs/*.txt
+
+# Environment variables and credentials
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# API keys and secrets
+secrets.json
+config.json
+credentials/*.json
+!credentials/*.example
+!credentials/*.json.example
+credentials/.env
+credentials/google-cloud-vision.json
+
+# Large text files (keep only small samples)
+*.txt
+!sample_*.txt
+!README*.txt
+!requirements*.txt
+!docs/*.txt
+# EXCEPTION: Allow website data files
+!website/public/data/*.txt
+!website/public/data/*.json
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Jupyter notebooks
+.ipynb_checkpoints
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Original script files (keep only the refactored ones)
+agg_*.py
+convert_pics.py
+png_to_text.py
+heic_to_png.py
+converg_dir_to_jpeg.py
+spell_check.py
+aggretate_text.py
+smart_ocr_v1.py
+gemini_fn_gpt.py
+png_ml_txt.py
+
+ernest-gann-1933/
