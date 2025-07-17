@@ -126,8 +126,20 @@ credentials/*.json
 credentials/.env
 credentials/google-cloud-vision.json
 
-# Large text files (keep only small samples)
-*.txt
+# Large text files (keep only small samples and important content)
+# Exclude individual OCR text files but preserve aggregated/cleaned content
+text_from_jpeg/*.txt
+text_from_png/*.txt
+pngai_text/*.txt
+smart_ocr_output/*.txt
+openai_text_from_png/*.txt
+png_ml_txt/*.txt
+
+# Preserve important logbook content
+!*agg*text*.txt
+!full_text*.txt
+!*cleaned*.txt
+!*logbook*.txt
 !sample_*.txt
 !README*.txt
 !requirements*.txt
@@ -158,16 +170,12 @@ coverage.xml
 .dmypy.json
 dmypy.json
 
-# Original script files (keep only the refactored ones)
-agg_*.py
-convert_pics.py
-png_to_text.py
-heic_to_png.py
+# Original script files (exclude duplicates but keep unique processing scripts)
+# Keep scripts that might be needed for data reproduction
 converg_dir_to_jpeg.py
-spell_check.py
 aggretate_text.py
 smart_ocr_v1.py
 gemini_fn_gpt.py
-png_ml_txt.py
+spell_check.py
 
 ernest-gann-1933/
