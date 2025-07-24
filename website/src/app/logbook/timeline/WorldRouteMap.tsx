@@ -26,12 +26,11 @@ const journeyStops = [
   { name: 'Beijing', lat: 39.9042, lng: 116.4074, order: 20 },
   { name: 'Manchuria', lat: 43.8383, lng: 125.3245, order: 21 },
   { name: 'Japan', lat: 36.2048, lng: 138.2529, order: 22 },
-  { name: 'Pacific Ocean', lat: 35.0, lng: -140.0, order: 23 },
-  { name: 'San Francisco', lat: 37.7749, lng: -122.4194, order: 24 },
-  { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, order: 25 },
-  { name: 'Vancouver', lat: 49.2827, lng: -123.1207, order: 26 },
-  { name: 'St. Paul', lat: 44.9537, lng: -93.0900, order: 27 },
-  { name: 'Chicago', lat: 41.8781, lng: -87.6298, order: 28 }
+  { name: 'San Francisco', lat: 37.7749, lng: -122.4194, order: 23 },
+  { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, order: 24 },
+  { name: 'Vancouver', lat: 49.2827, lng: -123.1207, order: 25 },
+  { name: 'St. Paul', lat: 44.9537, lng: -93.0900, order: 26 },
+  { name: 'Chicago', lat: 41.8781, lng: -87.6298, order: 27 }
 ]
 
 interface WorldRouteMapProps {
@@ -84,8 +83,25 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         maxZoom: 16
       }).addTo(map)
 
-      // Create route polyline coordinates
-      const routeCoordinates = journeyStops.map(stop => [stop.lat, stop.lng] as [number, number])
+      // Create route polyline coordinates with special handling for Pacific crossing
+      const routeCoordinates: [number, number][] = []
+      
+      journeyStops.forEach((stop, index) => {
+        routeCoordinates.push([stop.lat, stop.lng])
+        
+        // Special handling for Japan to San Francisco crossing (eastward across Pacific)
+        if (stop.name === 'Japan' && index < journeyStops.length - 1) {
+          const nextStop = journeyStops[index + 1]
+          if (nextStop.name === 'San Francisco') {
+            // Add intermediate waypoints to force eastward route across Pacific
+            // These points will guide the line to go east from Japan instead of west
+            routeCoordinates.push([40.0, 160.0])  // North Pacific, east of Japan
+            routeCoordinates.push([45.0, -180.0]) // International Date Line
+            routeCoordinates.push([45.0, -160.0]) // Mid-Pacific
+            routeCoordinates.push([42.0, -140.0]) // Approaching North America
+          }
+        }
+      })
 
       // Add route polyline with brighter color
       const routeLine = L.polyline(routeCoordinates, {
@@ -110,17 +126,17 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         iconAnchor: [6, 6]
       })
 
-      // Add arrows at regular intervals along the route
-      for (let i = 0; i < journeyStops.length - 1; i++) {
-        const start = journeyStops[i]
-        const end = journeyStops[i + 1]
+      // Add arrows at regular intervals along the route using actual route coordinates
+      for (let i = 0; i < routeCoordinates.length - 1; i++) {
+        const start = routeCoordinates[i]
+        const end = routeCoordinates[i + 1]
         
         // Calculate midpoint
-        const midLat = (start.lat + end.lat) / 2
-        const midLng = (start.lng + end.lng) / 2
+        const midLat = (start[0] + end[0]) / 2
+        const midLng = (start[1] + end[1]) / 2
         
         // Calculate angle for arrow direction
-        const angle = Math.atan2(end.lng - start.lng, end.lat - start.lat) * 180 / Math.PI
+        const angle = Math.atan2(end[1] - start[1], end[0] - start[0]) * 180 / Math.PI
         
         // Add arrow marker
         const arrowMarker = L.marker([midLat, midLng], { 
@@ -147,7 +163,7 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
           .bindPopup(`
             <div style="font-family: 'Courier Prime', monospace; color: #2c1810;">
               <strong>${stop.name}</strong><br/>
-              Stop ${stop.order} of 28<br/>
+              Stop ${stop.order} of ${journeyStops.length - 1}<br/>
               <em>Click to scroll to timeline location</em>
             </div>
           `, {
@@ -186,7 +202,6 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
               'Beijing': 'Beijing',
               'Manchuria': 'Manchuria',
               'Japan': 'Japan',
-              'Pacific Ocean': 'Pacific Ocean',
               'San Francisco': 'San Francisco',
               'Los Angeles': 'Los Angeles',
               'Vancouver': 'Vancouver',
@@ -200,7 +215,9 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
       })
 
       // Calculate tight bounds around the actual journey route
-      const routeBounds = L.latLngBounds(routeCoordinates)
+      // Only use the journey stops for bounds calculation, not the intermediate Pacific waypoints
+      const journeyCoordinates = journeyStops.map(stop => [stop.lat, stop.lng] as [number, number])
+      const routeBounds = L.latLngBounds(journeyCoordinates)
       
       // Fit map to the actual route with minimal padding
       map.fitBounds(routeBounds, { 
