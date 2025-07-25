@@ -27,10 +27,7 @@ const journeyStops = [
   { name: 'Manchuria', lat: 43.8383, lng: 125.3245, order: 21 },
   { name: 'Japan', lat: 36.2048, lng: 138.2529, order: 22 },
   { name: 'San Francisco', lat: 37.7749, lng: -122.4194, order: 23 },
-  { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, order: 24 },
-  { name: 'Vancouver', lat: 49.2827, lng: -123.1207, order: 25 },
-  { name: 'St. Paul', lat: 44.9537, lng: -93.0900, order: 26 },
-  { name: 'Chicago', lat: 41.8781, lng: -87.6298, order: 27 }
+  { name: 'Los Angeles', lat: 34.0522, lng: -118.2437, order: 24 }
 ]
 
 interface WorldRouteMapProps {
@@ -205,9 +202,7 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
               'Manchuria': 'Manchuria',
               'Japan': 'Japan',
               'San Francisco': 'San Francisco',
-              'Los Angeles': 'Los Angeles',
-              'Vancouver': 'Vancouver',
-              'St. Paul': 'St. Paul'
+              'Los Angeles': 'Los Angeles'
             }
             
             const timelineLocation = locationMapping[stop.name] || stop.name

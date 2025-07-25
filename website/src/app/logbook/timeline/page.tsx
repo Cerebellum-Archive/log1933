@@ -144,14 +144,14 @@ const JourneyRoute = ({ onLocationClick }: { onLocationClick?: (location: string
       {/* Cities list above the map */}
       <div className="text-center mb-6">
         <p className="typewriter-text text-brown-700 text-2xl font-bold mb-2">
-          Chicago → Europe → Asia → Pacific → Home
+          Chicago → Europe → Asia → Pacific → Los Angeles
         </p>
         <p className="typewriter-text text-brown-600 text-xl">
-          <span className="font-bold">28 stops</span> • <span className="font-bold">6 continents</span> • <span className="font-bold">8 months</span>
+          <span className="font-bold">24 stops</span> • <span className="font-bold">6 continents</span> • <span className="font-bold">8 months</span>
         </p>
       </div>
       
-      <div className="relative rounded-lg border-4 border-brown-400 overflow-hidden shadow-inner" style={{ height: '400px' }}>
+      <div className="relative rounded-lg border-4 border-brown-400 overflow-hidden shadow-inner" style={{ height: '500px' }}>
         <WorldRouteMap onLocationClick={onLocationClick} />
       </div>
       
@@ -335,9 +335,7 @@ function TimelineLogbookContent() {
     const locationMappings: { [key: string]: string } = {
       'New': 'New York',
       'San': 'San Francisco',
-      'Los': 'Los Angeles',
-      'St.': 'St. Paul',
-      'St': 'St. Paul'
+      'Los': 'Los Angeles'
     }
     
     const firstWord = primaryLocation.split(' ')[0]
@@ -383,9 +381,7 @@ function TimelineLogbookContent() {
       'Manchuria': 'China',
       'Japan': 'Japan',
       'San Francisco': 'San Francisco',
-      'Los Angeles': 'Los Angeles',
-      'Vancouver': 'Vancouver',
-      'St. Paul': 'St. Paul'
+      'Los Angeles': 'Los Angeles'
     }
     
     // First try exact mapping
