@@ -311,18 +311,18 @@ export default function JourneyHighlightsPage() {
     }
 
     return (
-      <div className="vintage-paper rounded-lg p-6 mb-8 shadow-lg">
-        <h2 className="text-2xl typewriter-title text-brown-800 mb-4 text-center">
+      <div className="vintage-paper rounded-lg p-4 md:p-6 mb-6 md:mb-8 shadow-lg">
+        <h2 className="text-xl md:text-2xl typewriter-title text-brown-800 mb-3 md:mb-4 text-center">
           Journey by Continent
         </h2>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3">
           {continentTimeline.map((continent) => (
             <button
               key={continent.id}
               onClick={() => handleContinentClick(continent.id)}
               onMouseEnter={() => handleContinentPopup(continent.id)}
               onMouseLeave={() => setShowContinentPopup(false)}
-              className={`relative px-4 py-2 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 ${
+              className={`relative px-3 md:px-4 py-1.5 md:py-2 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 ${
                 selectedContinent === continent.id
                   ? 'bg-brown-50 text-brown-800 border-brown-600 shadow-lg border-4'
                   : 'bg-brown-50 text-brown-800 border-brown-300 hover:border-brown-500'
@@ -339,7 +339,7 @@ export default function JourneyHighlightsPage() {
               {/* Continent Popup */}
               {showContinentPopup && selectedContinent === continent.id && (
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
-                  <div className="vintage-paper p-3 rounded-lg shadow-xl border-2 border-brown-400 min-w-64">
+                  <div className="vintage-paper p-3 rounded-lg shadow-xl border-2 border-brown-400 min-w-48 md:min-w-64">
                     <h3 className="typewriter-title text-brown-800 font-bold text-sm mb-2">
                       {continent.continent}
                     </h3>
@@ -673,8 +673,8 @@ export default function JourneyHighlightsPage() {
       `}</style>
 
       {/* Fixed Navigation Header - Dense */}
-      <header className="sticky top-0 z-50 vintage-paper border-b-4 border-brown-400 py-3 px-6">
-        <div className="max-w-7xl mx-auto">
+      <header className="sticky top-0 z-50 vintage-paper border-b-4 border-brown-400 py-3 md:py-4 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Left: Back to Home */}
             <Link 
@@ -693,7 +693,7 @@ export default function JourneyHighlightsPage() {
             </h1>
             
             {/* Right: Navigation */}
-            <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <Link 
                 href="/journey" 
                 className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-brown-600"
@@ -713,12 +713,17 @@ export default function JourneyHighlightsPage() {
                 About
               </Link>
             </div>
+            
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <span className="text-brown-600 typewriter-text text-sm font-semibold">Highlights</span>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section - Simplified */}
-      <section className="py-8 px-6">
+      <section className="py-6 md:py-8 px-4 md:px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl typewriter-title text-brown-800 font-bold mb-4">
             Journey Highlights
@@ -731,14 +736,14 @@ export default function JourneyHighlightsPage() {
       </section>
 
       {/* Continent Timeline */}
-      <section className="py-6 px-6">
+      <section className="py-4 md:py-6 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <ContinentTimeline />
         </div>
       </section>
 
       {/* Main Content - Newspaper Style Layout */}
-      <main className="py-4 px-6">
+      <main className="py-4 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-8">
             {filteredHighlights.map((highlight, index) => (
@@ -769,9 +774,9 @@ export default function JourneyHighlightsPage() {
                 </header>
 
                 {/* Newspaper-style Content Layout */}
-                <div className="grid lg:grid-cols-4 gap-6 items-start mb-6">
+                <div className="grid md:grid-cols-4 gap-4 md:gap-6 items-start mb-4 md:mb-6">
                   {/* Retro-Style Map */}
-                  <div className="lg:col-span-1">
+                  <div className="md:col-span-1">
                     <div className="vintage-paper p-3 rounded shadow-md">
                       <div className="aspect-square bg-gradient-to-br from-amber-50 to-amber-100 rounded border-2 border-brown-400 relative overflow-hidden">
                         {/* Decorative Map Elements */}
@@ -849,7 +854,7 @@ export default function JourneyHighlightsPage() {
                   </div>
                   
                   {/* Condensed Quote Content */}
-                  <div className="lg:col-span-3">
+                  <div className="md:col-span-3">
                     <div className="space-y-3">
                       {highlight.quotes.map((quote, qIndex) => (
                         <div key={qIndex} className="border-l-2 border-brown-300 pl-4">

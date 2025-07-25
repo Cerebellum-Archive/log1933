@@ -761,7 +761,7 @@ function TimelineLogbookContent() {
       
       {/* Header */}
       <div className="sticky top-0 z-50 bg-gradient-to-r from-amber-100 to-yellow-100 border-b-2 border-brown-400">
-        <div className="px-8 py-6">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 py-4 md:py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <Link 
@@ -776,7 +776,7 @@ function TimelineLogbookContent() {
               Ernest's 1933 World Tour Timeline
             </h1>
             
-            <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <Link 
                 href="/journey" 
                 className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
@@ -796,16 +796,21 @@ function TimelineLogbookContent() {
                 About
               </Link>
             </div>
+            
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <span className="text-brown-600 typewriter-text text-sm font-semibold">Timeline</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Journey Route */}
-      <div className="px-8 py-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 py-6">
         <JourneyRoute onLocationClick={scrollToLocation} />
       </div>
 
-      <div className="flex flex-col lg:flex-row px-4 md:px-8">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row px-4 md:px-8">
         {/* Timeline Sidebar */}
         <div className="w-full lg:w-80 lg:pr-6 mb-8 lg:mb-0 lg:h-screen lg:sticky lg:top-24 lg:overflow-y-auto">
           <div className="vintage-paper p-4 rounded-lg shadow-lg">
@@ -1191,9 +1196,9 @@ function TimelineLogbookContent() {
 
       {/* Stats Footer */}
       {logbookData && (
-        <footer className="vintage-paper border-t-2 border-brown-400 px-8 py-8 mt-12">
-          <div className="">
-            <div className="grid md:grid-cols-5 gap-8 text-center">
+        <footer className="vintage-paper border-t-2 border-brown-400 py-8 mt-12">
+          <div className="max-w-6xl mx-auto px-6 md:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-8 text-center">
               <div>
                 <div className="text-3xl font-bold typewriter-title text-brown-800">
                   {logbookData.metadata.original_entries || logbookData.metadata.total_entries}

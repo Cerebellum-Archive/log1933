@@ -81,8 +81,8 @@ export default function AboutPage() {
       `}</style>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 vintage-paper border-b-4 border-brown-400 py-6 px-6">
-        <div className="max-w-7xl mx-auto">
+      <header className="sticky top-0 z-50 vintage-paper border-b-4 border-brown-400 py-4 md:py-6 px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
             {/* Left: Back to Home */}
             <Link 
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </h1>
             
             {/* Right: Navigation */}
-            <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-6">
               <Link 
                 href="/journey" 
                 className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
@@ -121,6 +121,11 @@ export default function AboutPage() {
                 About
               </Link>
             </div>
+            
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <span className="text-brown-600 typewriter-text text-sm font-semibold">About</span>
+            </div>
           </div>
         </div>
       </header>
@@ -139,11 +144,11 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <main className="py-16 px-4">
-        <div className="max-w-4xl mx-auto space-y-20">
+      <main className="py-8 md:py-16 px-4">
+        <div className="max-w-6xl mx-auto space-y-8 md:space-y-20">
           
           {/* The Man Behind the Words */}
-          <section className="vintage-paper p-12 rounded-xl shadow-2xl">
+          <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
             <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
               The Man Behind the Words
             </h2>
@@ -183,7 +188,7 @@ export default function AboutPage() {
           </section>
 
           {/* Aviation Pioneer */}
-          <section className="vintage-paper p-12 rounded-xl shadow-2xl">
+          <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
             <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
               Taking to the Skies
             </h2>
@@ -223,7 +228,7 @@ export default function AboutPage() {
           </section>
 
           {/* Literary Legacy */}
-          <section className="vintage-paper p-12 rounded-xl shadow-2xl">
+          <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
             <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
               Literary Legacy
             </h2>
@@ -358,7 +363,7 @@ export default function AboutPage() {
           </section>
 
           {/* Later Life & Legacy */}
-          <section className="vintage-paper p-12 rounded-xl shadow-2xl">
+          <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
             <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
               The Final Chapters
             </h2>
@@ -411,7 +416,7 @@ export default function AboutPage() {
           </section>
 
           {/* Call to Action */}
-          <section className="text-center vintage-paper p-12 rounded-xl shadow-2xl">
+          <section className="text-center vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
             <h2 className="text-4xl typewriter-title text-brown-800 mb-6">
               Discover the Journey That Started It All
             </h2>
