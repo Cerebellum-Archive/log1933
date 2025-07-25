@@ -42,11 +42,22 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-          {/* Background texture */}
-          <div className="absolute inset-0 vintage-paper opacity-30"></div>
+          {/* Aviation sketch background */}
+          <div 
+            className="absolute inset-0 bg-center bg-cover opacity-20"
+            style={{
+              backgroundImage: 'url(/images/backgrounds/aviation-sketch-optimized.svg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          ></div>
+          
+          {/* Background texture overlay */}
+          <div className="absolute inset-0 vintage-paper opacity-15"></div>
           
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-            <div className="vintage-paper p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
+            <div className="bg-white/70 backdrop-blur-sm p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
               <h1 className="text-6xl md:text-8xl typewriter-title text-brown-800 mb-6 tracking-tight">
                 <span className="block">ERNEST K. GANN</span>
                 <span className="block text-3xl md:text-4xl text-brown-600 mt-4 typewriter-text">1933 World Tour Logbook</span>
@@ -127,7 +138,7 @@ export default function Home() {
         {/* Featured Quote */}
         <section className="py-20 px-4 bg-gradient-to-r from-brown-100 to-amber-100">
           <div className="max-w-4xl mx-auto">
-            <div className="vintage-paper p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
+            <div className="bg-white/80 backdrop-blur-sm p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
               <div className="text-center mb-8">
                 <h2 className="text-4xl typewriter-title text-brown-800 mb-4">From the Logbook</h2>
                 <div className="w-24 h-1 bg-brown-500 mx-auto"></div>
