@@ -80,26 +80,12 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         maxZoom: 16
       }).addTo(map)
 
-      // Create route polyline coordinates with special handling for Pacific crossing
+      // Create route polyline coordinates with direct Pacific crossing
       const routeCoordinates: [number, number][] = []
       
       for (let i = 0; i < journeyStops.length; i++) {
         const stop = journeyStops[i]
         routeCoordinates.push([stop.lat, stop.lng])
-        
-        // Special handling for Japan to San Francisco crossing (eastward across Pacific)
-        if (stop.name === 'Japan' && i < journeyStops.length - 1) {
-          const nextStop = journeyStops[i + 1]
-          if (nextStop.name === 'San Francisco') {
-            // Add intermediate waypoints to force eastward route across Pacific
-            // These points will guide the line to go east from Japan instead of west
-            routeCoordinates.push([42.0, 150.0])  // Northeast of Japan
-            routeCoordinates.push([48.0, 170.0])  // Bering Sea approach
-            routeCoordinates.push([52.0, -170.0]) // Aleutian Islands
-            routeCoordinates.push([50.0, -150.0]) // Gulf of Alaska
-            routeCoordinates.push([45.0, -135.0]) // North Pacific approaching coast
-          }
-        }
       }
 
       // Add route polyline with brighter color
