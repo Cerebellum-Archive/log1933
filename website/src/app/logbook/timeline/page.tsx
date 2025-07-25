@@ -470,65 +470,67 @@ function TimelineLogbookContent() {
   }
 
   const scrollToLocation = (locationName: string) => {
-    // Enhanced location mapping to match map pins with timeline entries
-    const locationMapping: { [key: string]: string } = {
-      'Chicago': 'Chicago',
-      'London': 'London',
-      'Liverpool': 'Liverpool',
-      'Paris': 'Paris',
-      'Brussels': 'Brussels',
-      'Antwerp': 'Antwerp',
-      'Berlin': 'Berlin',
-      'Vienna': 'Vienna',
-      'Switzerland': 'Switzerland',
-      'Italy': 'Italy',
-      'Lisbon': 'Lisbon',
-      'Morocco': 'Morocco',
-      'Suez Canal': 'Egypt',
-      'Ceylon': 'Ceylon',
-      'Singapore': 'Singapore',
-      'Malay States': 'Singapore',
-      'Shanghai': 'China',
-      'Beijing': 'China',
-      'Manchuria': 'China',
-      'Japan': 'Japan',
-      'San Francisco': 'San Francisco',
-      'Los Angeles': 'Los Angeles'
+    console.log(`Attempting to scroll to: ${locationName}`)
+    console.log('Available locations:', timelineEntries.map(entry => entry.location))
+    
+    // Create flexible matching patterns for map pins to timeline entries
+    const locationPatterns: { [key: string]: string[] } = {
+      'Chicago': ['Chicago'],
+      'Atlantic Ocean': ['aboard the motor-ship Georgic', 'Atlantic Ocean', 'mid-ocean'],
+      'Southampton': ['Southampton'],
+      'London': ['London', 'Norfolk House', 'Donington House', 'Melbourne House', 'Stafford House'],
+      'Liverpool': ['Liverpool'],
+      'Paris': ['Paris', 'Blvd. Raspail'],
+      'Brussels': ['Brussels', 'Belgium'],
+      'Antwerp': ['Antwerp', 'Rue du Verger', 'Berchem'],
+      'Berlin': ['Berlin'],
+      'Vienna': ['Vienna', 'Grand Hotel'],
+      'Switzerland': ['Swiss Federal Parliament'],
+      'Italy': ['Milan', 'Venice', 'Naples'],
+      'Lisbon': ['Lisbon'],
+      'Morocco': ['Morocco', 'Fez', 'Casa-Blanca', 'Algeciras'],
+      'Suez Canal': ['Port Said'],
+      'Ceylon': ['Ceylon', 'Colombo'],
+      'Singapore': ['Singapore', 'Straits Settlements'],
+      'Malay States': ['Singapore', 'Penang'],
+      'Shanghai': ['Shanghai', 'China', 'Chapel Exchange', 'Nantao Exchange'],
+      'Beijing': ['Pekin', 'Peking', 'Nanking', 'Tientsin'],
+      'Manchuria': ['Manchukuo', 'Antung'],
+      'Japan': ['Japan', 'Tokyo', 'Imperial Hotel', 'Yokohama'],
+      'San Francisco': ['San Francisco', 'Mills College'],
+      'Los Angeles': ['California']
     }
     
-    // First try exact mapping
-    const mappedLocation = locationMapping[locationName] || locationName
+    const patterns = locationPatterns[locationName] || [locationName]
     
-    // Find the timeline entry that matches the location name
+    // Find the timeline entry that matches any of the patterns
     const matchingEntry = timelineEntries.find(entry => {
-      const entryLocation = entry.location.toLowerCase()
-      const searchLocation = mappedLocation.toLowerCase()
+      const entryLocation = entry.location?.toLowerCase() || ''
       
-      // Try exact match first
-      if (entryLocation === searchLocation) return true
-      
-      // Try partial matches
-      if (entryLocation.includes(searchLocation) || searchLocation.includes(entryLocation)) return true
-      
-      // Try matching common variations
-      const variations = [
-        searchLocation,
-        searchLocation.replace(/\s+/g, ''),
-        searchLocation.split(' ')[0],
-        searchLocation.split(',')[0]
-      ]
-      
-      return variations.some(variation => 
-        entryLocation.includes(variation) || variation.includes(entryLocation)
-      )
+      return patterns.some(pattern => {
+        const patternLower = pattern.toLowerCase()
+        return entryLocation.includes(patternLower)
+      })
     })
     
     if (matchingEntry) {
-      console.log(`Scrolling to location: ${locationName} -> ${matchingEntry.location}`)
+      console.log(`✓ Found match: ${locationName} -> ${matchingEntry.location}`)
       scrollToEntry(matchingEntry.id)
     } else {
-      console.log(`No matching timeline entry found for: ${locationName}`)
-      console.log('Available locations:', timelineEntries.map(entry => entry.location))
+      console.log(`✗ No match found for: ${locationName}`)
+      console.log(`Searched patterns:`, patterns)
+      
+      // Fallback: try a very loose match on just the first word
+      const fallbackEntry = timelineEntries.find(entry => {
+        const entryLocation = entry.location?.toLowerCase() || ''
+        const firstWord = locationName.toLowerCase().split(' ')[0]
+        return entryLocation.includes(firstWord)
+      })
+      
+      if (fallbackEntry) {
+        console.log(`✓ Fallback match: ${locationName} -> ${fallbackEntry.location}`)
+        scrollToEntry(fallbackEntry.id)
+      }
     }
   }
 

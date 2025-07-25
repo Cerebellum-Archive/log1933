@@ -192,34 +192,8 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         marker.on('mouseover', () => marker.openPopup())
         marker.on('click', () => {
           if (onLocationClick) {
-            const locationMapping: { [key: string]: string } = {
-              'Chicago': 'Chicago',
-              'Atlantic Ocean': 'Atlantic Ocean',
-              'Southampton': 'Southampton',
-              'London': 'London',
-              'Liverpool': 'Liverpool', 
-              'Paris': 'Paris',
-              'Brussels': 'Brussels',
-              'Antwerp': 'Antwerp',
-              'Berlin': 'Berlin',
-              'Vienna': 'Vienna',
-              'Switzerland': 'Switzerland',
-              'Italy': 'Italy',
-              'Lisbon': 'Lisbon',
-              'Morocco': 'Morocco',
-              'Suez Canal': 'Suez Canal',
-              'Ceylon': 'Ceylon',
-              'Singapore': 'Singapore',
-              'Malay States': 'Malay States',
-              'Shanghai': 'Shanghai',
-              'Beijing': 'Beijing',
-              'Manchuria': 'Manchuria',
-              'Japan': 'Japan',
-              'San Francisco': 'San Francisco',
-              'Los Angeles': 'Los Angeles'
-            }
-            const timelineLocation = locationMapping[stop.name] || stop.name
-            onLocationClick(timelineLocation)
+            // Direct mapping to match the patterns used in timeline scrollToLocation
+            onLocationClick(stop.name)
           }
         })
         })
