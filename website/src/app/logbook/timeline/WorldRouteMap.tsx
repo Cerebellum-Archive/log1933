@@ -80,10 +80,11 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         maxZoom: 16
       }).addTo(map)
 
-      // Create route polyline coordinates with direct Pacific crossing
+      // Create route polyline coordinates - excluding the problematic return from Japan to US
       const routeCoordinates: [number, number][] = []
       
-      for (let i = 0; i < journeyStops.length; i++) {
+      // Only include stops up to Japan (excluding the return to US)
+      for (let i = 0; i < journeyStops.length - 2; i++) {
         const stop = journeyStops[i]
         routeCoordinates.push([stop.lat, stop.lng])
       }
@@ -141,8 +142,8 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         }).addTo(map)
       }
 
-      // Add markers for each stop
-      journeyStops.forEach((stop, index) => {
+      // Add markers for each stop (excluding the return to US)
+      journeyStops.slice(0, -2).forEach((stop, index) => {
         const marker = L.marker([stop.lat, stop.lng], { icon: customIcon })
           .addTo(map)
           .bindPopup(`
@@ -198,8 +199,8 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
       })
 
       // Calculate tight bounds around the actual journey route
-      // Only use the journey stops for bounds calculation, not the intermediate Pacific waypoints
-      const journeyCoordinates = journeyStops.map(stop => [stop.lat, stop.lng] as [number, number])
+      // Only use the journey stops up to Japan for bounds calculation (excluding return to US)
+      const journeyCoordinates = journeyStops.slice(0, -2).map(stop => [stop.lat, stop.lng] as [number, number])
       const routeBounds = L.latLngBounds(journeyCoordinates)
       
       // Fit map to the actual route with minimal padding
