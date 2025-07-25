@@ -44,10 +44,10 @@ export default function Home() {
         <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
           {/* Aviation sketch background */}
           <div 
-            className="absolute inset-0 bg-center bg-cover opacity-40"
+            className="absolute inset-0 opacity-30"
             style={{
-              backgroundImage: 'url(/images/backgrounds/aviation-sketch-optimized.svg)',
-              backgroundSize: 'cover',
+              backgroundImage: 'url(/images/backgrounds/aviation-sketch.png)',
+              backgroundSize: 'contain',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
             }}
