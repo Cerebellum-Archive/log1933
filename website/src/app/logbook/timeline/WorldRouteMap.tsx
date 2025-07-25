@@ -39,12 +39,41 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
   const mapInstanceRef = useRef<any>(null)
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !mapRef.current) {
+    if (typeof window === 'undefined') {
       return
     }
 
     const initializeMap = async () => {
+      // Ensure container exists and has dimensions
+      if (!mapRef.current) {
+        console.warn('Map container not found')
+        return
+      }
+
+      // Prevent double initialization
+      if (mapInstanceRef.current) {
+        return
+      }
+
+      // Check if container has proper dimensions
+      const containerRect = mapRef.current.getBoundingClientRect()
+      if (containerRect.width === 0 || containerRect.height === 0) {
+        console.warn('Map container has no dimensions, retrying in 100ms')
+        setTimeout(initializeMap, 100)
+        return
+      }
+      
       const L = (await import('leaflet')).default
+
+      // Clear any existing Leaflet instance from the container
+      if (mapRef.current) {
+        mapRef.current.innerHTML = ''
+        // Remove any Leaflet-specific data attributes
+        mapRef.current.removeAttribute('data-leaflet-id')
+        // Remove any existing leaflet containers
+        const existingContainers = mapRef.current.querySelectorAll('.leaflet-container')
+        existingContainers.forEach(container => container.remove())
+      }
 
       const customIcon = L.divIcon({
         className: 'custom-marker',
@@ -60,22 +89,46 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         iconAnchor: [8, 8]
       })
 
-      const map = L.map(mapRef.current!, {
-        center: [40, 30],
-        zoom: 2,
-        minZoom: 2,
-        maxZoom: 2,
-        zoomControl: false,
-        scrollWheelZoom: false,
-        doubleClickZoom: false,
-        dragging: true
-      })
-      mapInstanceRef.current = map
+      try {
+        // Ensure the container is still valid before creating the map
+        if (!mapRef.current || !mapRef.current.isConnected) {
+          console.warn('Map container is no longer connected to DOM')
+          return
+        }
 
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-        attribution: '&copy; National Geographic | &copy; OpenStreetMap contributors',
-        maxZoom: 16
-      }).addTo(map)
+        const map = L.map(mapRef.current!, {
+          center: [40, 30],
+          zoom: 2,
+          minZoom: 2,
+          maxZoom: 2,
+          zoomControl: false,
+          scrollWheelZoom: false,
+          doubleClickZoom: false,
+          dragging: true,
+          preferCanvas: true // This can help with performance and some rendering issues
+        })
+        mapInstanceRef.current = map
+
+        // Add a small delay to ensure map is fully initialized before adding layers
+        await new Promise(resolve => setTimeout(resolve, 10))
+        
+      } catch (error) {
+        console.error('Error initializing Leaflet map:', error)
+        return
+      }
+
+      const map = mapInstanceRef.current
+      if (!map || !mapRef.current) return
+
+      try {
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+          attribution: '&copy; National Geographic | &copy; OpenStreetMap contributors',
+          maxZoom: 16
+        }).addTo(map)
+      } catch (error) {
+        console.error('Error adding tile layer:', error)
+        return
+      }
 
       const routeCoordinates: [number, number][] = []
       for (let i = 0; i < journeyStops.length - 2; i++) {
@@ -83,14 +136,19 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         routeCoordinates.push([stop.lat, stop.lng])
       }
 
-      L.polyline(routeCoordinates, {
-        color: '#FF6B35',
-        weight: 4,
-        opacity: 0.9,
-        dashArray: '12, 6'
-      }).addTo(map)
+      try {
+        L.polyline(routeCoordinates, {
+          color: '#FF6B35',
+          weight: 4,
+          opacity: 0.9,
+          dashArray: '12, 6'
+        }).addTo(map)
+      } catch (error) {
+        console.error('Error adding route polyline:', error)
+      }
 
-      for (let i = 0; i < routeCoordinates.length - 1; i++) {
+      try {
+        for (let i = 0; i < routeCoordinates.length - 1; i++) {
         const start = routeCoordinates[i]
         const end = routeCoordinates[i + 1]
         const midLat = (start[0] + end[0]) / 2
@@ -112,9 +170,13 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
             iconAnchor: [6, 6]
           })
         }).addTo(map)
+        }
+      } catch (error) {
+        console.error('Error adding route arrows:', error)
       }
 
-      journeyStops.slice(0, -2).forEach((stop) => {
+      try {
+        journeyStops.slice(0, -2).forEach((stop) => {
         const marker = L.marker([stop.lat, stop.lng], { icon: customIcon })
           .addTo(map)
           .bindPopup(`
@@ -160,15 +222,22 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
             onLocationClick(timelineLocation)
           }
         })
-      })
+        })
+      } catch (error) {
+        console.error('Error adding location markers:', error)
+      }
 
-      const journeyCoordinates = journeyStops.slice(0, -2).map(stop => [stop.lat, stop.lng] as [number, number])
-      const routeBounds = L.latLngBounds(journeyCoordinates)
-      
-      map.fitBounds(routeBounds, { 
-        padding: [20, 20],
-        maxZoom: 4
-      })
+      try {
+        const journeyCoordinates = journeyStops.slice(0, -2).map(stop => [stop.lat, stop.lng] as [number, number])
+        const routeBounds = L.latLngBounds(journeyCoordinates)
+        
+        map.fitBounds(routeBounds, { 
+          padding: [20, 20],
+          maxZoom: 4
+        })
+      } catch (error) {
+        console.error('Error fitting map bounds:', error)
+      }
 
       const style = document.createElement('style')
       style.textContent = `
@@ -202,14 +271,27 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
       document.head.appendChild(style)
     }
 
-    if (!mapInstanceRef.current) {
-      initializeMap()
-    }
+    // Add a small delay to ensure the container is properly rendered
+    const timer = setTimeout(() => {
+      if (!mapInstanceRef.current) {
+        initializeMap()
+      }
+    }, 50)
 
     return () => {
+      clearTimeout(timer)
       if (mapInstanceRef.current) {
-        mapInstanceRef.current.remove()
+        try {
+          mapInstanceRef.current.remove()
+        } catch (error) {
+          console.warn('Error removing Leaflet map:', error)
+        }
         mapInstanceRef.current = null
+      }
+      // Also clean up the DOM container
+      if (mapRef.current) {
+        mapRef.current.innerHTML = ''
+        mapRef.current.removeAttribute('data-leaflet-id')
       }
     }
   }, [])
@@ -220,8 +302,11 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
       className="w-full h-full"
       style={{ 
         minHeight: '500px',
+        width: '100%',
         borderRadius: '8px',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        position: 'relative',
+        backgroundColor: '#87CEEB' // Fallback background color
       }}
     />
   )

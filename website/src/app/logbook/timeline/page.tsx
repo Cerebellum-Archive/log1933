@@ -33,7 +33,7 @@ interface LogbookEntry {
   document_type?: string
   document_title?: string
   is_combined?: boolean
-  is_complete?: boolean
+
   source_entries?: string[]
   entry_count?: number
 }
@@ -137,16 +137,16 @@ const formatContentForReading = (content: string): string[] => {
 const JourneyRoute = ({ onLocationClick }: { onLocationClick?: (location: string) => void }) => {
   return (
     <div className="vintage-paper rounded-lg p-8 mb-8 shadow-2xl">
-      <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center">
+      <h2 className="text-2xl typewriter-title text-brown-800 mb-4 text-center">
         World Tour Route
       </h2>
       
       {/* Cities list above the map */}
-      <div className="text-center mb-6">
-        <p className="typewriter-text text-brown-700 text-2xl font-bold mb-2">
+      <div className="text-center mb-4">
+        <p className="typewriter-text text-brown-700 text-lg font-bold mb-1">
           Chicago → Europe → Asia → Pacific → Los Angeles
         </p>
-        <p className="typewriter-text text-brown-600 text-xl">
+        <p className="typewriter-text text-brown-600 text-sm">
           <span className="font-bold">24 stops</span> • <span className="font-bold">6 continents</span> • <span className="font-bold">8 months</span>
         </p>
       </div>
@@ -155,10 +155,10 @@ const JourneyRoute = ({ onLocationClick }: { onLocationClick?: (location: string
         <WorldRouteMap onLocationClick={onLocationClick} />
       </div>
       
-      <div className="mt-8 text-center">
-        <p className="typewriter-text text-brown-500 text-lg">
+      <div className="mt-6 text-center">
+        <p className="typewriter-text text-brown-500 text-sm">
           Interactive map showing Ernest's complete 1933 world tour route<br/>
-          <span className="text-brown-400 text-base">Click on any location to scroll to that part of the timeline</span>
+          <span className="text-brown-400 text-xs">Click on any location to scroll to that part of the timeline</span>
         </p>
       </div>
     </div>
@@ -176,6 +176,11 @@ function TimelineLogbookContent() {
   const [expandedNotes, setExpandedNotes] = useState<{ [key: string]: boolean }>({})
   const [showBackToTop, setShowBackToTop] = useState(false)
   const [copyStatus, setCopyStatus] = useState<{ [key: string]: string }>({})
+  const [notesModal, setNotesModal] = useState<{ show: boolean, entry: LogbookEntry | null, entryKey: string | null }>({ 
+    show: false, 
+    entry: null, 
+    entryKey: null 
+  })
   
   const contentRef = useRef<HTMLDivElement>(null)
   const timelineRefs = useRef<{ [key: string]: HTMLDivElement }>({})
@@ -183,6 +188,7 @@ function TimelineLogbookContent() {
   const searchParams = useSearchParams()
   const filterMonth = searchParams.get('month')
   const filterYear = searchParams.get('year')
+  const locationParam = searchParams.get('location')
 
   useEffect(() => {
     const fetchLogbookData = async () => {
@@ -215,12 +221,60 @@ function TimelineLogbookContent() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Handle location parameter from URL
+  useEffect(() => {
+    if (locationParam && timelineEntries.length > 0) {
+      // Add a small delay to ensure the DOM is ready
+      setTimeout(() => {
+        scrollToLocation(locationParam)
+      }, 500)
+    }
+  }, [locationParam, timelineEntries])
+
   const processTimelineEntries = (entries: LogbookEntry[]) => {
-    // Sort entries by date
+    // Sort entries by date with better date parsing
     const sortedEntries = [...entries].sort((a, b) => {
       const dateA = a.date_entry || '1933-01-01'
       const dateB = b.date_entry || '1933-01-01'
-      return dateA.localeCompare(dateB)
+      
+      // Convert dates to Date objects for proper chronological sorting
+      const parseDateStr = (dateStr: string): Date => {
+        try {
+          // Try parsing as-is first
+          let date = new Date(dateStr)
+          if (!isNaN(date.getTime())) {
+            return date
+          }
+          
+          // Handle formats like "April 27th, 1933"
+          const monthDayYearMatch = dateStr.match(/(\w+)\s+(\d+)(?:st|nd|rd|th)?,?\s+(\d{4})/)
+          if (monthDayYearMatch) {
+            const [, month, day, year] = monthDayYearMatch
+            date = new Date(`${month} ${day}, ${year}`)
+            if (!isNaN(date.getTime())) {
+              return date
+            }
+          }
+          
+          // Handle formats like "1933-06"
+          if (dateStr.match(/^\d{4}-\d{2}$/)) {
+            date = new Date(dateStr + '-01')
+            if (!isNaN(date.getTime())) {
+              return date
+            }
+          }
+          
+          // Fallback to 1933-01-01
+          return new Date('1933-01-01')
+        } catch {
+          return new Date('1933-01-01')
+        }
+      }
+      
+      const dateAObj = parseDateStr(dateA)
+      const dateBObj = parseDateStr(dateB)
+      
+      return dateAObj.getTime() - dateBObj.getTime()
     })
 
     // Group entries by location only
@@ -251,7 +305,45 @@ function TimelineLogbookContent() {
     })
 
     // Sort timeline by date for proper chronological order
-    timeline.sort((a, b) => a.date.localeCompare(b.date))
+    timeline.sort((a, b) => {
+      const parseDateStr = (dateStr: string): Date => {
+        try {
+          // Try parsing as-is first
+          let date = new Date(dateStr)
+          if (!isNaN(date.getTime())) {
+            return date
+          }
+          
+          // Handle formats like "April 27th, 1933"
+          const monthDayYearMatch = dateStr.match(/(\w+)\s+(\d+)(?:st|nd|rd|th)?,?\s+(\d{4})/)
+          if (monthDayYearMatch) {
+            const [, month, day, year] = monthDayYearMatch
+            date = new Date(`${month} ${day}, ${year}`)
+            if (!isNaN(date.getTime())) {
+              return date
+            }
+          }
+          
+          // Handle formats like "1933-06"
+          if (dateStr.match(/^\d{4}-\d{2}$/)) {
+            date = new Date(dateStr + '-01')
+            if (!isNaN(date.getTime())) {
+              return date
+            }
+          }
+          
+          // Fallback to 1933-01-01
+          return new Date('1933-01-01')
+        } catch {
+          return new Date('1933-01-01')
+        }
+      }
+      
+      const dateAObj = parseDateStr(a.date)
+      const dateBObj = parseDateStr(b.date)
+      
+      return dateAObj.getTime() - dateBObj.getTime()
+    })
 
     setTimelineEntries(timeline)
     setFilteredEntries(timeline)
@@ -283,14 +375,19 @@ function TimelineLogbookContent() {
   const DateIndicator = ({ dateStr, isInferred }: { dateStr?: string, isInferred?: boolean }) => {
     const formattedDate = formatDate(dateStr)
     
+    // Don't render anything if the date is invalid or just '1933'
+    if (!formattedDate || formattedDate === '1933' || formattedDate === 'Invalid Date') {
+      return null
+    }
+    
     return (
-      <div className="flex items-center gap-2">
-        <span className="font-bold text-3xl typewriter-text text-brown-800">{formattedDate}</span>
+      <div className="flex items-center gap-1">
+        <span className="font-medium text-xs typewriter-text text-brown-500">{formattedDate}</span>
       </div>
     )
   }
 
-  const DocumentTypeIcon = ({ type, isComplete }: { type?: string, isComplete?: boolean }) => {
+  const DocumentTypeIcon = ({ type }: { type?: string }) => {
     const getIcon = () => {
       switch (type) {
         case 'letter': return '✉️'
@@ -304,14 +401,9 @@ function TimelineLogbookContent() {
 
     return (
       <div className="flex items-center gap-1">
-        <span title={`${type || 'document'} ${isComplete ? '(complete)' : '(incomplete)'}`}>
+        <span title={`${type || 'document'}`}>
           {getIcon()}
         </span>
-        {!isComplete && (
-          <span className="text-orange-600 text-lg bg-orange-100 px-3 py-2 rounded" title="Document appears incomplete">
-            ⚠️ Incomplete
-          </span>
-        )}
       </div>
     )
   }
@@ -335,8 +427,27 @@ function TimelineLogbookContent() {
     // Handle special cases where first word alone isn't descriptive enough
     const locationMappings: { [key: string]: string } = {
       'New': 'New York',
-      'San': 'San Francisco',
-      'Los': 'Los Angeles'
+      'San': 'San Francisco', 
+      'Los': 'Los Angeles',
+      'Las': 'Las Palmas',
+      'Port': 'Port Said',
+      'Santa': 'Santa Monica',
+      'Saint': 'Saint Paul',
+      'Fez': 'French Morocco',
+      'Casa-Blanca': 'Casa-Blanca, Morocco',
+      '218': 'London Office',
+      'Donington': 'London Office',
+      'Norfolk': 'London Office',
+      'Stafford': 'London Office',
+      'Chapel': 'Hong Kong',
+      'Imperial': 'Tokyo',
+      'Grand': 'Vienna',
+      'between': 'Between Vienna and Venice',
+      'One': 'Port Said',
+      'En': 'Colombo',
+      'aboard': 'Atlantic Ocean Crossing',
+      'Swiss': 'Switzerland',
+      'Harz': 'Germany'
     }
     
     const firstWord = primaryLocation.split(' ')[0]
@@ -425,11 +536,16 @@ function TimelineLogbookContent() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const toggleNotes = (entryKey: string) => {
-    setExpandedNotes(prev => ({
-      ...prev,
-      [entryKey]: !prev[entryKey]
-    }))
+  const toggleNotes = (entryKey: string, entry: LogbookEntry) => {
+    setNotesModal({
+      show: true,
+      entry: entry,
+      entryKey: entryKey
+    })
+  }
+
+  const closeNotesModal = () => {
+    setNotesModal({ show: false, entry: null, entryKey: null })
   }
 
   // Copy functions
@@ -552,10 +668,10 @@ function TimelineLogbookContent() {
         
         .typewriter-text {
           font-family: 'Courier Prime', monospace;
-          line-height: 1.7;
-          letter-spacing: 0.5px;
+          line-height: 1.4;
+          letter-spacing: 0.3px;
           color: #2c1810;
-          font-size: 32px;
+          font-size: 14px;
         }
         
         .typewriter-title {
@@ -584,10 +700,10 @@ function TimelineLogbookContent() {
           background: rgba(244,241,232,0.8);
           border: 2px solid #8B4513;
           border-radius: 4px;
-          padding: 16px 20px;
+          padding: 8px 12px;
           font-family: 'Courier Prime', monospace;
           color: #2c1810;
-          font-size: 24px;
+          font-size: 12px;
         }
         
         .search-vintage:focus {
@@ -596,22 +712,24 @@ function TimelineLogbookContent() {
         }
         
         .sidebar-button {
-          background: rgba(244,241,232,0.9);
-          border: 2px solid #8B4513;
+          background: rgba(244,241,232,0.3);
+          border: 1px solid rgba(139,69,19,0.1);
           color: #2c1810;
           font-family: 'Courier Prime', monospace;
-          transition: all 0.3s ease;
-          font-size: 20px;
+          transition: all 0.2s ease;
+          font-size: 9px;
+          line-height: 1.1;
         }
         
         .sidebar-button:hover {
           background: rgba(139,69,19,0.1);
-          transform: translateY(-1px);
+          border-color: rgba(139,69,19,0.3);
         }
         
         .sidebar-button.active {
           background: rgba(139,69,19,0.2);
-          border-color: #2c1810;
+          border-color: rgba(139,69,19,0.5);
+          color: #2c1810;
         }
         
         .copy-button {
@@ -652,22 +770,28 @@ function TimelineLogbookContent() {
               </Link>
             </div>
             
-            <h1 className="text-3xl md:text-5xl typewriter-title text-brown-800">
+            <h1 className="text-2xl md:text-3xl typewriter-title text-brown-800">
               Ernest's 1933 World Tour Timeline
             </h1>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-6">
               <Link 
                 href="/journey" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                ✨ Highlights
+                Highlights
+              </Link>
+              <Link 
+                href="/logbook/timeline" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-brown-600"
+              >
+                Timeline
               </Link>
               <Link 
                 href="/about" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                👨‍✈️ About
+                About
               </Link>
             </div>
           </div>
@@ -681,23 +805,23 @@ function TimelineLogbookContent() {
 
       <div className="flex flex-col lg:flex-row px-4 md:px-8">
         {/* Timeline Sidebar */}
-        <div className="w-full lg:w-80 lg:pr-8 mb-8 lg:mb-0 lg:h-screen lg:sticky lg:top-24 lg:overflow-y-auto">
-          <div className="vintage-paper p-6 rounded-lg shadow-lg">
-            <h2 className="text-3xl typewriter-title text-brown-800 mb-6 text-center">Journey Timeline</h2>
+        <div className="w-full lg:w-80 lg:pr-6 mb-8 lg:mb-0 lg:h-screen lg:sticky lg:top-24 lg:overflow-y-auto">
+          <div className="vintage-paper p-4 rounded-lg shadow-lg">
+            <h2 className="text-sm typewriter-title text-brown-800 mb-2 text-center">Journey Timeline</h2>
             
-            {/* Search Bar - Moved to Left Panel */}
-            <div className="mb-6 space-y-3">
+            {/* Search Bar - Compact */}
+            <div className="mb-3 space-y-2">
               <input
                 type="text"
                 placeholder="Search timeline..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-vintage w-full"
+                className="search-vintage w-full text-sm"
               />
               
               {logbookData && (
-                <div className="typewriter-text text-brown-600 text-sm text-center">
-                  {filteredEntries.length} entries found
+                <div className="typewriter-text text-brown-600 text-xs text-center">
+                  {filteredEntries.length} entries
                 </div>
               )}
             </div>
@@ -708,7 +832,7 @@ function TimelineLogbookContent() {
                 <p className="typewriter-text">No entries found</p>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-1">
                 {filteredEntries.map((timelineEntry, index) => {
                   const isActive = activeEntry === timelineEntry.id
                   const prevEntry = index > 0 ? filteredEntries[index - 1] : null
@@ -718,8 +842,8 @@ function TimelineLogbookContent() {
                   return (
                     <div key={timelineEntry.id}>
                       {showMonthDivider && (
-                        <div className="py-3 mb-3 border-b border-brown-400">
-                          <div className="typewriter-title text-brown-800 font-bold text-xl">
+                        <div className="py-1 mb-1 border-b border-brown-300">
+                          <div className="typewriter-title text-brown-800 font-bold text-xs">
                             {getMonthYear(timelineEntry.date)}
                           </div>
                         </div>
@@ -727,18 +851,23 @@ function TimelineLogbookContent() {
                       
                       <button
                         onClick={() => scrollToEntry(timelineEntry.id)}
-                        className={`w-full text-left p-4 rounded-lg transition-all sidebar-button ${
+                        className={`w-full text-left px-2 py-1 rounded transition-all sidebar-button ${
                           isActive ? 'active' : ''
                         }`}
                       >
-                        <div className="mb-2">
-                          <DateIndicator 
-                            dateStr={timelineEntry.date} 
-                            isInferred={timelineEntry.entries[0]?.date_inferred}
-                          />
-                        </div>
-                        <div className="typewriter-text text-brown-600 font-semibold text-xl">
-                          {normalizeLocationName(timelineEntry.location)}
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex-1 min-w-0">
+                            <div className="typewriter-text text-brown-800 font-medium text-xs truncate leading-tight">
+                              {normalizeLocationName(timelineEntry.location)}
+                            </div>
+                            <DateIndicator 
+                              dateStr={timelineEntry.date} 
+                              isInferred={timelineEntry.entries[0]?.date_inferred}
+                            />
+                          </div>
+                          <div className="typewriter-text text-brown-400 text-xs font-light opacity-75">
+                            {timelineEntry.entries.length}
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -775,17 +904,17 @@ function TimelineLogbookContent() {
                                              {/* Content - Full Width */}
                        <div className="w-full">
                          {/* Location Header */}
-                         <div className="mb-8 border-b-2 border-brown-400 pb-4">
-                           <h2 className="typewriter-title text-brown-800 text-4xl font-bold">{timelineEntry.location}</h2>
+                         <div className="mb-4 border-b-2 border-brown-400 pb-2">
+                           <h2 className="typewriter-title text-brown-800 text-lg font-bold">{timelineEntry.location}</h2>
                            {(() => {
                              const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                              if (dates.length > 1) {
                                return (
                                  <div className="mt-2 flex items-center gap-4">
-                                   <span className="typewriter-text text-brown-600 text-xl">
-                                     📅 {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
+                                   <span className="typewriter-text text-brown-600 text-sm">
+                                     {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
                                    </span>
-                                   <span className="typewriter-text text-brown-500 text-lg">
+                                   <span className="typewriter-text text-brown-500 text-sm">
                                      • {timelineEntry.entries.length} documents
                                    </span>
                                  </div>
@@ -797,7 +926,7 @@ function TimelineLogbookContent() {
                                      dateStr={timelineEntry.date} 
                                      isInferred={timelineEntry.entries[0]?.date_inferred}
                                    />
-                                   <span className="typewriter-text text-brown-500 text-lg">
+                                   <span className="typewriter-text text-brown-500 text-sm">
                                      • {timelineEntry.entries.length} documents
                                    </span>
                                  </div>
@@ -815,20 +944,19 @@ function TimelineLogbookContent() {
                                    <div className="flex items-center gap-4">
                                      <DocumentTypeIcon 
                                        type={entry.document_type}
-                                       isComplete={entry.is_complete}
                                      />
-                                     <h3 className="typewriter-title text-brown-800 font-bold text-2xl">
+                                     <h3 className="typewriter-title text-brown-800 font-bold text-sm">
                                        {entry.document_title || `Document ${entryIndex + 1}`}
                                      </h3>
                                    </div>
                                    <div className="flex items-center gap-4">
                                      {entry.date_entry && (
-                                       <span className="typewriter-text text-brown-500 text-lg">
-                                         📅 {formatDate(entry.date_entry)}
+                                       <span className="typewriter-text text-brown-500 text-sm">
+                                         {formatDate(entry.date_entry)}
                                        </span>
                                      )}
                                      
-                                     {/* Copy Icons */}
+                                     {/* Copy Icons and Notes */}
                                      <div className="flex items-center gap-2">
                                        {/* Copy Text Button */}
                                        <button
@@ -877,6 +1005,17 @@ function TimelineLogbookContent() {
                                            </svg>
                                          )}
                                        </button>
+                                       
+                                       {/* Notes Button */}
+                                       <button
+                                         onClick={() => toggleNotes(`${timelineEntry.id}-${entryIndex}`, entry)}
+                                         className="copy-button group relative p-2 rounded-lg transition-colors"
+                                         title="Toggle notes"
+                                       >
+                                         <span className="text-brown-600 group-hover:text-brown-800 text-sm">
+                                           📋
+                                         </span>
+                                       </button>
                                      </div>
                                    </div>
                                  </div>
@@ -885,60 +1024,17 @@ function TimelineLogbookContent() {
                                                              {/* Entry Content - Formatted in readable paragraphs with better spacing */}
                                <div className="space-y-3">
                                  {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-sm leading-tight" style={{
-                                     textIndent: paragraph.startsWith('...') ? '0' : '2.5rem',
+                                   <p key={paragraphIndex} className="typewriter-text text-brown-800 text-lg" style={{
+                                     textIndent: paragraph.startsWith('...') ? '0' : '2rem',
                                      textAlign: 'justify',
-                                     lineHeight: '1.2'
+                                     lineHeight: '1.6'
                                    }}>
                                      {paragraph}
                                    </p>
                                  ))}
                                </div>
 
-                               {/* Notes Link */}
-                               <div className="mt-8 pt-4 border-t border-brown-200">
-                                 <button
-                                   onClick={() => toggleNotes(`${timelineEntry.id}-${entryIndex}`)}
-                                   className="flex items-center gap-2 typewriter-text text-brown-600 hover:text-brown-800 transition-colors font-semibold"
-                                 >
-                                   <span>📋 Notes</span>
-                                   <span className="text-sm">
-                                     {expandedNotes[`${timelineEntry.id}-${entryIndex}`] ? '▼' : '▶'}
-                                   </span>
-                                 </button>
-                                 
-                                 {expandedNotes[`${timelineEntry.id}-${entryIndex}`] && (
-                                   <div className="mt-4 bg-brown-50 p-4 rounded-lg border border-brown-200">
-                                     <div className="space-y-3">
-                                       {entry.is_combined ? (
-                                         <div className="space-y-2 text-sm">
-                                           <div className="typewriter-text text-brown-700">
-                                             <strong>Combined from:</strong> {entry.source_entries?.join(', ')}
-                                           </div>
-                                           <div className="typewriter-text text-brown-700">
-                                             <strong>Original pages:</strong> {entry.entry_count}
-                                           </div>
-                                         </div>
-                                       ) : (
-                                         <div className="typewriter-text text-brown-700 text-sm">
-                                           <strong>Source:</strong> {entry.filename}
-                                         </div>
-                                       )}
-                                       <div className="text-sm space-y-1 border-t border-brown-200 pt-3">
-                                         <div className="typewriter-text text-brown-600">
-                                           <strong>Confidence:</strong> {Math.round(entry.confidence_score * 100)}%
-                                         </div>
-                                         <div className="typewriter-text text-brown-600">
-                                           <strong>Processing method:</strong> {entry.processing_method}
-                                         </div>
-                                         <div className="typewriter-text text-brown-600">
-                                           <strong>Page:</strong> {entry.page_number}
-                                         </div>
-                                       </div>
-                                     </div>
-                                   </div>
-                                 )}
-                               </div>
+
 
                                </div>
                           ))}
@@ -949,15 +1045,15 @@ function TimelineLogbookContent() {
                                         {/* Mobile Layout: Stacked */}
                     <div className="md:hidden">
                       {/* Location Header */}
-                      <div className="mb-6 border-b-2 border-brown-400 pb-4">
-                        <h2 className="typewriter-title text-brown-800 text-2xl font-bold">{timelineEntry.location}</h2>
+                      <div className="mb-4 border-b-2 border-brown-400 pb-2">
+                        <h2 className="typewriter-title text-brown-800 text-lg font-bold">{timelineEntry.location}</h2>
                         {(() => {
                           const dates = Array.from(new Set(timelineEntry.entries.map(e => e.date_entry).filter(Boolean))).sort()
                           if (dates.length > 1) {
                             return (
                               <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
                                 <span className="typewriter-text text-brown-600 text-lg">
-                                  📅 {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
+                                  {formatDate(dates[0])} to {formatDate(dates[dates.length - 1])}
                                 </span>
                                 <span className="typewriter-text text-brown-500 text-base mt-1 sm:mt-0">
                                   • {timelineEntry.entries.length} documents
@@ -989,20 +1085,19 @@ function TimelineLogbookContent() {
                                 <div className="flex items-center gap-2">
                                   <DocumentTypeIcon 
                                     type={entry.document_type}
-                                    isComplete={entry.is_complete}
                                   />
-                                  <h3 className="typewriter-title text-brown-800 font-bold text-xl">
+                                  <h3 className="typewriter-title text-brown-800 font-bold text-sm">
                                     {entry.document_title || `Document ${entryIndex + 1}`}
                                   </h3>
                                 </div>
                                 <div className="flex items-center gap-2">
                                   {entry.date_entry && (
                                     <span className="typewriter-text text-brown-500 text-lg">
-                                      📅 {formatDate(entry.date_entry)}
+                                      {formatDate(entry.date_entry)}
                                     </span>
                                   )}
                                   
-                                  {/* Copy Icons - Mobile */}
+                                  {/* Copy Icons and Notes - Mobile */}
                                   <div className="flex items-center gap-1">
                                     {/* Copy Text Button */}
                                     <button
@@ -1051,6 +1146,17 @@ function TimelineLogbookContent() {
                                         </svg>
                                       )}
                                     </button>
+                                    
+                                    {/* Notes Button - Mobile */}
+                                    <button
+                                      onClick={() => toggleNotes(`${timelineEntry.id}-${entryIndex}`, entry)}
+                                      className="copy-button group relative p-1.5 rounded-lg transition-colors"
+                                      title="Toggle notes"
+                                    >
+                                      <span className="text-brown-600 group-hover:text-brown-800 text-xs">
+                                        📋
+                                      </span>
+                                    </button>
                                   </div>
                                 </div>
                               </div>
@@ -1058,60 +1164,17 @@ function TimelineLogbookContent() {
                             
                             <div className="space-y-2">
                               {formatContentForReading(entry.content).map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-xs leading-tight" style={{
+                                <p key={paragraphIndex} className="typewriter-text text-brown-800 text-lg" style={{
                                   textIndent: paragraph.startsWith('...') ? '0' : '2rem',
                                   textAlign: 'justify',
-                                  lineHeight: '1.2'
+                                  lineHeight: '1.6'
                                 }}>
                                   {paragraph}
                                 </p>
                               ))}
                             </div>
 
-                            {/* Mobile Notes Link */}
-                            <div className="mt-6 pt-4 border-t border-brown-200">
-                              <button
-                                onClick={() => toggleNotes(`${timelineEntry.id}-${entryIndex}`)}
-                                className="flex items-center gap-2 typewriter-text text-brown-600 hover:text-brown-800 transition-colors font-semibold"
-                              >
-                                <span>📋 Notes</span>
-                                <span className="text-sm">
-                                  {expandedNotes[`${timelineEntry.id}-${entryIndex}`] ? '▼' : '▶'}
-                                </span>
-                              </button>
-                              
-                              {expandedNotes[`${timelineEntry.id}-${entryIndex}`] && (
-                                <div className="mt-4 bg-brown-50 p-4 rounded-lg border border-brown-200">
-                                  <div className="space-y-3">
-                                    {entry.is_combined ? (
-                                      <div className="space-y-2 text-sm">
-                                        <div className="typewriter-text text-brown-700">
-                                          <strong>Combined from:</strong> {entry.source_entries?.join(', ')}
-                                        </div>
-                                        <div className="typewriter-text text-brown-700">
-                                          <strong>Original pages:</strong> {entry.entry_count}
-                                        </div>
-                                      </div>
-                                    ) : (
-                                      <div className="typewriter-text text-brown-700 text-sm">
-                                        <strong>Source:</strong> {entry.filename}
-                                      </div>
-                                    )}
-                                    <div className="text-sm space-y-1 border-t border-brown-200 pt-3">
-                                      <div className="typewriter-text text-brown-600">
-                                        <strong>Confidence:</strong> {Math.round(entry.confidence_score * 100)}%
-                                      </div>
-                                      <div className="typewriter-text text-brown-600">
-                                        <strong>Processing method:</strong> {entry.processing_method}
-                                      </div>
-                                      <div className="typewriter-text text-brown-600">
-                                        <strong>Page:</strong> {entry.page_number}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
+
                           </div>
                         ))}
                       </div>
@@ -1130,38 +1193,105 @@ function TimelineLogbookContent() {
           <div className="">
             <div className="grid md:grid-cols-5 gap-8 text-center">
               <div>
-                <div className="text-6xl font-bold typewriter-title text-brown-800">
+                <div className="text-3xl font-bold typewriter-title text-brown-800">
                   {logbookData.metadata.original_entries || logbookData.metadata.total_entries}
                 </div>
-                <div className="typewriter-text text-brown-600">Original Pages</div>
+                <div className="typewriter-text text-brown-600 text-xs">Original Pages</div>
               </div>
               <div>
-                <div className="text-6xl font-bold typewriter-title text-brown-800">
+                <div className="text-3xl font-bold typewriter-title text-brown-800">
                   {logbookData.metadata.combined_entries || logbookData.metadata.total_entries}
                 </div>
-                <div className="typewriter-text text-brown-600">Combined Documents</div>
+                <div className="typewriter-text text-brown-600 text-xs">Combined Documents</div>
               </div>
               <div>
-                <div className="text-6xl font-bold typewriter-title text-brown-800">
+                <div className="text-3xl font-bold typewriter-title text-brown-800">
                   {logbookData.metadata.documents_combined || 0}
                 </div>
-                <div className="typewriter-text text-brown-600">Multi-page Documents</div>
+                <div className="typewriter-text text-brown-600 text-xs">Multi-page Documents</div>
               </div>
               <div>
-                <div className="text-6xl font-bold typewriter-title text-brown-800">
+                <div className="text-3xl font-bold typewriter-title text-brown-800">
                   {Math.round(logbookData.metadata.average_confidence * 100)}%
                 </div>
-                <div className="typewriter-text text-brown-600">Average Confidence</div>
+                <div className="typewriter-text text-brown-600 text-xs">Average Confidence</div>
               </div>
               <div>
-                <div className="text-6xl font-bold typewriter-title text-brown-800">
+                <div className="text-3xl font-bold typewriter-title text-brown-800">
                   1933
                 </div>
-                <div className="typewriter-text text-brown-600">Vintage Year</div>
+                <div className="typewriter-text text-brown-600 text-xs">Vintage Year</div>
               </div>
             </div>
           </div>
         </footer>
+      )}
+
+      {/* Notes Modal */}
+      {notesModal.show && notesModal.entry && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="vintage-paper max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-xl shadow-2xl">
+            <div className="p-6">
+              {/* Modal Header */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">📋</span>
+                  <h3 className="typewriter-title text-brown-800 font-bold text-xl">
+                    Document Notes
+                  </h3>
+                </div>
+                <button 
+                  onClick={closeNotesModal}
+                  className="text-brown-600 hover:text-brown-800 transition-colors p-1"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="space-y-4">
+                {notesModal.entry.is_combined ? (
+                  <div className="space-y-3">
+                    <div className="typewriter-text text-brown-700 text-sm">
+                      <strong>Combined from:</strong> {notesModal.entry.source_entries?.join(', ')}
+                    </div>
+                    <div className="typewriter-text text-brown-700 text-sm">
+                      <strong>Original pages:</strong> {notesModal.entry.entry_count}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="typewriter-text text-brown-700 text-sm">
+                    <strong>Source:</strong> {notesModal.entry.filename}
+                  </div>
+                )}
+                
+                <div className="border-t border-brown-200 pt-4 space-y-2">
+                  <div className="typewriter-text text-brown-600 text-sm">
+                    <strong>Confidence:</strong> {Math.round(notesModal.entry.confidence_score * 100)}%
+                  </div>
+                  <div className="typewriter-text text-brown-600 text-sm">
+                    <strong>Processing method:</strong> {notesModal.entry.processing_method}
+                  </div>
+                  <div className="typewriter-text text-brown-600 text-sm">
+                    <strong>Page:</strong> {notesModal.entry.page_number}
+                  </div>
+                </div>
+
+                {/* Close Button */}
+                <div className="pt-4 flex justify-end">
+                  <button 
+                    onClick={closeNotesModal}
+                    className="bg-brown-600 hover:bg-brown-700 text-white px-4 py-2 rounded-lg transition-colors typewriter-text text-sm"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Back to Top Button */}

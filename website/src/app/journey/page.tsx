@@ -56,6 +56,62 @@ export default function JourneyHighlightsPage() {
   // Journal entry modal state
   const [selectedEntry, setSelectedEntry] = useState<any>(null)
   const [showModal, setShowModal] = useState(false)
+  
+  // Continent selection state
+  const [selectedContinent, setSelectedContinent] = useState<string | null>(null)
+  const [showContinentPopup, setShowContinentPopup] = useState(false)
+
+  // Continent-level timeline data
+  const continentTimeline = [
+    {
+      id: "north_america",
+      continent: "North America",
+      period: "May 1933",
+      locations: ["Chicago", "New York"],
+      color: "#8B4513",
+      description: "Journey begins from the American heartland"
+    },
+    {
+      id: "atlantic",
+      continent: "Atlantic Ocean",
+      period: "June 1933", 
+      locations: ["Aboard SS Georgic"],
+      color: "#1E40AF",
+      description: "Transatlantic crossing and reflections"
+    },
+    {
+      id: "europe",
+      continent: "Europe",
+      period: "June-July 1933",
+      locations: ["London", "Paris", "Brussels", "Berlin", "Vienna", "Switzerland"],
+      color: "#059669",
+      description: "European capitals and telephone exchanges"
+    },
+    {
+      id: "africa",
+      continent: "North Africa",
+      period: "July 1933",
+      locations: ["Morocco", "Fez", "Casablanca"],
+      color: "#DC2626",
+      description: "French Morocco and ancient cities"
+    },
+    {
+      id: "asia",
+      continent: "Asia",
+      period: "August-October 1933",
+      locations: ["Egypt", "Ceylon", "Singapore", "China", "Japan"],
+      color: "#7C2D12",
+      description: "Eastern civilizations and telephone systems"
+    },
+    {
+      id: "pacific",
+      continent: "Pacific Ocean",  
+      period: "November 1933",
+      locations: ["Trans-Pacific crossing"],
+      color: "#1E40AF",
+      description: "Return journey across the vast Pacific"
+    }
+  ]
 
   // Enhanced journey highlights with multiple quotes and historical images
   const journeyHighlights = [
@@ -64,6 +120,7 @@ export default function JourneyHighlightsPage() {
       location: "Aboard the motor-ship Georgic",
       date: "June 1933",
       timelineLocation: "Liverpool",
+      continent: "atlantic",
       quotes: [
         {
           text: "I am at present on the threshold of a world tour... just like that, you see, I say 'World Tour.' The whole business of getting ready to leave one's native heath is fraught with more difficulties than one would suppose, and I find myself beset by advisors from every quarter.",
@@ -78,7 +135,7 @@ export default function JourneyHighlightsPage() {
           context: "His amusing yet anxious account of the required vaccinations and medical preparations for world travel"
         }
       ],
-      image: "/images/gann-portrait.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/320px-RMS_Titanic_3.jpg",
       journalEntry: {
         filename: "IMG_001.jpg",
         content: "I am suffering from the kind ministrations of my doctor, and I cannot help but ruminate upon certain peculiarities in the human race. I am at present on the threshold of a world tour... just like that, you see, I say 'World Tour.' The whole business of getting ready to leave one's native heath is fraught with more difficulties than one would suppose.",
@@ -90,6 +147,7 @@ export default function JourneyHighlightsPage() {
       location: "Mid-Atlantic",
       date: "June 1933",
       timelineLocation: "Liverpool",
+      continent: "atlantic",
       quotes: [
         {
           text: "Truth is not always a virtue in a book. I had a rather definite idea of where I wanted to go and how I wanted to get there. It seems, however, that I had suddenly become incapable of adult thought, and my carefully laid plans began to unravel before I even set foot aboard ship.",
@@ -104,7 +162,7 @@ export default function JourneyHighlightsPage() {
           context: "The overwhelming social attention and unsolicited advice that accompanied news of his world tour"
         }
       ],
-      image: "/images/placeholder-journey.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/320px-RMS_Titanic_3.jpg",
       journalEntry: {
         filename: "IMG_002.jpg",
         content: "Truth is not always a virtue in a book. I had a rather definite idea of where I wanted to go and how I wanted to get there. It seems, however, that I had suddenly become incapable of adult thought. The ocean stretches endlessly, and one begins to understand the true meaning of distance.",
@@ -116,6 +174,7 @@ export default function JourneyHighlightsPage() {
       location: "London, England",
       date: "June 1933",
       timelineLocation: "London",
+      continent: "europe",
       quotes: [
         {
           text: "London presents itself as a city of infinite possibilities and equal confusions. The fog here is not merely weather - it is a living thing that transforms the familiar into the mysterious, wrapping the great metropolis in layers of intrigue and romance.",
@@ -130,7 +189,7 @@ export default function JourneyHighlightsPage() {
           context: "Professional observations on British engineering and social organization, comparing it favorably to American methods"
         }
       ],
-      image: "/images/placeholder-journey.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Big_Ben_London.jpg/240px-Big_Ben_London.jpg",
       journalEntry: {
         filename: "IMG_015.jpg",
         content: "London presents itself as a city of infinite possibilities and equal confusions. The fog here is not merely weather - it is a living thing that transforms the familiar into the mysterious. Every street corner holds a story, every pub a gathering of characters worthy of Dickens himself.",
@@ -142,6 +201,7 @@ export default function JourneyHighlightsPage() {
       location: "Continental Europe",
       date: "July 1933",
       timelineLocation: "Paris",
+      continent: "europe",
       quotes: [
         {
           text: "Each border crossed reveals not just new landscapes, but entirely new ways of seeing the world.",
@@ -156,7 +216,7 @@ export default function JourneyHighlightsPage() {
           context: "Poetic impressions of the City of Light"
         }
       ],
-      image: "/images/placeholder-journey.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/240px-Tour_Eiffel_Wikimedia_Commons.jpg",
       journalEntry: {
         filename: "IMG_045.jpg",
         content: "Each border crossed reveals not just new landscapes, but entirely new ways of seeing the world. The telephone systems here are marvels of engineering, yet each operates by its own mysterious logic. Paris in summer is a symphony of light and shadow, each café a theater of human drama.",
@@ -168,6 +228,7 @@ export default function JourneyHighlightsPage() {
       location: "Asia",
       date: "September 1933",
       timelineLocation: "Singapore",
+      continent: "asia",
       quotes: [
         {
           text: "The East presents challenges that no amount of Western preparation could anticipate.",
@@ -182,7 +243,7 @@ export default function JourneyHighlightsPage() {
           context: "Vivid description of tropical conditions"
         }
       ],
-      image: "/images/placeholder-journey.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Singapore_Marina_Bay.jpg/320px-Singapore_Marina_Bay.jpg",
       journalEntry: {
         filename: "IMG_078.jpg",
         content: "The East presents challenges that no amount of Western preparation could anticipate. Singapore stands as a crossroads of civilizations, where East meets West in fascinating harmony. The heat here is not merely temperature - it is a presence that reshapes both body and mind.",
@@ -194,6 +255,7 @@ export default function JourneyHighlightsPage() {
       location: "Trans-Pacific Journey",
       date: "November 1933",
       timelineLocation: "Japan",
+      continent: "pacific",
       quotes: [
         {
           text: "The Pacific Ocean humbles even the most confident traveler with its sheer immensity.",
@@ -208,7 +270,7 @@ export default function JourneyHighlightsPage() {
           context: "Reflections on personal transformation through travel"
         }
       ],
-      image: "/images/placeholder-journey.jpg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Kinkaku-ji_-_Temple_of_the_Golden_Pavilion_in_Kyoto%2C_Japan.jpg/320px-Kinkaku-ji_-_Temple_of_the_Golden_Pavilion_in_Kyoto%2C_Japan.jpg",
       journalEntry: {
         filename: "IMG_112.jpg",
         content: "The Pacific Ocean humbles even the most confident traveler with its sheer immensity. Japan offers glimpses of a culture so refined and complex that it defies easy understanding. As we sail toward America, I carry with me not just memories, but a fundamentally changed perspective.",
@@ -226,6 +288,96 @@ export default function JourneyHighlightsPage() {
   const closeModal = () => {
     setShowModal(false)
     setSelectedEntry(null)
+  }
+
+  // Filter highlights by continent
+  const filteredHighlights = selectedContinent 
+    ? journeyHighlights.filter(highlight => highlight.continent === selectedContinent)
+    : journeyHighlights
+
+  // Continent Timeline Component
+  const ContinentTimeline = () => {
+    const handleContinentClick = (continentId: string) => {
+      if (selectedContinent === continentId) {
+        setSelectedContinent(null) // Deselect if already selected
+      } else {
+        setSelectedContinent(continentId)
+      }
+    }
+
+    const handleContinentPopup = (continentId: string) => {
+      setSelectedContinent(continentId)
+      setShowContinentPopup(true)
+    }
+
+    return (
+      <div className="vintage-paper rounded-lg p-6 mb-8 shadow-lg">
+        <h2 className="text-2xl typewriter-title text-brown-800 mb-4 text-center">
+          Journey by Continent
+        </h2>
+        <div className="flex flex-wrap justify-center gap-3">
+          {continentTimeline.map((continent) => (
+            <button
+              key={continent.id}
+              onClick={() => handleContinentClick(continent.id)}
+              onMouseEnter={() => handleContinentPopup(continent.id)}
+              onMouseLeave={() => setShowContinentPopup(false)}
+              className={`relative px-4 py-2 rounded-lg border-2 transition-all duration-200 transform hover:scale-105 ${
+                selectedContinent === continent.id
+                  ? 'bg-brown-50 text-brown-800 border-brown-600 shadow-lg border-4'
+                  : 'bg-brown-50 text-brown-800 border-brown-300 hover:border-brown-500'
+              }`}
+              style={{ borderColor: continent.color }}
+            >
+              <div className="typewriter-text text-sm font-semibold">
+                {continent.continent}
+              </div>
+              <div className="typewriter-text text-xs opacity-75">
+                {continent.period}
+              </div>
+              
+              {/* Continent Popup */}
+              {showContinentPopup && selectedContinent === continent.id && (
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
+                  <div className="vintage-paper p-3 rounded-lg shadow-xl border-2 border-brown-400 min-w-64">
+                    <h3 className="typewriter-title text-brown-800 font-bold text-sm mb-2">
+                      {continent.continent}
+                    </h3>
+                    <p className="typewriter-text text-brown-600 text-xs mb-2">
+                      {continent.description}
+                    </p>
+                    <div className="text-xs">
+                      <strong className="typewriter-text text-brown-700">Locations:</strong>
+                      <div className="typewriter-text text-brown-600 mt-1">
+                        {continent.locations.join(' • ')}
+                      </div>
+                    </div>
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-brown-400"></div>
+                  </div>
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
+        
+        {selectedContinent && (
+          <div className="mt-4 text-center">
+            <div className="typewriter-text text-brown-600 text-sm">
+              Showing {filteredHighlights.length} highlight{filteredHighlights.length !== 1 ? 's' : ''} from{' '}
+              <span className="font-semibold">
+                {continentTimeline.find(c => c.id === selectedContinent)?.continent}
+              </span>
+              <button
+                onClick={() => setSelectedContinent(null)}
+                className="ml-2 text-brown-500 hover:text-brown-700 underline"
+              >
+                Show All
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    )
   }
 
   // Format content for reading like timeline page
@@ -283,38 +435,41 @@ export default function JourneyHighlightsPage() {
         </div>
         
         {/* Quote Content with Side Navigation */}
-        <div className="quote-content-wrapper relative">
-          {/* Left Arrow */}
-          {quotes.length > 1 && (
-            <button
-              onClick={prevQuote}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 text-brown-600 hover:text-brown-800 text-2xl font-bold z-10 p-2"
-              title="Previous quote"
-            >
-              ‹
-            </button>
-          )}
-          
+        <div className="quote-content-wrapper">
           {/* Quote Content */}
           <div className="quote-content px-8">
-            <blockquote className="typewriter-text text-brown-800 text-lg lg:text-xl leading-relaxed italic font-medium mb-4 border-l-4 border-brown-400 pl-6">
-              "{quotes[currentQuote].text}"
-            </blockquote>
+            <div className="relative">
+              {/* Left Arrow - positioned relative to blockquote only */}
+              {quotes.length > 1 && (
+                <button
+                  onClick={prevQuote}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-brown-600 hover:text-brown-800 text-4xl font-bold z-10 p-3 hover:scale-110 transition-all duration-200"
+                  title="Previous quote"
+                >
+                  ❮
+                </button>
+              )}
+              
+              <blockquote className="typewriter-text text-brown-800 text-lg lg:text-xl leading-relaxed italic font-medium mb-4 border-l-4 border-brown-400 pl-6">
+                "{quotes[currentQuote].text}"
+              </blockquote>
+              
+              {/* Right Arrow - positioned relative to blockquote only */}
+              {quotes.length > 1 && (
+                <button
+                  onClick={nextQuote}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-brown-600 hover:text-brown-800 text-4xl font-bold z-10 p-3 hover:scale-110 transition-all duration-200"
+                  title="Next quote"
+                >
+                  ❯
+                </button>
+              )}
+            </div>
+            
             <p className="typewriter-text text-brown-600 text-base leading-relaxed">
               {quotes[currentQuote].context}
             </p>
           </div>
-          
-          {/* Right Arrow */}
-          {quotes.length > 1 && (
-            <button
-              onClick={nextQuote}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 text-brown-600 hover:text-brown-800 text-2xl font-bold z-10 p-2"
-              title="Next quote"
-            >
-              ›
-            </button>
-          )}
         </div>
       </div>
     )
@@ -470,6 +625,51 @@ export default function JourneyHighlightsPage() {
         .quote-content {
           transition: opacity 0.3s ease;
         }
+        
+        .vintage-location-badge {
+          position: relative;
+          background: linear-gradient(135deg, #f4f1e8 0%, #f7f3e9 50%, #f4f1e8 100%);
+          padding: 0.5rem 1.5rem;
+          border-radius: 0.5rem;
+          box-shadow: inset 0 2px 4px rgba(139,69,19,0.1);
+        }
+        
+        .vintage-location-badge::before {
+          content: '✈';
+          position: absolute;
+          left: -0.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+          color: #8B4513;
+        }
+        
+        .vintage-location-badge::after {
+          content: '✈';
+          position: absolute;
+          right: -0.75rem;
+          top: 50%;
+          transform: translateY(-50%) scaleX(-1);
+          font-size: 1.5rem;
+          color: #8B4513;
+        }
+        
+        .postage-stamp-button {
+          position: relative;
+          clip-path: polygon(
+            0% 3px, 3px 3px, 3px 0%, 6px 0%, 6px 3px, 9px 3px, 9px 0%, 12px 0%, 12px 3px, 15px 3px, 15px 0%, 18px 0%, 18px 3px, 21px 3px, 21px 0%, 24px 0%, 24px 3px, 27px 3px, 27px 0%, 30px 0%, 30px 3px, 33px 3px, 33px 0%, 36px 0%, 36px 3px, 39px 3px, 39px 0%, 42px 0%, 42px 3px, 45px 3px, 45px 0%, 48px 0%, 48px 3px, 51px 3px, 51px 0%, 54px 0%, 54px 3px, 57px 3px, 57px 0%, 60px 0%, 60px 3px, 63px 3px, 63px 0%, 66px 0%, 66px 3px, 69px 3px, 69px 0%, 72px 0%, 72px 3px, 75px 3px, 75px 0%, 78px 0%, 78px 3px, 81px 3px, 81px 0%, 84px 0%, 84px 3px, 87px 3px, 87px 0%, 90px 0%, 90px 3px, 93px 3px, 93px 0%, 96px 0%, 96px 3px, 99px 3px, 99px 0%, 
+            100% 0%, 100% 3px, 
+            calc(100% - 3px) 3px, calc(100% - 3px) 6px, 100% 6px, 100% 9px, calc(100% - 3px) 9px, calc(100% - 3px) 12px, 100% 12px, 100% 15px, calc(100% - 3px) 15px, calc(100% - 3px) 18px, 100% 18px, 100% 21px, calc(100% - 3px) 21px, calc(100% - 3px) 24px, 100% 24px, 100% 27px, calc(100% - 3px) 27px, calc(100% - 3px) 30px, 100% 30px, 100% 33px, calc(100% - 3px) 33px, calc(100% - 3px) 36px, 100% 36px, 100% 39px,
+            100% calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, calc(100% - 6px) 100%, calc(100% - 6px) calc(100% - 3px), calc(100% - 9px) calc(100% - 3px), calc(100% - 9px) 100%, calc(100% - 12px) 100%, calc(100% - 12px) calc(100% - 3px), calc(100% - 15px) calc(100% - 3px), calc(100% - 15px) 100%, calc(100% - 18px) 100%, calc(100% - 18px) calc(100% - 3px), calc(100% - 21px) calc(100% - 3px), calc(100% - 21px) 100%, calc(100% - 24px) 100%, calc(100% - 24px) calc(100% - 3px), calc(100% - 27px) calc(100% - 3px), calc(100% - 27px) 100%, calc(100% - 30px) 100%, calc(100% - 30px) calc(100% - 3px), calc(100% - 33px) calc(100% - 3px), calc(100% - 33px) 100%, calc(100% - 36px) 100%, calc(100% - 36px) calc(100% - 3px), calc(100% - 39px) calc(100% - 3px), calc(100% - 39px) 100%, calc(100% - 42px) 100%, calc(100% - 42px) calc(100% - 3px), calc(100% - 45px) calc(100% - 3px), calc(100% - 45px) 100%, calc(100% - 48px) 100%, calc(100% - 48px) calc(100% - 3px), calc(100% - 51px) calc(100% - 3px), calc(100% - 51px) 100%, calc(100% - 54px) 100%, calc(100% - 54px) calc(100% - 3px), calc(100% - 57px) calc(100% - 3px), calc(100% - 57px) 100%, calc(100% - 60px) 100%, calc(100% - 60px) calc(100% - 3px), calc(100% - 63px) calc(100% - 3px), calc(100% - 63px) 100%, calc(100% - 66px) 100%, calc(100% - 66px) calc(100% - 3px), calc(100% - 69px) calc(100% - 3px), calc(100% - 69px) 100%, calc(100% - 72px) 100%, calc(100% - 72px) calc(100% - 3px), calc(100% - 75px) calc(100% - 3px), calc(100% - 75px) 100%, calc(100% - 78px) 100%, calc(100% - 78px) calc(100% - 3px), calc(100% - 81px) calc(100% - 3px), calc(100% - 81px) 100%, calc(100% - 84px) 100%, calc(100% - 84px) calc(100% - 3px), calc(100% - 87px) calc(100% - 3px), calc(100% - 87px) 100%, calc(100% - 90px) 100%, calc(100% - 90px) calc(100% - 3px), calc(100% - 93px) calc(100% - 3px), calc(100% - 93px) 100%, calc(100% - 96px) 100%, calc(100% - 96px) calc(100% - 3px), calc(100% - 99px) calc(100% - 3px), calc(100% - 99px) 100%,
+            0% 100%, 0% calc(100% - 3px),
+            3px calc(100% - 3px), 3px calc(100% - 6px), 0% calc(100% - 6px), 0% calc(100% - 9px), 3px calc(100% - 9px), 3px calc(100% - 12px), 0% calc(100% - 12px), 0% calc(100% - 15px), 3px calc(100% - 15px), 3px calc(100% - 18px), 0% calc(100% - 18px), 0% calc(100% - 21px), 3px calc(100% - 21px), 3px calc(100% - 24px), 0% calc(100% - 24px), 0% calc(100% - 27px), 3px calc(100% - 27px), 3px calc(100% - 30px), 0% calc(100% - 30px), 0% calc(100% - 33px), 3px calc(100% - 33px), 3px calc(100% - 36px), 0% calc(100% - 36px), 0% calc(100% - 39px), 3px calc(100% - 39px),
+            0% 39px, 0% 36px, 3px 36px, 3px 33px, 0% 33px, 0% 30px, 3px 30px, 3px 27px, 0% 27px, 0% 24px, 3px 24px, 3px 21px, 0% 21px, 0% 18px, 3px 18px, 3px 15px, 0% 15px, 0% 12px, 3px 12px, 3px 9px, 0% 9px, 0% 6px, 3px 6px
+          );
+        }
+        
+        .postage-stamp-button:hover {
+          transform: translateY(-1px);
+        }
       `}</style>
 
       {/* Fixed Navigation Header - Dense */}
@@ -489,22 +689,28 @@ export default function JourneyHighlightsPage() {
             
             {/* Center: Title */}
             <h1 className="text-3xl md:text-4xl typewriter-title text-brown-800 font-bold">
-              Journey Highlights
+              Ernest K. Gann 1933 Logbook
             </h1>
             
-            {/* Right: Quick Navigation */}
-            <div className="flex items-center space-x-4">
+            {/* Right: Navigation */}
+            <div className="flex items-center space-x-6">
+              <Link 
+                href="/journey" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-brown-600"
+              >
+                Highlights
+              </Link>
               <Link 
                 href="/logbook/timeline" 
-                className="nav-button text-white px-4 py-2 rounded-lg typewriter-text font-semibold text-sm"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                📖 Timeline
+                Timeline
               </Link>
               <Link 
                 href="/about" 
-                className="nav-button text-white px-4 py-2 rounded-lg typewriter-text font-semibold text-sm"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                👨‍✈️ About
+                About
               </Link>
             </div>
           </div>
@@ -524,46 +730,139 @@ export default function JourneyHighlightsPage() {
         </div>
       </section>
 
-      {/* Main Content - Simplified Clean Layout */}
-      <main className="py-6 px-6">
+      {/* Continent Timeline */}
+      <section className="py-6 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="space-y-16">
-            {journeyHighlights.map((highlight, index) => (
-              <article key={highlight.id} className="highlight-entry border-b border-brown-200 pb-12 last:border-b-0">
+          <ContinentTimeline />
+        </div>
+      </section>
+
+      {/* Main Content - Newspaper Style Layout */}
+      <main className="py-4 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="space-y-8">
+            {filteredHighlights.map((highlight, index) => (
+              <article key={highlight.id} className="highlight-entry border-b border-brown-200 pb-8 last:border-b-0">
                 
-                {/* Header with Date and Location */}
-                <header className="mb-8">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                {/* Header with Date and Location - Newspaper Style */}
+                <header className="mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
                     <div>
-                      <time className="typewriter-text text-brown-500 font-semibold text-lg">
-                        📅 {highlight.date}
+                      <time className="typewriter-text text-brown-500 font-semibold text-sm uppercase tracking-wide">
+                        {highlight.date}
                       </time>
-                      <h2 className="text-3xl lg:text-4xl typewriter-title text-brown-800 font-bold leading-tight mt-2">
+                      <h2 className="text-xl lg:text-2xl typewriter-title text-brown-800 font-bold leading-tight mt-1">
                         {highlight.location}
                       </h2>
                     </div>
                     
-                    {/* Action Buttons - Simplified */}
-                    <div className="flex gap-3 sm:ml-auto">
+                    {/* Action Button */}
+                    <div className="flex sm:ml-auto">
                       <button 
                         onClick={() => openModal(highlight)}
-                        className="nav-button px-4 py-2 rounded typewriter-text text-sm"
+                        className="postage-stamp-button bg-gradient-to-r from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-200 text-brown-800 border-2 border-brown-400 hover:border-brown-600 px-4 py-2 typewriter-text text-xs font-semibold transition-all duration-200 hover:shadow-md"
                       >
-                        View Entry
+                        View Post
                       </button>
-                      <Link 
-                        href={`/logbook/timeline?location=${encodeURIComponent(highlight.timelineLocation)}`}
-                        className="secondary-button px-4 py-2 rounded typewriter-text text-sm"
-                      >
-                        Timeline
-                      </Link>
                     </div>
                   </div>
                 </header>
 
-                {/* Quote Content - Clean Single Panel */}
-                <div className="quote-section">
-                  <QuoteCarousel quotes={highlight.quotes} />
+                {/* Newspaper-style Content Layout */}
+                <div className="grid lg:grid-cols-4 gap-6 items-start mb-6">
+                  {/* Retro-Style Map */}
+                  <div className="lg:col-span-1">
+                    <div className="vintage-paper p-3 rounded shadow-md">
+                      <div className="aspect-square bg-gradient-to-br from-amber-50 to-amber-100 rounded border-2 border-brown-400 relative overflow-hidden">
+                        {/* Decorative Map Elements */}
+                        <div className="absolute inset-0 opacity-20">
+                          <svg viewBox="0 0 100 100" className="w-full h-full">
+                                                         {/* Grid lines for map feel */}
+                             <defs>
+                               <pattern id={`grid-${highlight.id}`} width="10" height="10" patternUnits="userSpaceOnUse">
+                                 <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#8B4513" strokeWidth="0.5"/>
+                               </pattern>
+                             </defs>
+                             <rect width="100" height="100" fill={`url(#grid-${highlight.id})`} />
+                            
+                            {/* Decorative compass rose */}
+                            <g transform="translate(80,20)">
+                              <circle cx="0" cy="0" r="8" fill="none" stroke="#8B4513" strokeWidth="1"/>
+                              <path d="M 0,-6 L 2,0 L 0,6 L -2,0 Z" fill="#8B4513"/>
+                              <text x="0" y="-12" textAnchor="middle" fontSize="4" fill="#8B4513" fontFamily="serif">N</text>
+                            </g>
+                            
+                            {/* Geographic features based on location */}
+                            {highlight.continent === 'atlantic' && (
+                              <>
+                                <path d="M 10,40 Q 30,30 50,45 Q 70,35 90,50" fill="none" stroke="#1E40AF" strokeWidth="2"/>
+                                <path d="M 15,60 Q 35,50 55,65 Q 75,55 85,70" fill="none" stroke="#1E40AF" strokeWidth="1.5"/>
+                              </>
+                            )}
+                            {highlight.continent === 'europe' && (
+                              <>
+                                <rect x="20" y="30" width="60" height="40" fill="#059669" opacity="0.3" rx="5"/>
+                                <circle cx="35" cy="45" r="3" fill="#8B4513"/>
+                                <circle cx="55" cy="50" r="2" fill="#8B4513"/>
+                              </>
+                            )}
+                            {highlight.continent === 'asia' && (
+                              <>
+                                <path d="M 30,20 Q 50,40 70,25 Q 80,50 90,40" fill="#7C2D12" opacity="0.3"/>
+                                <circle cx="45" cy="35" r="2" fill="#8B4513"/>
+                                <circle cx="65" cy="45" r="2" fill="#8B4513"/>
+                              </>
+                            )}
+                            {highlight.continent === 'africa' && (
+                              <>
+                                <path d="M 25,30 Q 40,20 55,35 Q 70,25 75,50 Q 60,70 45,65 Q 30,60 25,45 Z" fill="#DC2626" opacity="0.3"/>
+                                <circle cx="45" cy="45" r="2" fill="#8B4513"/>
+                              </>
+                            )}
+                            {highlight.continent === 'pacific' && (
+                              <>
+                                <circle cx="25" cy="40" r="4" fill="#1E40AF" opacity="0.5"/>
+                                <circle cx="75" cy="55" r="6" fill="#1E40AF" opacity="0.5"/>
+                                <path d="M 15,70 Q 50,60 85,75" fill="none" stroke="#1E40AF" strokeWidth="2"/>
+                              </>
+                            )}
+                          </svg>
+                        </div>
+                        
+                        {/* Location marker and text */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="text-center text-brown-700">
+                            <div className="text-2xl mb-1">📍</div>
+                            <div className="typewriter-text text-xs font-bold">
+                              {highlight.location.split(',')[0]}
+                            </div>
+                            <div className="typewriter-text text-xs opacity-75">
+                              {highlight.date}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Vintage map border */}
+                        <div className="absolute inset-0 border-2 border-brown-400 rounded pointer-events-none"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Condensed Quote Content */}
+                  <div className="lg:col-span-3">
+                    <div className="space-y-3">
+                      {highlight.quotes.map((quote, qIndex) => (
+                        <div key={qIndex} className="border-l-2 border-brown-300 pl-4">
+                          <blockquote className="typewriter-text text-brown-800 text-sm leading-relaxed italic mb-2">
+                            "{quote.text}"
+                          </blockquote>
+                          <p className="typewriter-text text-brown-600 text-xs">
+                            {quote.context}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
                 
               </article>
@@ -621,17 +920,6 @@ export default function JourneyHighlightsPage() {
                   ))}
                 </div>
 
-                {/* Entry Metadata */}
-                <div className="mt-6 pt-4 border-t border-brown-200 bg-brown-50 p-4 rounded-lg">
-                  <div className="text-sm space-y-1">
-                    <div className="typewriter-text text-brown-600">
-                      <strong>Source:</strong> {selectedEntry.journalEntry.filename}
-                    </div>
-                    <div className="typewriter-text text-brown-600">
-                      <strong>Confidence:</strong> {Math.round(selectedEntry.journalEntry.confidence_score * 100)}%
-                    </div>
-                  </div>
-                </div>
 
                 {/* Action Buttons */}
                 <div className="pt-6 flex flex-col sm:flex-row gap-4">
@@ -640,7 +928,7 @@ export default function JourneyHighlightsPage() {
                     className="nav-button inline-flex items-center justify-center text-white px-8 py-4 rounded-xl typewriter-text font-semibold text-lg"
                     onClick={closeModal}
                   >
-                    🗺️ Go to Timeline Location
+                    See in Timeline
                     <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

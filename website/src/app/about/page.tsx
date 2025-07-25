@@ -100,19 +100,25 @@ export default function AboutPage() {
               About Ernest K. Gann
             </h1>
             
-            {/* Right: Quick Navigation */}
-            <div className="flex items-center space-x-4">
+            {/* Right: Navigation */}
+            <div className="flex items-center space-x-6">
               <Link 
                 href="/journey" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                ✨ Highlights
+                Highlights
               </Link>
               <Link 
                 href="/logbook/timeline" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
-                📖 Timeline
+                Timeline
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-brown-600"
+              >
+                About
               </Link>
             </div>
           </div>
@@ -200,18 +206,18 @@ export default function AboutPage() {
               </div>
 
               <div className="grid md:grid-cols-3 gap-4 my-8">
-                <div className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300">
+                <a href="https://en.wikipedia.org/wiki/Douglas_DC-3" target="_blank" rel="noopener noreferrer" className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300 hover:border-brown-500 transition-colors block">
                   <div className="text-3xl typewriter-title text-brown-700 font-bold">DC-3</div>
                   <div className="typewriter-text text-brown-600 text-sm">Commercial Aviation</div>
-                </div>
-                <div className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300">
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Hump_(airlift)" target="_blank" rel="noopener noreferrer" className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300 hover:border-brown-500 transition-colors block">
                   <div className="text-3xl typewriter-title text-brown-700 font-bold">The Hump</div>
                   <div className="typewriter-text text-brown-600 text-sm">Himalayan Route</div>
-                </div>
-                <div className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300">
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Air_Transport_Command" target="_blank" rel="noopener noreferrer" className="text-center vintage-paper p-4 rounded-lg border-2 border-brown-300 hover:border-brown-500 transition-colors block">
                   <div className="text-3xl typewriter-title text-brown-700 font-bold">ATC</div>
                   <div className="typewriter-text text-brown-600 text-sm">Air Transport Command</div>
-                </div>
+                </a>
               </div>
             </div>
           </section>
@@ -237,36 +243,36 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <h4 className="text-xl typewriter-title text-brown-700">Aviation Classics</h4>
                   <div className="space-y-3">
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    <a href="https://www.amazon.com/s?k=Island+in+the+Sky+Ernest+K+Gann" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">Island in the Sky (1944)</div>
                       <div className="text-sm typewriter-text opacity-90">His breakthrough novel</div>
-                    </div>
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    </a>
+                    <a href="https://www.amazon.com/s?k=The+High+and+the+Mighty+Ernest+K+Gann" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">The High and the Mighty (1953)</div>
                       <div className="text-sm typewriter-text opacity-90">Academy Award winning adaptation</div>
-                    </div>
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    </a>
+                    <a href="https://www.amazon.com/Fate-Hunter-Ernest-K-Gann/dp/0671636030" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">Fate Is the Hunter (1961)</div>
                       <div className="text-sm typewriter-text opacity-90">Classic aviation memoir</div>
-                    </div>
+                    </a>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <h4 className="text-xl typewriter-title text-brown-700">Adventure & Beyond</h4>
                   <div className="space-y-3">
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    <a href="https://www.amazon.com/s?k=Soldier+of+Fortune+Ernest+K+Gann" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">Soldier of Fortune (1954)</div>
                       <div className="text-sm typewriter-text opacity-90">Hong Kong adventure</div>
-                    </div>
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    </a>
+                    <a href="https://www.amazon.com/s?k=The+Antagonists+Ernest+K+Gann" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">The Antagonists (1970)</div>
                       <div className="text-sm typewriter-text opacity-90">Siege of Masada epic</div>
-                    </div>
-                    <div className="book-spine p-4 rounded-lg text-white">
+                    </a>
+                    <a href="https://www.amazon.com/s?k=Song+of+the+Sirens+Ernest+K+Gann" target="_blank" rel="noopener noreferrer" className="book-spine p-4 rounded-lg text-white block hover:opacity-90 transition-opacity">
                       <div className="font-bold typewriter-text">Song of the Sirens (1968)</div>
                       <div className="text-sm typewriter-text opacity-90">Maritime memoir</div>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -278,6 +284,75 @@ export default function AboutPage() {
                   film and television. Stars like John Wayne, Clark Gable, and Rock Hudson brought his characters 
                   to life, but the authentic aviation details came straight from Ernest's own experiences in the cockpit.
                 </p>
+              </div>
+
+              {/* Literary Reviews */}
+              <div className="mt-8">
+                <h4 className="text-xl typewriter-title text-brown-700 mb-6">Critical Acclaim</h4>
+                <div className="space-y-6">
+                  <blockquote className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
+                    <p className="typewriter-text text-brown-800 leading-relaxed italic mb-3">
+                      "Few writers have ever drawn readers so intimately into the shielded sanctum of the cockpit, 
+                      and it is here that Mr. Gann is truly the artist."
+                    </p>
+                    <cite className="typewriter-text text-brown-600 text-sm font-semibold">— The New York Times Book Review</cite>
+                  </blockquote>
+                  
+                  <blockquote className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
+                    <p className="typewriter-text text-brown-800 leading-relaxed italic mb-3">
+                      "A splendid and many-faceted personal memoir that is not only one man's story but the story, 
+                      in essence, of all men who fly."
+                    </p>
+                    <cite className="typewriter-text text-brown-600 text-sm font-semibold">— Chicago Tribune</cite>
+                  </blockquote>
+                  
+                  <blockquote className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
+                    <p className="typewriter-text text-brown-800 leading-relaxed italic mb-3">
+                      "Happily, Gann never gets too technical for the layman to understand. His style is smooth, 
+                      his observations keen, and his sense of drama highly developed."
+                    </p>
+                    <cite className="typewriter-text text-brown-600 text-sm font-semibold">— Saturday Review</cite>
+                  </blockquote>
+                  
+                  <blockquote className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
+                    <p className="typewriter-text text-brown-800 leading-relaxed italic mb-3">
+                      "Ernest K. Gann's flying experiences read like fiction, but this is the way it really was 
+                      in the pioneer days of commercial aviation."
+                    </p>
+                    <cite className="typewriter-text text-brown-600 text-sm font-semibold">— Aviation Week</cite>
+                  </blockquote>
+                </div>
+              </div>
+
+              {/* Featured Podcast */}
+              <div className="mt-8">
+                <h4 className="text-xl typewriter-title text-brown-700 mb-4">Recent Recognition</h4>
+                <div className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-6 rounded-r-lg">
+                  <div className="flex items-start space-x-4">
+                    <div className="text-4xl">🎧</div>
+                    <div className="flex-1">
+                      <h5 className="text-lg typewriter-title text-brown-800 font-bold mb-2">
+                        "Ernest Gann: Fate of the Hunter" - CBC Ideas Podcast
+                      </h5>
+                      <p className="typewriter-text text-brown-700 leading-relaxed mb-3">
+                        An excellent and recently produced documentary by <a href="https://soundcloud.com/nsandell" target="_blank" rel="noopener noreferrer" className="text-brown-600 hover:text-brown-800 underline font-semibold">Neil Sandell</a> exploring Ernest's life, 
+                        his aviation experiences, and the enduring legacy of his most famous work, 
+                        <em>Fate Is the Hunter</em>.
+                      </p>
+                      <a 
+                        href="https://www.cbc.ca/radio/ideas/ernest-gann-fate-of-the-hunter-1.6652465" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold typewriter-text transition-colors"
+                      >
+                        🎧 Listen on CBC Ideas
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

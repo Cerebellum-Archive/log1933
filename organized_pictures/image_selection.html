@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Selection - Choose Images for Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .image-selector { border: 3px solid transparent; cursor: pointer; position: relative; }
+        .image-selector.selected { border-color: #10B981; }
+        .image-selector:hover { border-color: #6B7280; }
+        .image-number { 
+            position: absolute; 
+            top: 2px; 
+            left: 2px; 
+            background: rgba(0,0,0,0.8); 
+            color: white; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function toggleSelection(img) {
+            img.classList.toggle('selected');
+            updateSelectedList();
+        }
+        
+        function updateSelectedList() {
+            const selected = document.querySelectorAll('.image-selector.selected');
+            const list = document.getElementById('selected-list');
+            const numbersList = document.getElementById('selected-numbers');
+            
+            list.innerHTML = '';
+            const numbers = [];
+            
+            selected.forEach(img => {
+                const number = img.dataset.number;
+                const filename = img.dataset.filename;
+                numbers.push(number);
+                
+                const li = document.createElement('li');
+                li.textContent = `#${number}: ${filename}`;
+                list.appendChild(li);
+            });
+            
+            numbersList.textContent = numbers.join(', ');
+            document.getElementById('copy-section').style.display = 
+                selected.length > 0 ? 'block' : 'none';
+        }
+        
+        function copyNumbersToClipboard() {
+            const numbers = document.getElementById('selected-numbers').textContent;
+            navigator.clipboard.writeText(numbers).then(() => {
+                alert('Numbers copied to clipboard!\n\nGive these numbers to Claude: ' + numbers);
+            });
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="max-w-6xl mx-auto py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center">Select Images for Website</h1>
+        
+        <div class="bg-blue-100 p-4 rounded-lg mb-6">
+            <p class="text-sm"><strong>Instructions:</strong></p>
+            <ul class="text-sm mt-2 list-disc list-inside">
+                <li>Each image has a number in the top-left corner</li>
+                <li>Click on images to select them (green border = selected)</li>
+                <li>Copy the selected numbers and give them to Claude</li>
+                <li>Claude will generate code to copy your chosen images to the website</li>
+            </ul>
+        </div>
+
+        <div class="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg max-w-sm">
+            <h3 class="font-bold mb-2">Selected Images:</h3>
+            <ul id="selected-list" class="text-sm max-h-24 overflow-y-auto mb-2"></ul>
+            
+            <div id="copy-section" style="display:none">
+                <div class="bg-gray-100 p-2 rounded text-sm mb-2">
+                    <strong>Numbers for Claude:</strong><br>
+                    <span id="selected-numbers" class="font-mono"></span>
+                </div>
+                <button onclick="copyNumbersToClipboard()" 
+                        class="bg-blue-600 text-white px-4 py-2 rounded w-full text-sm">
+                    Copy Numbers to Clipboard
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
