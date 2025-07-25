@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-// Force deployment update - Ernest K. Gann 1933 Logbook
-// Timestamp: 2024-06-21 20:55 - FORCE FRESH DEPLOYMENT
+// Force deployment update - Ernest K. Gann 1933 Logbook - Aviation Sketch Background
+// Timestamp: July 25, 2025 - FRESH DEPLOYMENT WITH AVIATION SKETCH
 export default function Home() {
   return (
     <>
