@@ -42,12 +42,12 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-          {/* Aviation sketch background */}
+          {/* Aviation hangar sketch background */}
           <div 
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 opacity-25"
             style={{
-              backgroundImage: 'url(/images/backgrounds/aviation-sketch.png)',
-              backgroundSize: 'contain',
+              backgroundImage: 'url(/images/backgrounds/aviation-hangar-sketch.jpg)',
+              backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
             }}
