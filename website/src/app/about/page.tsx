@@ -81,22 +81,47 @@ export default function AboutPage() {
       `}</style>
 
       {/* Header */}
-      <header className="vintage-paper border-b-4 border-brown-400 py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link 
-            href="/" 
-            className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors mb-8 typewriter-text text-lg"
-          >
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            ← Back to Home
-          </Link>
-          
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl typewriter-title text-brown-800 mb-6">
-              Ernest K. Gann
+      <header className="sticky top-0 z-50 vintage-paper border-b-4 border-brown-400 py-6 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between">
+            {/* Left: Back to Home */}
+            <Link 
+              href="/" 
+              className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text text-lg font-semibold"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              ← Home
+            </Link>
+            
+            {/* Center: Title */}
+            <h1 className="text-3xl md:text-4xl typewriter-title text-brown-800 font-bold">
+              About Ernest K. Gann
             </h1>
+            
+            {/* Right: Quick Navigation */}
+            <div className="flex items-center space-x-4">
+              <Link 
+                href="/journey" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm"
+              >
+                ✨ Highlights
+              </Link>
+              <Link 
+                href="/logbook/timeline" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm"
+              >
+                📖 Timeline
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      {/* Hero Section */}
+      <section className="py-12 px-6">
+        <div className="max-w-6xl mx-auto text-center">
             <div className="text-2xl typewriter-text text-brown-600 mb-4">
               1910 - 1991
             </div>
@@ -104,9 +129,8 @@ export default function AboutPage() {
               From telephone company reviewer to aviation pioneer and bestselling author — 
               the remarkable life of a man who turned his 1933 world tour into a lifetime of adventure.
             </p>
-          </div>
         </div>
-      </header>
+      </section>
 
       {/* Main Content */}
       <main className="py-16 px-4">

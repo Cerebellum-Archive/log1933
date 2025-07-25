@@ -166,7 +166,7 @@ function RetroLogbookContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center">
+      <div className="min-h-screen bg-vintage-paper flex items-center justify-center">
         <div className="vintage-paper p-8 rounded-lg shadow-2xl max-w-md text-center">
           <div className="text-4xl mb-4">📖</div>
           <p className="typewriter-text text-brown-800">Loading vintage logbook...</p>
@@ -177,11 +177,11 @@ function RetroLogbookContent() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center">
+      <div className="min-h-screen bg-vintage-paper flex items-center justify-center">
         <div className="vintage-paper p-8 rounded-lg shadow-2xl max-w-md text-center">
           <div className="text-4xl mb-4">⚠️</div>
-          <h2 className="text-2xl font-bold text-brown-800 mb-4">Unable to Load Logbook</h2>
-          <p className="text-brown-600 mb-4">Error: {error}</p>
+          <h2 className="typewriter-title text-2xl font-bold text-brown-800 mb-4">Unable to Load Logbook</h2>
+          <p className="typewriter-text text-brown-600 mb-4">Error: {error}</p>
         </div>
       </div>
     )
@@ -191,149 +191,39 @@ function RetroLogbookContent() {
   const totalPages = filteredEntries.length
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 p-4">
-      <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap');
-        
-        .vintage-paper {
-          background: linear-gradient(45deg, #f4f1e8 0%, #f7f3e9 25%, #f4f1e8 50%, #f7f3e9 75%, #f4f1e8 100%);
-          background-size: 20px 20px;
-          position: relative;
-          box-shadow: 
-            0 4px 8px rgba(0,0,0,0.1),
-            inset 0 0 50px rgba(139,69,19,0.05);
-        }
-        
-        .vintage-paper::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 30%, rgba(139,69,19,0.02) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(139,69,19,0.02) 0%, transparent 50%),
-            radial-gradient(circle at 60% 20%, rgba(139,69,19,0.01) 0%, transparent 50%);
-          pointer-events: none;
-        }
-        
-        .vintage-paper::after {
-          content: '';
-          position: absolute;
-          top: -2px;
-          left: -2px;
-          right: -2px;
-          bottom: -2px;
-          background: 
-            linear-gradient(45deg, transparent 0%, rgba(139,69,19,0.1) 25%, transparent 50%, rgba(139,69,19,0.1) 75%, transparent 100%);
-          z-index: -1;
-          border-radius: inherit;
-        }
-        
-        .torn-edges {
-          position: relative;
-          border-radius: 2px;
-        }
-        
-        .torn-edges::before {
-          content: '';
-          position: absolute;
-          top: -3px;
-          left: -3px;
-          right: -3px;
-          bottom: -3px;
-          background: #8B4513;
-          opacity: 0.1;
-          z-index: -1;
-          clip-path: polygon(
-            0% 2%, 2% 0%, 98% 0%, 100% 2%, 
-            100% 98%, 98% 100%, 2% 100%, 0% 98%
-          );
-        }
-        
-        .typewriter-text {
-          font-family: 'Courier Prime', monospace;
-          line-height: 1.6;
-          letter-spacing: 0.5px;
-          color: #2c1810;
-        }
-        
-        .typewriter-title {
-          font-family: 'Special Elite', cursive;
-          color: #2c1810;
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        
-        .page-turn-button {
-          background: linear-gradient(45deg, #d4af37, #f4d03f);
-          border: 2px solid #8B4513;
-          color: #2c1810;
-          font-family: 'Courier Prime', monospace;
-          font-weight: bold;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .page-turn-button:hover {
-          background: linear-gradient(45deg, #f4d03f, #d4af37);
-          transform: translateY(-1px);
-          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-        
-        .page-turn-button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-          transform: none;
-        }
-        
-        .page-indicator {
-          background: rgba(139,69,19,0.1);
-          border: 1px solid rgba(139,69,19,0.3);
-          border-radius: 20px;
-          padding: 5px 15px;
-          font-family: 'Courier Prime', monospace;
-          color: #2c1810;
-        }
-        
-        .search-vintage {
-          background: rgba(244,241,232,0.8);
-          border: 2px solid #8B4513;
-          border-radius: 4px;
-          padding: 8px 12px;
-          font-family: 'Courier Prime', monospace;
-          color: #2c1810;
-        }
-        
-        .search-vintage:focus {
-          outline: none;
-          box-shadow: 0 0 0 3px rgba(139,69,19,0.2);
-        }
-        
-        .brown-800 {
-          color: #2c1810;
-        }
-        
-        .brown-600 {
-          color: #4a2c1a;
-        }
-        
-        .brown-400 {
-          color: #6b4226;
-        }
-      `}</style>
+    <div className="bg-vintage-paper min-h-screen p-4">
       
       {/* Header */}
       <div className="max-w-6xl mx-auto">
         <div className="vintage-paper torn-edges p-6 mb-6 shadow-lg">
           <div className="flex items-center justify-between mb-4">
-            <Link 
-              href="/logbook"
-              className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
-            >
-              <span className="mr-2">←</span>
-              Back to Modern View
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link 
+                href="/"
+                className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                <span className="mr-2">←</span>
+                Home
+              </Link>
+              <Link 
+                href="/logbook/timeline"
+                className="inline-flex items-center text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                Timeline View
+              </Link>
+              <Link 
+                href="/journey"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                Journey Highlights
+              </Link>
+              <Link 
+                href="/about"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                About Ernest
+              </Link>
+            </div>
             
             <Link 
               href="/logbook/timeline"
@@ -343,139 +233,139 @@ function RetroLogbookContent() {
               Timeline View
             </Link>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl typewriter-title text-center mb-4">
-            Ernest K. Gann's
-          </h1>
-          <h2 className="text-2xl md:text-3xl typewriter-title text-center mb-6">
-            1933 World Tour Logbook
-          </h2>
-          
-          <div className="text-center">
-            <input
-              type="text"
-              placeholder="Search the logbook..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="search-vintage max-w-md w-full"
-            />
-          </div>
         </div>
         
-        {/* Main Content */}
-        {currentEntry ? (
-          <div className="vintage-paper torn-edges p-8 shadow-2xl mb-6 min-h-[600px] relative">
-            {/* Page Header */}
-            <div className="border-b-2 border-brown-400 pb-4 mb-6">
-              <div className="flex justify-between items-center">
-                <div className="typewriter-text text-brown-800">
-                  <div className="text-lg font-bold">
-                    {formatDate(currentEntry.date_entry)}
-                  </div>
-                  {currentEntry.location && (
-                    <div className="text-sm text-brown-600">
-                      📍 {currentEntry.location}
-                    </div>
-                  )}
-                </div>
-                <div className="page-indicator">
-                  Page {currentPage + 1} of {totalPages}
-                </div>
-              </div>
-            </div>
-            
-            {/* Content */}
-            <div className="typewriter-text text-brown-800 leading-relaxed">
-              {currentEntry.content.split('\n').map((paragraph, index) => (
-                <p key={index} className="mb-4">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            
-            {/* Footer */}
-            <div className="absolute bottom-4 left-8 right-8 border-t-2 border-brown-400 pt-4">
-              <div className="flex justify-between items-center text-xs typewriter-text text-brown-600">
-                <span>Confidence: {Math.round(currentEntry.confidence_score * 100)}%</span>
-                <span>Original: {currentEntry.filename}</span>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="vintage-paper torn-edges p-8 shadow-2xl text-center">
-            <div className="text-4xl mb-4">📖</div>
-            <h3 className="text-2xl typewriter-title text-brown-800 mb-4">No Entries Found</h3>
-            <p className="typewriter-text text-brown-600">
-              {searchTerm ? 'Try adjusting your search terms.' : 'No entries available.'}
-            </p>
-          </div>
-        )}
+        <h1 className="typewriter-title text-4xl md:text-6xl text-center mb-4">
+          Ernest K. Gann's
+        </h1>
+        <h2 className="typewriter-title text-2xl md:text-3xl text-center mb-6">
+          1933 World Tour Logbook
+        </h2>
         
-        {/* Navigation */}
-        <div className="flex justify-center items-center gap-4 mb-6">
-          <button
-            onClick={prevPage}
-            disabled={currentPage === 0}
-            className="page-turn-button px-6 py-3 rounded-lg disabled:opacity-50"
-          >
-            ← Previous
-          </button>
-          
-          <div className="flex items-center gap-2">
-            <select
-              value={currentPage}
-              onChange={(e) => goToPage(parseInt(e.target.value))}
-              className="search-vintage"
-            >
-              {filteredEntries.map((entry, index) => (
-                <option key={index} value={index}>
-                  Page {index + 1}: {formatDate(entry.date_entry)}
-                </option>
-              ))}
-            </select>
-          </div>
-          
-          <button
-            onClick={nextPage}
-            disabled={currentPage >= filteredEntries.length - 1}
-            className="page-turn-button px-6 py-3 rounded-lg disabled:opacity-50"
-          >
-            Next →
-          </button>
+        <div className="text-center">
+          <input
+            type="text"
+            placeholder="Search the logbook..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-vintage max-w-md w-full"
+          />
         </div>
-        
-        {/* Stats */}
-        {logbookData && (
-          <div className="vintage-paper torn-edges p-6 shadow-lg">
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-brown-800 typewriter-title">
-                  {logbookData.metadata.total_entries}
-                </div>
-                <div className="text-brown-600 typewriter-text">Total Pages</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-brown-800 typewriter-title">
-                  {Math.round(logbookData.metadata.average_confidence * 100)}%
-                </div>
-                <div className="text-brown-600 typewriter-text">Accuracy</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-brown-800 typewriter-title">
-                  {totalPages}
-                </div>
-                <div className="text-brown-600 typewriter-text">Showing</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-brown-800 typewriter-title">
-                  1933
-                </div>
-                <div className="text-brown-600 typewriter-text">Vintage</div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
+      
+      {/* Main Content */}
+      {currentEntry ? (
+        <div className="vintage-paper torn-edges p-8 shadow-2xl mb-6 min-h-[600px] relative">
+          {/* Page Header */}
+          <div className="border-b-2 border-brown-400 pb-4 mb-6">
+            <div className="flex justify-between items-center">
+              <div className="typewriter-text text-brown-800">
+                <div className="text-lg font-bold">
+                  {formatDate(currentEntry.date_entry)}
+                </div>
+                {currentEntry.location && (
+                  <div className="text-sm text-brown-600">
+                    📍 {currentEntry.location}
+                  </div>
+                )}
+              </div>
+              <div className="page-indicator">
+                Page {currentPage + 1} of {totalPages}
+              </div>
+            </div>
+          </div>
+          
+          {/* Content */}
+          <div className="typewriter-text text-brown-800 leading-relaxed">
+            {currentEntry.content.split('\n').map((paragraph, index) => (
+              <p key={index} className="mb-4">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          
+          {/* Footer */}
+          <div className="absolute bottom-4 left-8 right-8 border-t-2 border-brown-400 pt-4">
+            <div className="flex justify-between items-center text-xs typewriter-text text-brown-600">
+              <span>Confidence: {Math.round(currentEntry.confidence_score * 100)}%</span>
+              <span>Original: {currentEntry.filename}</span>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="vintage-paper torn-edges p-8 shadow-2xl text-center">
+          <div className="text-4xl mb-4">📖</div>
+          <h3 className="typewriter-title text-2xl text-brown-800 mb-4">No Entries Found</h3>
+          <p className="typewriter-text text-brown-600">
+            {searchTerm ? 'Try adjusting your search terms.' : 'No entries available.'}
+          </p>
+        </div>
+      )}
+      
+      {/* Navigation */}
+      <div className="flex justify-center items-center gap-4 mb-6">
+        <button
+          onClick={prevPage}
+          disabled={currentPage === 0}
+          className="page-turn-button px-6 py-3 rounded-lg disabled:opacity-50"
+        >
+          ← Previous
+        </button>
+        
+        <div className="flex items-center gap-2">
+          <select
+            value={currentPage}
+            onChange={(e) => goToPage(parseInt(e.target.value))}
+            className="search-vintage"
+          >
+            {filteredEntries.map((entry, index) => (
+              <option key={index} value={index}>
+                Page {index + 1}: {formatDate(entry.date_entry)}
+              </option>
+            ))}
+          </select>
+        </div>
+        
+        <button
+          onClick={nextPage}
+          disabled={currentPage >= filteredEntries.length - 1}
+          className="page-turn-button px-6 py-3 rounded-lg disabled:opacity-50"
+        >
+          Next →
+        </button>
+      </div>
+      
+      {/* Stats */}
+      {logbookData && (
+        <div className="vintage-paper torn-edges p-6 shadow-lg">
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-3xl font-bold text-brown-800 typewriter-title">
+                {logbookData.metadata.total_entries}
+              </div>
+              <div className="text-brown-600 typewriter-text">Total Pages</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-brown-800 typewriter-title">
+                {Math.round(logbookData.metadata.average_confidence * 100)}%
+              </div>
+              <div className="text-brown-600 typewriter-text">Accuracy</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-brown-800 typewriter-title">
+                {totalPages}
+              </div>
+              <div className="text-brown-600 typewriter-text">Showing</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-brown-800 typewriter-title">
+                1933
+              </div>
+              <div className="text-brown-600 typewriter-text">Vintage</div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -483,7 +373,7 @@ function RetroLogbookContent() {
 export default function RetroLogbookPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 flex items-center justify-center">
+      <div className="min-h-screen bg-vintage-paper flex items-center justify-center">
         <div className="vintage-paper p-8 rounded-lg shadow-2xl max-w-md text-center">
           <div className="text-4xl mb-4">📖</div>
           <p className="typewriter-text text-brown-800">Loading vintage logbook...</p>

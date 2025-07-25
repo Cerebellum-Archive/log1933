@@ -103,7 +103,7 @@ export class HistoricalImageGenerator {
       
       // Return fallback image
       return {
-        url: `/images/fallback-${request.location.toLowerCase().replace(/[^a-z]/g, '-')}.jpg`,
+        url: `/images/journey/departure.jpg`,
         alt: `${request.location} in ${request.date}`,
         prompt: prompt,
         cached: false

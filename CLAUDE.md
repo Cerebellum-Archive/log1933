@@ -47,7 +47,7 @@ npm install
 npm run dev      # Development server at http://localhost:3000
 npm run build    # Production build
 npm run start    # Start production server
-npm run lint     # ESLint code quality check
+npm run lint     # ESLint code quality check (uses Next.js ESLint config)
 
 # Type checking (TypeScript compilation check)
 npx tsc --noEmit
@@ -103,7 +103,9 @@ The digitization pipeline follows this flow:
 - `python-dotenv>=1.0.0` - Environment variable management
 - `google-cloud-vision` - Google Vision API for OCR
 - `aiohttp` - Async HTTP client for API calls
-- `pyheif` - HEIC image format support
+- `pyheif>=0.7.0` - HEIC image format support
+- `img2pdf>=0.4.0` - PDF aggregation
+- `pyspellchecker>=0.7.2` - Text processing utilities
 
 **Node.js Stack:**
 - `next@14.2.3` - React framework with app router

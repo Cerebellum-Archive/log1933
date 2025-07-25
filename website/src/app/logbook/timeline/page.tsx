@@ -12,7 +12,7 @@ const WorldRouteMap = dynamic(() => import('./WorldRouteMap'), {
     <div className="w-full h-full bg-blue-200 rounded-lg flex items-center justify-center">
       <div className="text-center">
         <div className="text-4xl mb-4">🗺️</div>
-        <div className="text-brown-800 text-xl">Loading interactive map...</div>
+        <div className="typewriter-text text-brown-800 text-xl">Loading interactive map...</div>
       </div>
     </div>
   )
@@ -137,8 +137,8 @@ const formatContentForReading = (content: string): string[] => {
 const JourneyRoute = ({ onLocationClick }: { onLocationClick?: (location: string) => void }) => {
   return (
     <div className="vintage-paper rounded-lg p-8 mb-8 shadow-2xl">
-      <h2 className="text-5xl typewriter-title text-brown-800 mb-8 text-center">
-        Ernest's 1933 World Tour Route
+      <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center">
+        World Tour Route
       </h2>
       
       {/* Cities list above the map */}
@@ -175,6 +175,7 @@ function TimelineLogbookContent() {
   const [filteredEntries, setFilteredEntries] = useState<TimelineEntry[]>([])
   const [expandedNotes, setExpandedNotes] = useState<{ [key: string]: boolean }>({})
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const [copyStatus, setCopyStatus] = useState<{ [key: string]: string }>({})
   
   const contentRef = useRef<HTMLDivElement>(null)
   const timelineRefs = useRef<{ [key: string]: HTMLDivElement }>({})
@@ -431,6 +432,57 @@ function TimelineLogbookContent() {
     }))
   }
 
+  // Copy functions
+  const copyTextToClipboard = async (text: string, entryKey: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopyStatus(prev => ({ ...prev, [`text-${entryKey}`]: 'copied' }))
+      setTimeout(() => {
+        setCopyStatus(prev => ({ ...prev, [`text-${entryKey}`]: '' }))
+      }, 2000)
+    } catch (err) {
+      console.error('Failed to copy text: ', err)
+      setCopyStatus(prev => ({ ...prev, [`text-${entryKey}`]: 'error' }))
+      setTimeout(() => {
+        setCopyStatus(prev => ({ ...prev, [`text-${entryKey}`]: '' }))
+      }, 2000)
+    }
+  }
+
+  const copyImageToClipboard = async (filename: string, entryKey: string) => {
+    try {
+      // First, try to copy the actual image as a blob
+      const imagePath = `/images/logbook/${filename}`
+      
+      try {
+        const response = await fetch(imagePath)
+        if (response.ok) {
+          const blob = await response.blob()
+          const item = new ClipboardItem({ [blob.type]: blob })
+          await navigator.clipboard.write([item])
+          setCopyStatus(prev => ({ ...prev, [`image-${entryKey}`]: 'copied' }))
+        } else {
+          throw new Error('Image not found')
+        }
+      } catch (imageError) {
+        // Fallback: copy image reference and filename as text
+        const imageInfo = `Logbook Image: ${filename}\nSource: ${imagePath}\nDate: ${new Date().toISOString()}`
+        await navigator.clipboard.writeText(imageInfo)
+        setCopyStatus(prev => ({ ...prev, [`image-${entryKey}`]: 'copied' }))
+      }
+      
+      setTimeout(() => {
+        setCopyStatus(prev => ({ ...prev, [`image-${entryKey}`]: '' }))
+      }, 2000)
+    } catch (err) {
+      console.error('Failed to copy image: ', err)
+      setCopyStatus(prev => ({ ...prev, [`image-${entryKey}`]: 'error' }))
+      setTimeout(() => {
+        setCopyStatus(prev => ({ ...prev, [`image-${entryKey}`]: '' }))
+      }, 2000)
+    }
+  }
+
   useEffect(() => {
     if (!searchTerm) {
       setFilteredEntries(timelineEntries)
@@ -561,46 +613,69 @@ function TimelineLogbookContent() {
           background: rgba(139,69,19,0.2);
           border-color: #2c1810;
         }
+        
+        .copy-button {
+          position: relative;
+          transition: all 0.2s ease;
+          background: rgba(244,241,232,0.6);
+          border: 1px solid rgba(139,69,19,0.3);
+        }
+        
+        .copy-button:hover {
+          background: rgba(139,69,19,0.1);
+          border-color: rgba(139,69,19,0.5);
+          transform: translateY(-1px);
+          box-shadow: 0 2px 4px rgba(139,69,19,0.2);
+        }
+        
+        .copy-button.copied {
+          background: rgba(34,197,94,0.1);
+          border-color: rgba(34,197,94,0.5);
+        }
+        
+        .copy-button.error {
+          background: rgba(239,68,68,0.1);
+          border-color: rgba(239,68,68,0.5);
+        }
       `}</style>
       
       {/* Header */}
       <div className="sticky top-0 z-50 bg-gradient-to-r from-amber-100 to-yellow-100 border-b-2 border-brown-400">
-        <div className="px-8 py-4">
+        <div className="px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
               <Link 
-                href="/logbook"
+                href="/"
                 className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
               >
-                ← Back to Logbook
+                ← Back to Home
               </Link>
             </div>
             
-            <h1 className="text-3xl md:text-6xl typewriter-title text-brown-800">
+            <h1 className="text-3xl md:text-5xl typewriter-title text-brown-800">
               Ernest's 1933 World Tour Timeline
             </h1>
             
-            <div className="flex flex-col md:flex-row md:items-center gap-4">
-              <input
-                type="text"
-                placeholder="Search timeline..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-vintage w-full md:w-96"
-              />
-              
-              {logbookData && (
-                <div className="typewriter-text text-brown-600 text-sm">
-                  {filteredEntries.length} entries
-                </div>
-              )}
+            <div className="flex items-center gap-4">
+              <Link 
+                href="/journey" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                ✨ Highlights
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text"
+              >
+                👨‍✈️ About
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* Journey Route */}
-      <div className="px-8 py-8">
+      <div className="px-8 py-6">
         <JourneyRoute onLocationClick={scrollToLocation} />
       </div>
 
@@ -609,6 +684,23 @@ function TimelineLogbookContent() {
         <div className="w-full lg:w-80 lg:pr-8 mb-8 lg:mb-0 lg:h-screen lg:sticky lg:top-24 lg:overflow-y-auto">
           <div className="vintage-paper p-6 rounded-lg shadow-lg">
             <h2 className="text-3xl typewriter-title text-brown-800 mb-6 text-center">Journey Timeline</h2>
+            
+            {/* Search Bar - Moved to Left Panel */}
+            <div className="mb-6 space-y-3">
+              <input
+                type="text"
+                placeholder="Search timeline..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="search-vintage w-full"
+              />
+              
+              {logbookData && (
+                <div className="typewriter-text text-brown-600 text-sm text-center">
+                  {filteredEntries.length} entries found
+                </div>
+              )}
+            </div>
             
             {filteredEntries.length === 0 ? (
               <div className="text-center text-brown-600 py-8">
@@ -729,11 +821,64 @@ function TimelineLogbookContent() {
                                        {entry.document_title || `Document ${entryIndex + 1}`}
                                      </h3>
                                    </div>
-                                   {entry.date_entry && (
-                                     <span className="typewriter-text text-brown-500 text-lg">
-                                       📅 {formatDate(entry.date_entry)}
-                                     </span>
-                                   )}
+                                   <div className="flex items-center gap-4">
+                                     {entry.date_entry && (
+                                       <span className="typewriter-text text-brown-500 text-lg">
+                                         📅 {formatDate(entry.date_entry)}
+                                       </span>
+                                     )}
+                                     
+                                     {/* Copy Icons */}
+                                     <div className="flex items-center gap-2">
+                                       {/* Copy Text Button */}
+                                       <button
+                                         onClick={() => copyTextToClipboard(entry.content, `${timelineEntry.id}-${entryIndex}`)}
+                                         className={`copy-button group relative p-2 rounded-lg transition-colors ${
+                                           copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'copied' ? 'copied' :
+                                           copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'error' ? 'error' : ''
+                                         }`}
+                                         title="Copy text to clipboard"
+                                       >
+                                         {copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'copied' ? (
+                                           <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                           </svg>
+                                         ) : copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'error' ? (
+                                           <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                           </svg>
+                                         ) : (
+                                           <svg className="w-5 h-5 text-brown-600 group-hover:text-brown-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                           </svg>
+                                         )}
+                                       </button>
+                                       
+                                       {/* Copy Image Button */}
+                                       <button
+                                         onClick={() => copyImageToClipboard(entry.filename, `${timelineEntry.id}-${entryIndex}`)}
+                                         className={`copy-button group relative p-2 rounded-lg transition-colors ${
+                                           copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'copied' ? 'copied' :
+                                           copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'error' ? 'error' : ''
+                                         }`}
+                                         title="Copy image reference to clipboard"
+                                       >
+                                         {copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'copied' ? (
+                                           <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                           </svg>
+                                         ) : copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'error' ? (
+                                           <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                           </svg>
+                                         ) : (
+                                           <svg className="w-5 h-5 text-brown-600 group-hover:text-brown-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                           </svg>
+                                         )}
+                                       </button>
+                                     </div>
+                                   </div>
                                  </div>
                                </div>
 
@@ -850,11 +995,64 @@ function TimelineLogbookContent() {
                                     {entry.document_title || `Document ${entryIndex + 1}`}
                                   </h3>
                                 </div>
-                                {entry.date_entry && (
-                                  <span className="typewriter-text text-brown-500 text-lg">
-                                    📅 {formatDate(entry.date_entry)}
-                                  </span>
-                                )}
+                                <div className="flex items-center gap-2">
+                                  {entry.date_entry && (
+                                    <span className="typewriter-text text-brown-500 text-lg">
+                                      📅 {formatDate(entry.date_entry)}
+                                    </span>
+                                  )}
+                                  
+                                  {/* Copy Icons - Mobile */}
+                                  <div className="flex items-center gap-1">
+                                    {/* Copy Text Button */}
+                                    <button
+                                      onClick={() => copyTextToClipboard(entry.content, `${timelineEntry.id}-${entryIndex}`)}
+                                      className={`copy-button group relative p-1.5 rounded-lg transition-colors ${
+                                        copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'copied' ? 'copied' :
+                                        copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'error' ? 'error' : ''
+                                      }`}
+                                      title="Copy text to clipboard"
+                                    >
+                                      {copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'copied' ? (
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                      ) : copyStatus[`text-${timelineEntry.id}-${entryIndex}`] === 'error' ? (
+                                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                      ) : (
+                                        <svg className="w-4 h-4 text-brown-600 group-hover:text-brown-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                        </svg>
+                                      )}
+                                    </button>
+                                    
+                                    {/* Copy Image Button */}
+                                    <button
+                                      onClick={() => copyImageToClipboard(entry.filename, `${timelineEntry.id}-${entryIndex}`)}
+                                      className={`copy-button group relative p-1.5 rounded-lg transition-colors ${
+                                        copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'copied' ? 'copied' :
+                                        copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'error' ? 'error' : ''
+                                      }`}
+                                      title="Copy image reference to clipboard"
+                                    >
+                                      {copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'copied' ? (
+                                        <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                      ) : copyStatus[`image-${timelineEntry.id}-${entryIndex}`] === 'error' ? (
+                                        <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                      ) : (
+                                        <svg className="w-4 h-4 text-brown-600 group-hover:text-brown-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                      )}
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                             
@@ -993,4 +1191,4 @@ export default function TimelineLogbookPage() {
       <TimelineLogbookContent />
     </Suspense>
   )
-} 
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vintage aviation propeller icon -->
+  <defs>
+    <style>
+      .propeller { fill: #654321; stroke: #2c1810; stroke-width: 2; }
+      .center { fill: #2c1810; }
+    </style>
+  </defs>
+  
+  <!-- Propeller blades -->
+  <ellipse cx="60" cy="60" rx="55" ry="8" class="propeller" transform="rotate(0 60 60)"/>
+  <ellipse cx="60" cy="60" rx="55" ry="8" class="propeller" transform="rotate(90 60 60)"/>
+  
+  <!-- Center hub -->
+  <circle cx="60" cy="60" r="12" class="center"/>
+  <circle cx="60" cy="60" r="6" fill="#8b4513"/>
+  
+  <!-- Hub bolts -->
+  <circle cx="54" cy="54" r="2" fill="#654321"/>
+  <circle cx="66" cy="54" r="2" fill="#654321"/>
+  <circle cx="54" cy="66" r="2" fill="#654321"/>
+  <circle cx="66" cy="66" r="2" fill="#654321"/>
+</svg> 

@@ -6,8 +6,42 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
+        {/* Fixed Navigation Header */}
+        <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-amber-100/95 via-yellow-100/95 to-orange-100/95 backdrop-blur-sm border-b-2 border-brown-400 py-3 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between">
+              {/* Left: Logo/Title */}
+              <div className="text-2xl typewriter-title text-brown-800 font-bold">
+                Ernest K. Gann 1933
+              </div>
+              
+              {/* Right: Quick Navigation */}
+              <div className="flex items-center space-x-4">
+                <Link 
+                  href="/journey" 
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                >
+                  ✨ Highlights
+                </Link>
+                <Link 
+                  href="/logbook/timeline" 
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                >
+                  📖 Timeline
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                >
+                  👨‍✈️ About
+                </Link>
+              </div>
+            </div>
+          </div>
+        </header>
+
         {/* Hero Section */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
           {/* Background texture */}
           <div className="absolute inset-0 vintage-paper opacity-30"></div>
           
@@ -26,19 +60,19 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link 
                   href="/journey" 
-                  className="bg-brown-600 hover:bg-brown-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 typewriter-text font-semibold text-lg"
+                  className="bg-gradient-to-r from-brown-600 to-brown-700 hover:from-brown-700 hover:to-brown-800 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl"
                 >
                   ✨ Journey Highlights
                 </Link>
                 <Link 
                   href="/logbook/timeline" 
-                  className="border-2 border-brown-600 text-brown-600 hover:bg-brown-600 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg"
+                  className="border-2 border-brown-600 text-brown-600 hover:bg-gradient-to-r hover:from-brown-600 hover:to-brown-700 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
                 >
                   📖 Explore Timeline
                 </Link>
                 <Link 
                   href="/about" 
-                  className="border-2 border-brown-500 text-brown-500 hover:bg-brown-500 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg"
+                  className="border-2 border-brown-500 text-brown-500 hover:bg-gradient-to-r hover:from-brown-500 hover:to-brown-600 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
                 >
                   👨‍✈️ About Ernest
                 </Link>

@@ -39,13 +39,13 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
   const mapInstanceRef = useRef<any>(null)
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !mapRef.current) return
+    if (typeof window === 'undefined' || !mapRef.current) {
+      return
+    }
 
     const initializeMap = async () => {
-      // Dynamically import Leaflet to avoid SSR issues
       const L = (await import('leaflet')).default
 
-      // Set up custom icons
       const customIcon = L.divIcon({
         className: 'custom-marker',
         html: `<div style="
@@ -60,72 +60,44 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         iconAnchor: [8, 8]
       })
 
-      // Initialize map with custom bounds to minimize ocean space
       const map = L.map(mapRef.current!, {
-        center: [30, 20], // Center more on land areas
+        center: [40, 30],
         zoom: 2,
-        minZoom: 1,
-        maxZoom: 6,
-        zoomControl: true,
-        scrollWheelZoom: true,
-        doubleClickZoom: true,
+        minZoom: 2,
+        maxZoom: 2,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        doubleClickZoom: false,
         dragging: true
       })
-
       mapInstanceRef.current = map
 
-      // Add beautiful tile layer - Natural Earth style
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
         attribution: '&copy; National Geographic | &copy; OpenStreetMap contributors',
         maxZoom: 16
       }).addTo(map)
 
-      // Create route polyline coordinates - excluding the problematic return from Japan to US
       const routeCoordinates: [number, number][] = []
-      
-      // Only include stops up to Japan (excluding the return to US)
       for (let i = 0; i < journeyStops.length - 2; i++) {
         const stop = journeyStops[i]
         routeCoordinates.push([stop.lat, stop.lng])
       }
 
-      // Add route polyline with brighter color
-      const routeLine = L.polyline(routeCoordinates, {
-        color: '#FF6B35', // Bright orange-red for better visibility
+      L.polyline(routeCoordinates, {
+        color: '#FF6B35',
         weight: 4,
         opacity: 0.9,
         dashArray: '12, 6'
       }).addTo(map)
 
-      // Add directional arrows along the route
-      const arrowIcon = L.divIcon({
-        className: 'route-arrow',
-        html: `<div style="
-          width: 0; 
-          height: 0; 
-          border-left: 6px solid transparent;
-          border-right: 6px solid transparent;
-          border-bottom: 12px solid #FF6B35;
-          transform: rotate(var(--arrow-rotation, 0deg));
-        "></div>`,
-        iconSize: [12, 12],
-        iconAnchor: [6, 6]
-      })
-
-      // Add arrows at regular intervals along the route using actual route coordinates
       for (let i = 0; i < routeCoordinates.length - 1; i++) {
         const start = routeCoordinates[i]
         const end = routeCoordinates[i + 1]
-        
-        // Calculate midpoint
         const midLat = (start[0] + end[0]) / 2
         const midLng = (start[1] + end[1]) / 2
-        
-        // Calculate angle for arrow direction
         const angle = Math.atan2(end[1] - start[1], end[0] - start[0]) * 180 / Math.PI
         
-        // Add arrow marker
-        const arrowMarker = L.marker([midLat, midLng], { 
+        L.marker([midLat, midLng], { 
           icon: L.divIcon({
             className: 'route-arrow',
             html: `<div style="
@@ -142,8 +114,7 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         }).addTo(map)
       }
 
-      // Add markers for each stop (excluding the return to US)
-      journeyStops.slice(0, -2).forEach((stop, index) => {
+      journeyStops.slice(0, -2).forEach((stop) => {
         const marker = L.marker([stop.lat, stop.lng], { icon: customIcon })
           .addTo(map)
           .bindPopup(`
@@ -156,15 +127,9 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
             className: 'custom-popup'
           })
 
-        // Add hover effects
-        marker.on('mouseover', () => {
-          marker.openPopup()
-        })
-
-        // Add click handler to scroll to timeline location
+        marker.on('mouseover', () => marker.openPopup())
         marker.on('click', () => {
           if (onLocationClick) {
-            // Map journey stop names to timeline location names
             const locationMapping: { [key: string]: string } = {
               'Chicago': 'Chicago',
               'Atlantic Ocean': 'Atlantic Ocean',
@@ -191,25 +156,20 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
               'San Francisco': 'San Francisco',
               'Los Angeles': 'Los Angeles'
             }
-            
             const timelineLocation = locationMapping[stop.name] || stop.name
             onLocationClick(timelineLocation)
           }
         })
       })
 
-      // Calculate tight bounds around the actual journey route
-      // Only use the journey stops up to Japan for bounds calculation (excluding return to US)
       const journeyCoordinates = journeyStops.slice(0, -2).map(stop => [stop.lat, stop.lng] as [number, number])
       const routeBounds = L.latLngBounds(journeyCoordinates)
       
-      // Fit map to the actual route with minimal padding
       map.fitBounds(routeBounds, { 
-        padding: [20, 20], // Minimal padding to focus on the route
-        maxZoom: 4 // Allow closer zoom to focus on itinerary
+        padding: [20, 20],
+        maxZoom: 4
       })
 
-      // Add custom CSS for markers and popups
       const style = document.createElement('style')
       style.textContent = `
         .custom-popup .leaflet-popup-content-wrapper {
@@ -240,13 +200,12 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         }
       `
       document.head.appendChild(style)
-
-      // Removed the overlay since info is now above the map
     }
 
-    initializeMap()
+    if (!mapInstanceRef.current) {
+      initializeMap()
+    }
 
-    // Cleanup
     return () => {
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove()

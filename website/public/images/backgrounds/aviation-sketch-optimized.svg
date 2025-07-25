@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Optimized aviation sketch background - lightweight SVG version -->
+  <defs>
+    <style>
+      .sketch-line { fill: none; stroke: #8b4513; stroke-width: 2; opacity: 0.3; }
+      .sketch-fill { fill: #8b4513; opacity: 0.1; }
+      .sketch-detail { fill: none; stroke: #654321; stroke-width: 1; opacity: 0.2; }
+    </style>
+    
+    <!-- Vintage paper texture pattern -->
+    <pattern id="paperTexture" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#f4f1e8"/>
+      <circle cx="3" cy="7" r="0.5" fill="#e8dcc6" opacity="0.3"/>
+      <circle cx="17" cy="13" r="0.3" fill="#e8dcc6" opacity="0.2"/>
+      <circle cx="9" cy="15" r="0.4" fill="#e8dcc6" opacity="0.25"/>
+    </pattern>
+    
+    <!-- Sepia filter for vintage look -->
+    <filter id="sepia">
+      <feColorMatrix type="matrix" values="0.393 0.769 0.189 0 0
+                                           0.349 0.686 0.168 0 0
+                                           0.272 0.534 0.131 0 0
+                                           0 0 0 1 0"/>
+    </filter>
+  </defs>
+  
+  <!-- Background with paper texture -->
+  <rect width="1920" height="1080" fill="url(#paperTexture)"/>
+  
+  <!-- Main aircraft fuselage -->
+  <ellipse cx="960" cy="540" rx="400" ry="60" class="sketch-fill" filter="url(#sepia)"/>
+  <path d="M560 540 Q960 480 1360 540 Q960 600 560 540" class="sketch-line" filter="url(#sepia)"/>
+  
+  <!-- Wings -->
+  <ellipse cx="960" cy="540" rx="600" ry="20" class="sketch-fill" filter="url(#sepia)"/>
+  <path d="M360 540 L1560 540" class="sketch-line" filter="url(#sepia)"/>
+  <path d="M360 535 L1560 535" class="sketch-detail" filter="url(#sepia)"/>
+  <path d="M360 545 L1560 545" class="sketch-detail" filter="url(#sepia)"/>
+  
+  <!-- Wing struts -->
+  <path d="M480 520 L480 560" class="sketch-line" filter="url(#sepia)"/>
+  <path d="M1440 520 L1440 560" class="sketch-line" filter="url(#sepia)"/>
+  <path d="M600 525 L600 555" class="sketch-detail" filter="url(#sepia)"/>
+  <path d="M1320 525 L1320 555" class="sketch-detail" filter="url(#sepia)"/>
+  
+  <!-- Propeller -->
+  <ellipse cx="520" cy="540" rx="80" ry="8" class="sketch-line" filter="url(#sepia)"/>
+  <ellipse cx="520" cy="540" rx="8" ry="80" class="sketch-line" filter="url(#sepia)"/>
+  <circle cx="520" cy="540" r="12" class="sketch-fill" filter="url(#sepia)"/>
+  
+  <!-- Engine cowling -->
+  <ellipse cx="580" cy="540" rx="60" ry="40" class="sketch-line" filter="url(#sepia)"/>
+  
+  <!-- Cockpit area -->
+  <path d="M800 520 Q860 510 920 520 Q860 530 800 520" class="sketch-line" filter="url(#sepia)"/>
+  <path d="M820 525 L900 525" class="sketch-detail" filter="url(#sepia)"/>
+  
+  <!-- Tail -->
+  <path d="M1360 540 L1500 520 L1480 540 L1500 560 Z" class="sketch-fill" filter="url(#sepia)"/>
+  <path d="M1360 540 L1500 520 M1360 540 L1500 560" class="sketch-line" filter="url(#sepia)"/>
+  <path d="M1480 480 L1500 520 L1480 540" class="sketch-line" filter="url(#sepia)"/>
+  
+  <!-- Landing gear suggestion -->
+  <circle cx="700" cy="580" r="8" class="sketch-detail" filter="url(#sepia)"/>
+  <circle cx="1200" cy="580" r="8" class="sketch-detail" filter="url(#sepia)"/>
+  <path d="M700 580 L700 600" class="sketch-detail" filter="url(#sepia)"/>
+  <path d="M1200 580 L1200 600" class="sketch-detail" filter="url(#sepia)"/>
+  
+  <!-- Additional sketch details for authenticity -->
+  <path d="M400 400 Q500 420 600 400" class="sketch-detail" filter="url(#sepia)"/>
+  <path d="M1300 650 Q1400 670 1500 650" class="sketch-detail" filter="url(#sepia)"/>
+  <circle cx="200" cy="200" r="3" class="sketch-detail" filter="url(#sepia)"/>
+  <circle cx="1700" cy="800" r="2" class="sketch-detail" filter="url(#sepia)"/>
+  
+  <!-- Vintage annotations style -->
+  <text x="960" y="420" text-anchor="middle" font-family="Special Elite, cursive" font-size="24" fill="#654321" opacity="0.6" filter="url(#sepia)">1933 World Tour Aircraft</text>
+  <text x="960" y="680" text-anchor="middle" font-family="Courier Prime, monospace" font-size="16" fill="#8b4513" opacity="0.4" filter="url(#sepia)">Ernest K. Gann's Journey</text>
+</svg> 
