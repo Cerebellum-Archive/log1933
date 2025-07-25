@@ -78,7 +78,7 @@ export default function JourneyHighlightsPage() {
           context: "His amusing yet anxious account of the required vaccinations and medical preparations for world travel"
         }
       ],
-      image: "/images/journey/departure.jpg",
+      image: "/images/gann-portrait.jpg",
       journalEntry: {
         filename: "IMG_001.jpg",
         content: "I am suffering from the kind ministrations of my doctor, and I cannot help but ruminate upon certain peculiarities in the human race. I am at present on the threshold of a world tour... just like that, you see, I say 'World Tour.' The whole business of getting ready to leave one's native heath is fraught with more difficulties than one would suppose.",
@@ -104,7 +104,7 @@ export default function JourneyHighlightsPage() {
           context: "The overwhelming social attention and unsolicited advice that accompanied news of his world tour"
         }
       ],
-      image: "/images/journey/europe.jpg",
+      image: "/images/placeholder-journey.jpg",
       journalEntry: {
         filename: "IMG_002.jpg",
         content: "Truth is not always a virtue in a book. I had a rather definite idea of where I wanted to go and how I wanted to get there. It seems, however, that I had suddenly become incapable of adult thought. The ocean stretches endlessly, and one begins to understand the true meaning of distance.",
@@ -130,7 +130,7 @@ export default function JourneyHighlightsPage() {
           context: "Professional observations on British engineering and social organization, comparing it favorably to American methods"
         }
       ],
-      image: "/images/journey/africa.jpg",
+      image: "/images/placeholder-journey.jpg",
       journalEntry: {
         filename: "IMG_015.jpg",
         content: "London presents itself as a city of infinite possibilities and equal confusions. The fog here is not merely weather - it is a living thing that transforms the familiar into the mysterious. Every street corner holds a story, every pub a gathering of characters worthy of Dickens himself.",
@@ -156,7 +156,7 @@ export default function JourneyHighlightsPage() {
           context: "Poetic impressions of the City of Light"
         }
       ],
-      image: "/images/journey/egypt.jpg",
+      image: "/images/placeholder-journey.jpg",
       journalEntry: {
         filename: "IMG_045.jpg",
         content: "Each border crossed reveals not just new landscapes, but entirely new ways of seeing the world. The telephone systems here are marvels of engineering, yet each operates by its own mysterious logic. Paris in summer is a symphony of light and shadow, each café a theater of human drama.",
@@ -182,7 +182,7 @@ export default function JourneyHighlightsPage() {
           context: "Vivid description of tropical conditions"
         }
       ],
-      image: "/images/journey/singapore.jpg",
+      image: "/images/placeholder-journey.jpg",
       journalEntry: {
         filename: "IMG_078.jpg",
         content: "The East presents challenges that no amount of Western preparation could anticipate. Singapore stands as a crossroads of civilizations, where East meets West in fascinating harmony. The heat here is not merely temperature - it is a presence that reshapes both body and mind.",
@@ -208,7 +208,7 @@ export default function JourneyHighlightsPage() {
           context: "Reflections on personal transformation through travel"
         }
       ],
-      image: "/images/journey/japan.jpg",
+      image: "/images/placeholder-journey.jpg",
       journalEntry: {
         filename: "IMG_112.jpg",
         content: "The Pacific Ocean humbles even the most confident traveler with its sheer immensity. Japan offers glimpses of a culture so refined and complex that it defies easy understanding. As we sail toward America, I carry with me not just memories, but a fundamentally changed perspective.",
@@ -270,41 +270,51 @@ export default function JourneyHighlightsPage() {
 
     return (
       <div className="quote-carousel relative">
-        <div className="quote-highlight">
-          <blockquote className="typewriter-text text-brown-800 text-lg lg:text-xl leading-relaxed italic font-medium">
-            "{quotes[currentQuote].text}"
-          </blockquote>
+        {/* Quote Dots - Compact at top */}
+        <div className="flex justify-center space-x-2 mb-4">
+          {quotes.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentQuote(index)}
+              className={`quote-dot ${currentQuote === index ? 'active' : ''}`}
+              title={`Quote ${index + 1}`}
+            />
+          ))}
         </div>
-        <p className="typewriter-text text-brown-600 text-base mb-6 leading-relaxed">
-          {quotes[currentQuote].context}
-        </p>
-        <div className="quote-navigation flex items-center justify-between">
-          <div className="flex space-x-3">
-            {quotes.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentQuote(index)}
-                className={`quote-dot ${currentQuote === index ? 'active' : ''}`}
-                title={`Quote ${index + 1}`}
-              />
-            ))}
-          </div>
-          <div className="flex space-x-2">
+        
+        {/* Quote Content with Side Navigation */}
+        <div className="quote-content-wrapper relative">
+          {/* Left Arrow */}
+          {quotes.length > 1 && (
             <button
               onClick={prevQuote}
-              className="quote-nav-button typewriter-text text-sm"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 text-brown-600 hover:text-brown-800 text-2xl font-bold z-10 p-2"
               title="Previous quote"
             >
-              ←
+              ‹
             </button>
+          )}
+          
+          {/* Quote Content */}
+          <div className="quote-content px-8">
+            <blockquote className="typewriter-text text-brown-800 text-lg lg:text-xl leading-relaxed italic font-medium mb-4 border-l-4 border-brown-400 pl-6">
+              "{quotes[currentQuote].text}"
+            </blockquote>
+            <p className="typewriter-text text-brown-600 text-base leading-relaxed">
+              {quotes[currentQuote].context}
+            </p>
+          </div>
+          
+          {/* Right Arrow */}
+          {quotes.length > 1 && (
             <button
               onClick={nextQuote}
-              className="quote-nav-button typewriter-text text-sm"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 text-brown-600 hover:text-brown-800 text-2xl font-bold z-10 p-2"
               title="Next quote"
             >
-              →
+              ›
             </button>
-          </div>
+          )}
         </div>
       </div>
     )
@@ -426,57 +436,39 @@ export default function JourneyHighlightsPage() {
           position: relative;
         }
         
-        .quote-carousel .quote-highlight {
-          min-height: 120px;
-          display: flex;
-          align-items: center;
-          background: rgba(255, 107, 53, 0.08);
-          border-left: 5px solid #FF6B35;
-          border-radius: 0 12px 12px 0;
-          padding: 2rem;
-          margin: 1rem 0;
-          box-shadow: 0 2px 8px rgba(139,69,19,0.1);
+        .highlight-entry {
+          transition: all 0.3s ease;
         }
         
-        .quote-navigation {
-          background: rgba(244,241,232,0.7);
-          border-radius: 12px;
-          padding: 0.75rem;
-          border: 1px solid rgba(139,69,19,0.2);
+        .highlight-entry:hover {
+          transform: translateY(-2px);
         }
         
         .quote-dot {
-          width: 12px;
-          height: 12px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
           transition: all 0.3s ease;
           border: 2px solid #8B4513;
+          background: transparent;
         }
         
         .quote-dot.active {
           background: #8B4513;
-          transform: scale(1.2);
+          transform: scale(1.3);
         }
         
         .quote-dot:hover {
-          transform: scale(1.1);
+          transform: scale(1.2);
           border-color: #654321;
         }
         
-        .quote-nav-button {
-          background: #8B4513;
-          color: white;
-          border: none;
-          padding: 0.5rem 0.75rem;
-          border-radius: 6px;
-          transition: all 0.2s ease;
-          font-weight: 600;
+        .quote-content-wrapper {
+          position: relative;
         }
         
-        .quote-nav-button:hover {
-          background: #654321;
-          transform: translateY(-1px);
-          box-shadow: 0 2px 4px rgba(139,69,19,0.3);
+        .quote-content {
+          transition: opacity 0.3s ease;
         }
       `}</style>
 
@@ -519,115 +511,63 @@ export default function JourneyHighlightsPage() {
         </div>
       </header>
 
-      {/* Hero Section - Enhanced */}
-      <section className="py-12 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="vintage-paper rounded-2xl p-8 mb-8 shadow-xl">
-            <h2 className="text-3xl md:text-4xl typewriter-title text-brown-800 font-bold mb-4">
-              Journey Through Words
-            </h2>
-            <p className="text-lg md:text-xl typewriter-text text-brown-600 max-w-4xl mx-auto leading-relaxed mb-6">
-              Experience Ernest K. Gann's extraordinary 1933 world tour through his own vivid descriptions, 
-              captured in these memorable passages from his original handwritten logbook.
-            </p>
-            {!loading && logbookData && (
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <span className="vintage-paper px-6 py-3 rounded-full typewriter-text border-2 border-brown-400 text-base bg-brown-50">
-                  📖 {logbookData.metadata.total_entries} original pages digitized
-                </span>
-                <span className="vintage-paper px-6 py-3 rounded-full typewriter-text border-2 border-brown-400 text-base bg-brown-50">
-                  🌍 6 continents • 24 destinations
-                </span>
-              </div>
-            )}
-          </div>
-          
-          {/* Quick Navigation */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <Link href="/logbook/timeline" className="secondary-button px-4 py-2 rounded-lg typewriter-text text-sm">
-              📚 Complete Timeline
-            </Link>
-            <Link href="/about" className="secondary-button px-4 py-2 rounded-lg typewriter-text text-sm">
-              👨‍✈️ About Ernest
-            </Link>
-            <Link href="/" className="secondary-button px-4 py-2 rounded-lg typewriter-text text-sm">
-              🏠 Home
-            </Link>
-          </div>
+      {/* Hero Section - Simplified */}
+      <section className="py-8 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl typewriter-title text-brown-800 font-bold mb-4">
+            Journey Highlights
+          </h2>
+          <p className="text-lg md:text-xl typewriter-text text-brown-600 max-w-4xl mx-auto leading-relaxed">
+            Experience Ernest K. Gann's extraordinary 1933 world tour through his own vivid descriptions, 
+            captured in memorable passages from his original handwritten logbook.
+          </p>
         </div>
       </section>
 
-      {/* Main Content - Completely Redesigned */}
+      {/* Main Content - Simplified Clean Layout */}
       <main className="py-6 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="space-y-12">
-            {journeyHighlights.map((highlight, index) => {
-              const isEven = index % 2 === 0
-              
-              return (
-                <div key={highlight.id} className={`highlight-card ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex flex-col lg:flex items-stretch gap-6 lg:gap-8`}>
-                  {/* Image Section - Historical B&W Photos */}
-                  <div className="lg:w-2/5">
-                    <div className="relative group h-full">
-                      <div className="vintage-paper p-4 rounded-xl shadow-xl h-full">
-                        <img
-                          src={highlight.image}
-                          alt={`${highlight.location} - ${highlight.date}`}
-                          className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-inner transform transition-transform group-hover:scale-105 filter grayscale"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement
-                            target.src = '/images/journey/departure.jpg'
-                          }}
-                        />
-                        <div className="absolute inset-4 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-lg pointer-events-none" />
-                        <div className="absolute bottom-8 left-8 text-white">
-                          <div className="typewriter-text text-sm font-medium opacity-90 mb-1">{highlight.date}</div>
-                          <div className="typewriter-title text-xl font-bold">{highlight.location}</div>
-                        </div>
-                      </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="space-y-16">
+            {journeyHighlights.map((highlight, index) => (
+              <article key={highlight.id} className="highlight-entry border-b border-brown-200 pb-12 last:border-b-0">
+                
+                {/* Header with Date and Location */}
+                <header className="mb-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                    <div>
+                      <time className="typewriter-text text-brown-500 font-semibold text-lg">
+                        📅 {highlight.date}
+                      </time>
+                      <h2 className="text-3xl lg:text-4xl typewriter-title text-brown-800 font-bold leading-tight mt-2">
+                        {highlight.location}
+                      </h2>
+                    </div>
+                    
+                    {/* Action Buttons - Simplified */}
+                    <div className="flex gap-3 sm:ml-auto">
+                      <button 
+                        onClick={() => openModal(highlight)}
+                        className="nav-button px-4 py-2 rounded typewriter-text text-sm"
+                      >
+                        View Entry
+                      </button>
+                      <Link 
+                        href={`/logbook/timeline?location=${encodeURIComponent(highlight.timelineLocation)}`}
+                        className="secondary-button px-4 py-2 rounded typewriter-text text-sm"
+                      >
+                        Timeline
+                      </Link>
                     </div>
                   </div>
+                </header>
 
-                  {/* Quote Content - Dense Layout with Carousel */}
-                  <div className="lg:w-3/5 flex flex-col justify-center">
-                    <div className="vintage-paper p-6 lg:p-8 rounded-xl shadow-xl">
-                      <div className="space-y-6">
-                        <div className="space-y-2">
-                          <div className="typewriter-text text-brown-500 font-semibold text-lg">
-                            📅 {highlight.date}
-                          </div>
-                          <h2 className="text-2xl lg:text-3xl typewriter-title text-brown-800 font-bold leading-tight">
-                            {highlight.location}
-                          </h2>
-                        </div>
-                        
-                        {/* Quote Carousel - 3 Quotes */}
-                        <QuoteCarousel quotes={highlight.quotes} />
-
-                        {/* Action Buttons - Compact */}
-                        <div className="pt-4 flex flex-col sm:flex-row gap-3">
-                          <button 
-                            onClick={() => openModal(highlight)}
-                            className="nav-button inline-flex items-center justify-center text-white px-6 py-3 rounded-lg typewriter-text font-semibold text-base"
-                          >
-                            📖 View Journal Entry
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </button>
-                          <Link 
-                            href={`/logbook/timeline?location=${encodeURIComponent(highlight.timelineLocation)}`}
-                            className="secondary-button px-6 py-3 rounded-lg typewriter-text text-base text-center"
-                          >
-                            🗺️ Go to Timeline
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* Quote Content - Clean Single Panel */}
+                <div className="quote-section">
+                  <QuoteCarousel quotes={highlight.quotes} />
                 </div>
-              )
-            })}
+                
+              </article>
+            ))}
           </div>
         </div>
       </main>
