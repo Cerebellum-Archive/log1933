@@ -42,11 +42,11 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-          {/* Aviation hangar sketch background */}
+          {/* Aviation sketch background */}
           <div 
-            className="absolute inset-0 opacity-25"
+            className="absolute inset-0 opacity-40"
             style={{
-              backgroundImage: 'url(/images/backgrounds/aviation-hangar-sketch.jpg)',
+              backgroundImage: 'url(/images/backgrounds/aviation-sketch.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
@@ -57,13 +57,13 @@ export default function Home() {
           <div className="absolute inset-0 vintage-paper opacity-15"></div>
           
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-            <div className="bg-white/70 backdrop-blur-sm p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
-              <h1 className="text-6xl md:text-8xl typewriter-title text-brown-800 mb-6 tracking-tight">
+            <div className="bg-white/30 backdrop-blur-none p-12 rounded-2xl shadow-2xl border-4 border-brown-400">
+              <h1 className="text-6xl md:text-8xl typewriter-title text-brown-800 mb-6 tracking-tight" style={{textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}}>
                 <span className="block">ERNEST K. GANN</span>
                 <span className="block text-3xl md:text-4xl text-brown-600 mt-4 typewriter-text">1933 World Tour Logbook</span>
               </h1>
               
-              <p className="text-xl md:text-2xl typewriter-text text-brown-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl typewriter-text text-brown-700 mb-8 max-w-4xl mx-auto leading-relaxed" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.7)'}}>
                 A young man's journey around the world to review telephone companies in Europe and Asia, 
                 setting the stage for one of aviation's greatest storytellers.
               </p>
