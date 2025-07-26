@@ -58,6 +58,7 @@ Thumbs.db
 
 # EXCEPTIONS: Allow website assets
 !website/public/images/journey/*.png
+!website/public/images/backgrounds/*.png
 !website/public/images/journey/*.jpg
 !website/public/images/journey/*.jpeg
 !website/public/data/*.json
