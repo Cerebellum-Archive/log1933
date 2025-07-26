@@ -16,24 +16,24 @@ export default function Home() {
               </div>
               
               {/* Right: Quick Navigation */}
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-6">
                 <Link 
                   href="/journey" 
-                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 rounded"
                 >
-                  ✨ Highlights
+                  Highlights
                 </Link>
                 <Link 
                   href="/logbook/timeline" 
-                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 rounded"
                 >
-                  📖 Timeline
+                  Timeline
                 </Link>
                 <Link 
                   href="/about" 
-                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 rounded"
+                  className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 rounded"
                 >
-                  👨‍✈️ About
+                  About
                 </Link>
               </div>
             </div>
@@ -71,21 +71,21 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link 
                   href="/journey" 
-                  className="bg-gradient-to-r from-brown-600 to-brown-700 hover:from-brown-700 hover:to-brown-800 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl"
+                  className="border-2 border-brown-600 text-brown-600 hover:bg-gradient-to-r hover:from-brown-600 hover:to-brown-700 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
                 >
-                  ✨ Journey Highlights
+                  Journey Highlights
                 </Link>
                 <Link 
                   href="/logbook/timeline" 
                   className="border-2 border-brown-600 text-brown-600 hover:bg-gradient-to-r hover:from-brown-600 hover:to-brown-700 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
                 >
-                  📖 Explore Timeline
+                  Explore Timeline
                 </Link>
                 <Link 
                   href="/about" 
-                  className="border-2 border-brown-500 text-brown-500 hover:bg-gradient-to-r hover:from-brown-500 hover:to-brown-600 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
+                  className="border-2 border-brown-600 text-brown-600 hover:bg-gradient-to-r hover:from-brown-600 hover:to-brown-700 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105"
                 >
-                  👨‍✈️ About Ernest
+                  About Ernest
                 </Link>
               </div>
             </div>

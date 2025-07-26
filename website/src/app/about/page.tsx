@@ -104,19 +104,19 @@ export default function AboutPage() {
             <div className="hidden md:flex items-center space-x-6">
               <Link 
                 href="/journey" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
                 Highlights
               </Link>
               <Link 
                 href="/logbook/timeline" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 border-b-2 border-transparent hover:border-brown-400"
               >
                 Timeline
               </Link>
               <Link 
                 href="/about" 
-                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-sm px-3 py-2 border-b-2 border-brown-600"
+                className="text-brown-600 hover:text-brown-800 transition-colors typewriter-text font-semibold text-lg px-3 py-2 border-b-2 border-brown-600"
               >
                 About
               </Link>
@@ -131,9 +131,9 @@ export default function AboutPage() {
       </header>
       
       {/* Hero Section */}
-      <section className="py-12 px-6">
+      <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto text-center">
-            <div className="text-2xl typewriter-text text-brown-600 mb-4">
+            <div className="text-2xl typewriter-text text-brown-600 mb-3">
               1910 - 1991
             </div>
             <p className="text-xl typewriter-text text-brown-600 max-w-4xl mx-auto leading-relaxed">
@@ -144,16 +144,16 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <main className="py-8 md:py-16 px-4">
-        <div className="max-w-6xl mx-auto space-y-8 md:space-y-20">
+      <main className="py-6 md:py-12 px-4">
+        <div className="max-w-6xl mx-auto space-y-6 md:space-y-12">
           
           {/* The Man Behind the Words */}
           <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
-            <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
+            <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center border-b-2 border-brown-300 pb-3">
               The Man Behind the Words
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-2xl typewriter-title text-brown-700 mb-4">Early Dreams & Rebellions</h3>
                 <p className="typewriter-text text-brown-800 text-lg leading-relaxed mb-4">
@@ -189,11 +189,11 @@ export default function AboutPage() {
 
           {/* Aviation Pioneer */}
           <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
-            <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
+            <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center border-b-2 border-brown-300 pb-3">
               Taking to the Skies
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-2xl typewriter-title text-brown-700 mb-4">Finding His Wings (1938-1945)</h3>
                 <p className="typewriter-text text-brown-800 text-lg leading-relaxed mb-4">
@@ -229,11 +229,11 @@ export default function AboutPage() {
 
           {/* Literary Legacy */}
           <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
-            <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
+            <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center border-b-2 border-brown-300 pb-3">
               Literary Legacy
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-2xl typewriter-title text-brown-700 mb-4">The Stories Take Flight</h3>
                 <p className="typewriter-text text-brown-800 text-lg leading-relaxed mb-6">
@@ -292,9 +292,9 @@ export default function AboutPage() {
               </div>
 
               {/* Literary Reviews */}
-              <div className="mt-8">
-                <h4 className="text-xl typewriter-title text-brown-700 mb-6">Critical Acclaim</h4>
-                <div className="space-y-6">
+              <div className="mt-6">
+                <h4 className="text-xl typewriter-title text-brown-700 mb-4">Critical Acclaim</h4>
+                <div className="space-y-4">
                   <blockquote className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
                     <p className="typewriter-text text-brown-800 leading-relaxed italic mb-3">
                       "Few writers have ever drawn readers so intimately into the shielded sanctum of the cockpit, 
@@ -330,9 +330,9 @@ export default function AboutPage() {
               </div>
 
               {/* Featured Podcast */}
-              <div className="mt-8">
+              <div className="mt-6">
                 <h4 className="text-xl typewriter-title text-brown-700 mb-4">Recent Recognition</h4>
-                <div className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-6 rounded-r-lg">
+                <div className="border-l-4 border-brown-400 pl-6 bg-brown-50 py-4 rounded-r-lg">
                   <div className="flex items-start space-x-4">
                     <div className="text-4xl">🎧</div>
                     <div className="flex-1">
@@ -364,11 +364,11 @@ export default function AboutPage() {
 
           {/* Later Life & Legacy */}
           <section className="vintage-paper p-6 md:p-12 rounded-xl shadow-2xl">
-            <h2 className="text-4xl typewriter-title text-brown-800 mb-8 text-center border-b-2 border-brown-300 pb-4">
+            <h2 className="text-4xl typewriter-title text-brown-800 mb-6 text-center border-b-2 border-brown-300 pb-3">
               The Final Chapters
             </h2>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div>
                 <h3 className="text-2xl typewriter-title text-brown-700 mb-4">Sailor & Conservationist</h3>
                 <p className="typewriter-text text-brown-800 text-lg leading-relaxed mb-4">
@@ -430,13 +430,13 @@ export default function AboutPage() {
                 href="/logbook/timeline" 
                 className="bg-brown-600 hover:bg-brown-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 typewriter-text font-semibold text-lg"
               >
-                📖 Explore the 1933 Logbook
+                Explore the 1933 Logbook
               </Link>
               <Link 
                 href="/journey" 
                 className="border-2 border-brown-600 text-brown-600 hover:bg-brown-600 hover:text-white px-8 py-4 rounded-lg transition-all duration-300 typewriter-text font-semibold text-lg"
               >
-                ✨ Read Journey Highlights
+                Read Journey Highlights
               </Link>
             </div>
           </section>
