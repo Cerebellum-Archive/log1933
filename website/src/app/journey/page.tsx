@@ -478,7 +478,7 @@ export default function JourneyHighlightsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@400;700&display=swap');
         
         .vintage-paper {
           background: linear-gradient(45deg, #f4f1e8 0%, #f7f3e9 25%, #f4f1e8 50%, #f7f3e9 75%, #f4f1e8 100%);
@@ -511,7 +511,7 @@ export default function JourneyHighlightsPage() {
         }
         
         .typewriter-title {
-          font-family: 'Special Elite', cursive;
+          font-family: 'Merriweather', serif;
           color: #2c1810;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }

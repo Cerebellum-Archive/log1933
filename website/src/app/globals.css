@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Merriweather:wght@400;700&display=swap');
 
 :root {
   --foreground-rgb: 44, 24, 16;
@@ -61,7 +61,7 @@ body {
 }
 
 .typewriter-title {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Merriweather', serif;
   color: var(--brown-800);
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }

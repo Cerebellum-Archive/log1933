@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter, Special_Elite } from 'next/font/google'
+import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
 import 'leaflet/dist/leaflet.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const specialElite = Special_Elite({
-  weight: '400',
+const merriweather = Merriweather({
+  weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-special-elite',
+  variable: '--font-merriweather',
 });
 
 export const metadata: Metadata = {
