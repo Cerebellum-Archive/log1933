@@ -151,13 +151,13 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
         
         if (japanStop && sanFranciscoStop) {
           // First segment: Japan to eastern edge of map
-          const pacificSegment1 = [
+          const pacificSegment1: [number, number][] = [
             [japanStop.lat, japanStop.lng],
             [japanStop.lat, 179] // Go to eastern edge of map
           ]
           
           // Second segment: western edge of map to San Francisco
-          const pacificSegment2 = [
+          const pacificSegment2: [number, number][] = [
             [sanFranciscoStop.lat, -179], // Start from western edge of map
             [sanFranciscoStop.lat, sanFranciscoStop.lng]
           ]
