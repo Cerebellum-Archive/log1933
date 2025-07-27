@@ -143,6 +143,40 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
           opacity: 0.9,
           dashArray: '12, 6'
         }).addTo(map)
+
+        // Add Pacific crossing from Japan to San Francisco as two segments
+        // to handle the map split at the international date line
+        const japanStop = journeyStops.find(stop => stop.name === 'Japan')
+        const sanFranciscoStop = journeyStops.find(stop => stop.name === 'San Francisco')
+        
+        if (japanStop && sanFranciscoStop) {
+          // First segment: Japan to eastern edge of map
+          const pacificSegment1 = [
+            [japanStop.lat, japanStop.lng],
+            [japanStop.lat, 179] // Go to eastern edge of map
+          ]
+          
+          // Second segment: western edge of map to San Francisco
+          const pacificSegment2 = [
+            [sanFranciscoStop.lat, -179], // Start from western edge of map
+            [sanFranciscoStop.lat, sanFranciscoStop.lng]
+          ]
+          
+          // Add both Pacific segments with same styling as main route
+          L.polyline(pacificSegment1, {
+            color: '#FF6B35',
+            weight: 4,
+            opacity: 0.9,
+            dashArray: '12, 6'
+          }).addTo(map)
+          
+          L.polyline(pacificSegment2, {
+            color: '#FF6B35',
+            weight: 4,
+            opacity: 0.9,
+            dashArray: '12, 6'
+          }).addTo(map)
+        }
       } catch (error) {
         console.error('Error adding route polyline:', error)
       }
@@ -171,12 +205,61 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
           })
         }).addTo(map)
         }
+
+        // Add arrows for Pacific crossing segments
+        const japanStop = journeyStops.find(stop => stop.name === 'Japan')
+        const sanFranciscoStop = journeyStops.find(stop => stop.name === 'San Francisco')
+        
+        if (japanStop && sanFranciscoStop) {
+          // Arrow for first Pacific segment (Japan to eastern edge)
+          const midLat1 = japanStop.lat
+          const midLng1 = (japanStop.lng + 179) / 2
+          const angle1 = 90 // Pointing east
+          
+          L.marker([midLat1, midLng1], { 
+            icon: L.divIcon({
+              className: 'route-arrow',
+              html: `<div style="
+                width: 0; 
+                height: 0; 
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 12px solid #FF6B35;
+                transform: rotate(${angle1}deg);
+              "></div>`,
+              iconSize: [12, 12],
+              iconAnchor: [6, 6]
+            })
+          }).addTo(map)
+          
+          // Arrow for second Pacific segment (western edge to San Francisco)
+          const midLat2 = sanFranciscoStop.lat
+          const midLng2 = (-179 + sanFranciscoStop.lng) / 2
+          const angle2 = 90 // Pointing east
+          
+          L.marker([midLat2, midLng2], { 
+            icon: L.divIcon({
+              className: 'route-arrow',
+              html: `<div style="
+                width: 0; 
+                height: 0; 
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 12px solid #FF6B35;
+                transform: rotate(${angle2}deg);
+              "></div>`,
+              iconSize: [12, 12],
+              iconAnchor: [6, 6]
+            })
+          }).addTo(map)
+        }
       } catch (error) {
         console.error('Error adding route arrows:', error)
       }
 
       try {
-        journeyStops.slice(0, -2).forEach((stop) => {
+        // Add markers for all stops except Los Angeles (include San Francisco now)
+        journeyStops.slice(0, -1).forEach((stop) => {
         const marker = L.marker([stop.lat, stop.lng], { icon: customIcon })
           .addTo(map)
           .bindPopup(`
@@ -202,7 +285,8 @@ const WorldRouteMap = ({ onLocationClick }: WorldRouteMapProps) => {
       }
 
       try {
-        const journeyCoordinates = journeyStops.slice(0, -2).map(stop => [stop.lat, stop.lng] as [number, number])
+        // Include San Francisco in bounds calculation now that we have the Pacific crossing
+        const journeyCoordinates = journeyStops.slice(0, -1).map(stop => [stop.lat, stop.lng] as [number, number])
         const routeBounds = L.latLngBounds(journeyCoordinates)
         
         map.fitBounds(routeBounds, { 
